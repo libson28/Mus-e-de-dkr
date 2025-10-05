@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <script src="https://static.readdy.ai/static/e.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Musée des Civilisations Noires - Dakar</title>
+        <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+        <script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#D97706',
+secondary: '#92400E'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+        <style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+body {
+font-family: 'Inter', sans-serif;
+}
+.hero-bg {
+background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://readdy.ai/api/search-image?query=African%20museum%20interior%20with%20traditional%20artifacts%20sculptures%20masks%20and%20cultural%20displays%20warm%20lighting%20wooden%20floors%20elegant%20exhibition%20space%20showcasing%20black%20civilizations%20heritage%20with%20visitors%20admiring%20collections%20modern%20museum%20architecture&width=1920&height=1080&seq=hero001&orientation=landscape');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+.card-hover {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+.carousel-container {
+scroll-behavior: smooth;
+}
+        </style>
+    </head>
+    <body class="bg-gray-50">
+        <!-- Header -->
+        <header class="bg-amber-900 text-white shadow-lg sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center space-x-8">
+                        <div class="font-['Pacifico'] text-2xl text-amber-200">MCN</div>
+                        <nav class="hidden md:flex space-x-8">
+                            <a href="#accueil" class="text-amber-200 transition-colors font-medium border-b-2 border-amber-200 pb-1">Accueil</a>
+                            <a href="#catalogue" class="hover:text-amber-200 transition-colors font-medium">Catalogue</a>
+                            <a href="#histoire" class="hover:text-amber-200 transition-colors font-medium">Histoire & Culture</a>
+                            <a href="#multimedia" class="hover:text-amber-200 transition-colors font-medium">Multimédia</a>
+                            <a href="#contact" class="hover:text-amber-200 transition-colors font-medium">Contact</a>
+                        </nav>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <button class="px-3 py-1 rounded-button bg-primary text-white text-sm font-medium whitespace-nowrap">FR</button>
+                            <button class="px-3 py-1 rounded-button text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
+                            <button class="px-3 py-1 rounded-button text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">ES</button>
+                        </div>
+                        <button class="md:hidden w-8 h-8 flex items-center justify-center">
+                            <i class="ri-menu-line ri-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Hero Section -->
+        <section id="accueil" class="hero-bg min-h-screen flex items-center">
+            <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center text-white">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        Bienvenue au Musée des
+                        <br>
+                        <span class="text-amber-300">Civilisations Noires</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                        Découvrez la richesse et la diversité des civilisations africaines à travers nos collections exceptionnelles
+                    </p>
+                    <button class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-button text-lg font-semibold transition-colors whitespace-nowrap !rounded-button">
+                        Découvrir nos collections
+                    </button>
+                    <div class="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-300">2500+</div>
+                            <div class="text-sm uppercase tracking-wide">Œuvres</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-300">15</div>
+                            <div class="text-sm uppercase tracking-wide">Pays représentés</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-300">50+</div>
+                            <div class="text-sm uppercase tracking-wide">Années d'histoire</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Présentation -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold text-gray-900 mb-6">Notre Mission</h2>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                            Le Musée des Civilisations Noires de Dakar est un espace dédié à la préservation, à la valorisation et à la transmission du patrimoine culturel africain. Nous célébrons la diversité et la richesse des civilisations noires à travers le monde.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                           Projet au long cours, pensé tour à tour par un militant anticolonialiste (Lamine Senghor), un penseur de la négritude (Léopold Sedar Senghor) et un chantre de la renaissance africaine (Abdoulaye Wade), le Musée des Civilisations noires (MCN) a été inauguré le 6 décembre 2018 par le Président Macky Sall. Le MCN œuvre depuis lors pour la valorisation de l’apport des Civilisations noires au patrimoine universel de l’humanité. Ainsi, le visiteur qui franchit la porte de la case à impluvium qui a inspiré son architecture rencontre tout autour du grand Baobab de l’artiste haïtien Edouard Duval-Carrié, l’exposition : l’Afrique, berceau de l’humanité.
+                        </p>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+                                <i class="ri-trophy-line ri-lg"></i>
+                            </div>
+                            <div class="w-12 h-12 flex items-center justify-center bg-amber-100 text-primary rounded-full">
+                                <i class="ri-global-line ri-lg"></i>
+                            </div>
+                            <div class="w-12 h-12 flex items-center justify-center bg-amber-100 text-primary rounded-full">
+                                <i class="ri-heart-line ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl text-white">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-star-line ri-lg"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold ml-3">Événements & Expositions</h3>
+                        </div>
+                        <p class="text-amber-100 mb-6 leading-relaxed">
+                            Découvrez nos expositions temporaires et événements culturels qui célèbrent la richesse des civilisations africaines à travers des installations immersives et des rencontres artistiques.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <i class="ri-calendar-event-line ri-sm mr-3"></i>
+                                <span>Exposition : "Masques Sacrés"</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-music-2-line ri-sm mr-3"></i>
+                                <span>Concert de musique traditionnelle</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-user-voice-line ri-sm mr-3"></i>
+                                <span>Conférences mensuelles</span>
+                            </div>
+                        </div>
+                        <button class="mt-6 bg-white text-primary px-6 py-3 rounded-button font-semibold hover:bg-amber-50 transition-colors whitespace-nowrap !rounded-button">
+                            Voir le programme
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Œuvres Phares -->
+        <section id="catalogue" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Œuvres Phares</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Découvrez quelques-unes de nos pièces les plus remarquables qui témoignent de la richesse artistique africaine
+                    </p>
+                </div>
+                <div class="carousel-container overflow-x-auto">
+                    <div class="flex space-x-6 pb-4" style="width: max-content;">
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" style="width: 320px;">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations&width=320&height=256&seq=art001&orientation=landscape');"></div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Masque Royal du Bénin</h3>
+                                <p class="text-sm text-primary font-medium mb-2">XVIe siècle</p>
+                                <p class="text-gray-600 mb-4">Bronze coulé selon les techniques ancestrales de la cour royale du Bénin, symbole de pouvoir et de prestige.</p>
+                                <button class="artwork-btn bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button" data-artwork="benin">
+                                    Découvrir
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" style="width: 320px;">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20wooden%20sculpture%20statue%20carved%20figure%20tribal%20art%20museum%20exhibition%20cultural%20artifact%20black%20wood%20craftsmanship%20ancestral%20heritage%20display&width=320&height=256&seq=art002&orientation=landscape');"></div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Statuette Dogon</h3>
+                                <p class="text-sm text-primary font-medium mb-2">XIVe siècle</p>
+                                <p class="text-gray-600 mb-4">Sculpture en bois représentant un ancêtre mythique, pièce centrale des rituels spirituels dogon.</p>
+                                <button class="artwork-btn bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button" data-artwork="dogon">
+                                    Découvrir
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" style="width: 320px;">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20textile%20kente%20cloth%20colorful%20geometric%20patterns%20traditional%20weaving%20Ghana%20cultural%20fabric%20museum%20display%20vibrant%20colors%20heritage%20craftsmanship&width=320&height=256&seq=art003&orientation=landscape');"></div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Tissu Kente Royal</h3>
+                                <p class="text-sm text-primary font-medium mb-2">XVIIe siècle</p>
+                                <p class="text-gray-600 mb-4">Textile tissé à la main aux motifs géométriques complexes, réservé aux cérémonies royales ashanti.</p>
+                                <button class="artwork-btn bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button" data-artwork="kente">
+                                    Découvrir
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" style="width: 320px;">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20pottery%20ceramic%20vessel%20traditional%20craftsmanship%20museum%20artifact%20cultural%20heritage%20terracotta%20decorative%20patterns%20archaeological%20find&width=320&height=256&seq=art004&orientation=landscape');"></div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Poterie Nok</h3>
+                                <p class="text-sm text-primary font-medium mb-2">Ve siècle av. J.-C.</p>
+                                <p class="text-gray-600 mb-4">Céramique de la culture Nok, témoignage de l'une des plus anciennes civilisations d'Afrique de l'Ouest.</p>
+                                <button class="artwork-btn bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button" data-artwork="nok">
+                                    Découvrir
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover" style="width: 320px;">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20musical%20instruments%20drums%20djembe%20kora%20balafon%20museum%20display%20cultural%20heritage%20music%20artifacts%20wooden%20carved%20instruments&width=320&height=256&seq=art005&orientation=landscape');"></div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Djembé Mandingue</h3>
+                                <p class="text-sm text-primary font-medium mb-2">XIIe siècle</p>
+                                <p class="text-gray-600 mb-4">Tambour sacré sculpté dans un tronc d'arbre, instrument central de la musique traditionnelle mandingue.</p>
+                                <button class="artwork-btn bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button" data-artwork="djembe">
+                                    Découvrir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fonctionnalités Interactives -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Expérience Interactive</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Explorez nos collections grâce à nos outils numériques innovants
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl text-white text-center card-hover">
+                        <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-6">
+                            <i class="ri-qr-scan-line ri-2x"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Scanner QR Code</h3>
+                        <p class="text-amber-100 mb-6 leading-relaxed">
+                            Scannez les QR codes près de chaque œuvre pour accéder instantanément aux informations détaillées, audio guides et contenus multimédia.
+                        </p>
+                        <button class="bg-white text-primary px-6 py-3 rounded-button font-semibold hover:bg-amber-50 transition-colors whitespace-nowrap !rounded-button">
+                            Essayer maintenant
+                        </button>
+                    </div>
+                    <div class="bg-white border-2 border-gray-200 p-8 rounded-2xl text-center card-hover">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
+                            <i class="ri-headphone-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Audio Guides</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Écoutez nos guides audio en français, anglais ou wolof pour une visite enrichie et personnalisée de nos collections.
+                        </p>
+                        <div class="flex justify-center space-x-2 mb-6">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">FR</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">EN</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">WO</span>
+                        </div>
+                        <button id="audioGuideBtn" class="bg-primary text-white px-6 py-3 rounded-button font-semibold hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                            Écouter
+                        </button>
+                    </div>
+                    <div class="bg-white border-2 border-gray-200 p-8 rounded-2xl text-center card-hover">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
+                            <i class="ri-gamepad-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Quiz Culturels</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Testez vos connaissances sur les civilisations africaines avec nos quiz interactifs et découvrez des anecdotes fascinantes.
+                        </p>
+                        <div class="text-3xl font-bold text-primary mb-2">12</div>
+                        <div class="text-sm text-gray-500 mb-6">Quiz disponibles</div>
+                        <button id="startQuiz" class="bg-primary text-white px-6 py-3 rounded-button font-semibold hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                            Jouer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Histoire & Culture -->
+        <section id="histoire" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Histoire & Culture</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Plongez dans l'histoire millénaire des civilisations africaines
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4">
+                            <i class="ri-ancient-gate-line ri-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Royaumes Anciens</h3>
+                        <p class="text-gray-600 text-sm">Explorez l'histoire des grands empires africains : Ghana, Mali, Songhaï, Kush...</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4">
+                            <i class="ri-palette-line ri-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Arts Traditionnels</h3>
+                        <p class="text-gray-600 text-sm">Découvrez les techniques ancestrales de sculpture, poterie, tissage et métallurgie.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4">
+                            <i class="ri-music-line ri-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Musiques & Danses</h3>
+                        <p class="text-gray-600 text-sm">Immergez-vous dans la richesse des traditions musicales et chorégraphiques africaines.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4">
+                            <i class="ri-book-open-line ri-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Littérature Orale</h3>
+                        <p class="text-gray-600 text-sm">Écoutez les contes, légendes et épopées transmis de génération en génération.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Galerie Multimédia -->
+        <section id="multimedia" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4">Galerie Multimédia</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Une expérience immersive à travers photos, vidéos et contenus audio
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div class="relative group overflow-hidden rounded-2xl">
+                        <div class="h-80 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20museum%20gallery%20visitors%20exploring%20exhibitions%20cultural%20artifacts%20display%20modern%20interior%20architecture%20people%20admiring%20traditional%20art%20collections&width=600&height=320&seq=gallery001&orientation=landscape');"></div>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button class="bg-white text-gray-900 px-6 py-3 rounded-button font-semibold whitespace-nowrap !rounded-button">
+                                Voir la galerie photos
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="relative group overflow-hidden rounded-2xl">
+                            <div class="h-36 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20traditional%20dance%20performance%20cultural%20ceremony%20colorful%20costumes%20drums%20music%20heritage%20celebration%20museum%20event&width=300&height=144&seq=media001&orientation=landscape');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-play-fill ri-lg text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-2xl">
+                            <div class="h-36 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20craftsman%20artisan%20working%20traditional%20pottery%20sculpture%20workshop%20cultural%20heritage%20skills%20transmission%20museum%20documentation&width=300&height=144&seq=media002&orientation=landscape');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-play-fill ri-lg text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-2xl">
+                            <div class="h-36 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20museum%20conservation%20restoration%20expert%20working%20on%20ancient%20artifacts%20preservation%20cultural%20heritage%20laboratory%20scientific%20approach&width=300&height=144&seq=media003&orientation=landscape');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-volume-up-fill ri-lg text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative group overflow-hidden rounded-2xl">
+                            <div class="h-36 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20children%20learning%20about%20cultural%20heritage%20museum%20educational%20program%20traditional%20stories%20cultural%20transmission%20young%20generation&width=300&height=144&seq=media004&orientation=landscape');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-play-fill ri-lg text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="bg-primary text-white px-8 py-4 rounded-button text-lg font-semibold hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                        Voir toute la galerie
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Partenaires -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Nos Partenaires</h2>
+                    <p class="text-lg text-gray-600">Ensemble pour valoriser le patrimoine culturel africain</p>
+                </div>
+                <div class="flex flex-wrap gap-6 justify-center items-center space-x-12">
+                    <div class="flex items-center space-x-3 text-gray-600">
+                        <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full">
+                            <i class="ri-rocket-line ri-lg text-blue-600"></i>
+                        </div>
+                        <span class="text-xl font-semibold">Dakar Slush'D</span>
+                    </div>
+                    <div class="flex items-center  text-gray-600">
+                        <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full">
+                            <i class="ri-lightbulb-line ri-lg text-green-600"></i>
+                        </div>
+                        <span class="text-xl font-semibold">Senstartup</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-gray-600">
+                        <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-full">
+                            <i class="ri-government-line ri-lg text-purple-600"></i>
+                        </div>
+                        <span class="text-xl font-semibold">Ministère de la Culture</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer id="contact" class="bg-amber-900 text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <div class="font-['Pacifico'] text-3xl text-amber-200 mb-4">MCN</div>
+                        <p class="text-amber-100 mb-6 leading-relaxed">
+                            Le Musée des Civilisations Noires préserve et valorise le patrimoine culturel africain pour les générations futures.
+                        </p>
+                        <div class="flex space-x-4">
+                            <div class="w-10 h-10 flex items-center justify-center bg-amber-800 hover:bg-amber-700 rounded-full transition-colors">
+                                <i class="ri-facebook-fill ri-lg"></i>
+                            </div>
+                            <div class="w-10 h-10 flex items-center justify-center bg-amber-800 hover:bg-amber-700 rounded-full transition-colors">
+                                <i class="ri-twitter-fill ri-lg"></i>
+                            </div>
+                            <div class="w-10 h-10 flex items-center justify-center bg-amber-800 hover:bg-amber-700 rounded-full transition-colors">
+                                <i class="ri-instagram-fill ri-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Informations Pratiques</h3>
+                        <div class="space-y-3 text-amber-100">
+                            <div class="flex items-start">
+                                <i class="ri-map-pin-line ri-sm mr-3 mt-1"></i>
+                                <span>Route de la Corniche Ouest
+                                    <br>Dakar, Sénégal
+                                </span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-phone-line ri-sm mr-3"></i>
+                                <span>+221 33 823 90 23</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="ri-mail-line ri-sm mr-3"></i>
+                                <span>contact@mcn.sn</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Horaires</h3>
+                        <div class="space-y-2 text-amber-100">
+                            <div class="flex justify-between">
+                                <span>Lun - Ven</span>
+                                <span>9h - 18h</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Samedi</span>
+                                <span>9h - 19h</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Dimanche</span>
+                                <span>10h - 17h</span>
+                            </div>
+                            <div class="text-sm mt-4 text-amber-200">
+                                Fermé les jours fériés
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                        <p class="text-amber-100 mb-4">Restez informé de nos actualités et événements</p>
+                        <div class="flex">
+                            <input type="email" placeholder="Votre email" class="flex-1 px-4 py-3 rounded-l-button text-gray-900 border-none focus:outline-none">
+                            <button class="bg-primary hover:bg-secondary px-6 py-3 rounded-r-button transition-colors whitespace-nowrap !rounded-button">
+                                <i class="ri-send-plane-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-amber-800 mt-12 pt-8 text-center text-amber-200">
+                    <p>&copy; 2024 Musée des Civilisations Noires. Tous droits réservés.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- Audio Player Indicator -->
+        <div id="audioIndicator" class="fixed right-6 top-24 bg-primary text-white p-3 rounded-full shadow-lg z-50 hidden">
+            <i class="ri-music-2-line ri-lg animate-pulse"></i>
+        </div>
+        <!-- Boutons d'Accessibilité -->
+        <div class="fixed right-6 bottom-6 space-y-3 z-50">
+            <button id="textSize" class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full shadow-lg hover:bg-secondary transition-colors">
+                <i class="ri-font-size-2 ri-lg"></i>
+            </button>
+            <button id="audioMode" class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full shadow-lg hover:bg-secondary transition-colors">
+                <i class="ri-volume-up-line ri-lg"></i>
+            </button>
+            <button id="highContrast" class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full shadow-lg hover:bg-secondary transition-colors">
+                <i class="ri-contrast-line ri-lg"></i>
+            </button>
+        </div>
+        <script id="navigation">
+document.addEventListener('DOMContentLoaded', function() {
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+navLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href').substring(1);
+const targetElement = document.getElementById(targetId);
+if (targetElement) {
+targetElement.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+});
+        </script>
+        <script id="languageSelector">
+document.addEventListener('DOMContentLoaded', function() {
+const langButtons = document.querySelectorAll('header button[class*="px-3"]');
+const translations = {
+fr: {
+navItems: ['Accueil', 'Catalogue', 'Histoire & Culture', 'Multimédia', 'Contact'],
+heroTitle: 'Bienvenue au Musée des<br><span class="text-amber-300">Civilisations Noires</span>',
+heroSubtitle: 'Découvrez la richesse et la diversité des civilisations africaines à travers nos collections exceptionnelles',
+heroButton: 'Découvrir nos collections',
+audioGuideBtn: 'Écouter'
+},
+en: {
+navItems: ['Home', 'Catalog', 'History & Culture', 'Multimedia', 'Contact'],
+heroTitle: 'Welcome to the Museum of<br><span class="text-amber-300">Black Civilizations</span>',
+heroSubtitle: 'Discover the richness and diversity of African civilizations through our exceptional collections',
+heroButton: 'Discover our collections',
+audioGuideBtn: 'Listen'
+},
+es: {
+navItems: ['Inicio', 'Catálogo', 'Historia y Cultura', 'Multimedia', 'Contacto'],
+heroTitle: 'Bienvenidos al Museo de las<br><span class="text-amber-300">Civilizaciones Negras</span>',
+heroSubtitle: 'Descubre la riqueza y diversidad de las civilizaciones africanas a través de nuestras colecciones excepcionales',
+heroButton: 'Descubrir nuestras colecciones',
+audioGuideBtn: 'Escuchar'
+}
+};
+
+function switchLanguage(lang) {
+const translation = translations[lang];
+if (!translation) return;
+
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach((link, index) => {
+if (index < translation.navItems.length) {
+link.textContent = translation.navItems[index];
+}
+});
+
+document.querySelector('h1').innerHTML = translation.heroTitle;
+document.querySelector('h1').nextElementSibling.textContent = translation.heroSubtitle;
+document.querySelector('.hero-bg button').textContent = translation.heroButton;
+
+const audioBtn = document.getElementById('audioGuideBtn');
+if (audioBtn) {
+audioBtn.textContent = translation.audioGuideBtn;
+}
+}
+
+langButtons.forEach(button => {
+button.addEventListener('click', function() {
+langButtons.forEach(btn => {
+btn.classList.remove('bg-primary', 'text-white');
+btn.classList.add('text-amber-200', 'hover:bg-amber-800');
+});
+this.classList.remove('text-amber-200', 'hover:bg-amber-800');
+this.classList.add('bg-primary', 'text-white');
+
+const lang = this.textContent.toLowerCase();
+if (lang === 'en') {
+switchLanguage('en');
+} else if (lang === 'es') {
+switchLanguage('es');
+} else {
+switchLanguage('fr');
+}
+});
+});
+});
+        </script>
+        <script id="accessibilityControls">
+document.addEventListener('DOMContentLoaded', function() {
+let textSizeLevel = 0;
+let audioModeActive = false;
+let highContrastActive = false;
+document.getElementById('textSize').addEventListener('click', function() {
+textSizeLevel = (textSizeLevel + 1) % 3;
+document.body.classList.remove('text-sm', 'text-lg', 'text-xl');
+if (textSizeLevel === 1) document.body.classList.add('text-lg');
+if (textSizeLevel === 2) document.body.classList.add('text-xl');
+});
+document.getElementById('audioMode').addEventListener('click', function() {
+audioModeActive = !audioModeActive;
+this.classList.toggle('bg-secondary', audioModeActive);
+if (audioModeActive) {
+console.log('Mode audio activé');
+}
+});
+document.getElementById('highContrast').addEventListener('click', function() {
+highContrastActive = !highContrastActive;
+this.classList.toggle('bg-secondary', highContrastActive);
+document.body.classList.toggle('contrast-125', highContrastActive);
+});
+});
+        </script>
+        <!-- Quiz Modal -->
+        <div id="quizModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-2xl max-w-2xl mx-4 max-h-screen overflow-y-auto">
+                <div class="p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-3xl font-bold text-gray-900">Quiz Culturel</h2>
+                        <button id="closeQuiz" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600">
+                            <i class="ri-close-line ri-lg"></i>
+                        </button>
+                    </div>
+                    <div id="quizContent">
+                        <div id="quizStart" class="text-center">
+                            <div class="w-20 h-20 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
+                                <i class="ri-brain-line ri-3x text-primary"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Testez vos connaissances</h3>
+                            <p class="text-gray-600 mb-8">Découvrez l'histoire et la culture des civilisations africaines à travers 10 questions passionnantes.</p>
+                            <button id="beginQuiz" class="bg-primary text-white px-8 py-4 rounded-button text-lg font-semibold hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                                Commencer le Quiz
+                            </button>
+                        </div>
+                        <div id="quizQuestion" class="hidden">
+                            <div class="flex justify-between items-center mb-6">
+                                <span id="questionNumber" class="text-sm font-medium text-gray-500">Question 1/10</span>
+                                <div class="flex space-x-2">
+                                    <div class="w-3 h-3 bg-primary rounded-full"></div>
+                                    <div class="w-3 h-3 bg-gray-200 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-gray-200 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-gray-200 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-gray-200 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-gray-200 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-gray-200 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-gray-200 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-gray-200 rounded-full"></div>
+                                    <div class="w-3 h-3 bg-gray-200 rounded-full"></div>
+                                </div>
+                            </div>
+                            <h3 id="questionText" class="text-xl font-bold text-gray-900 mb-6"></h3>
+                            <div id="answerOptions" class="space-y-3 mb-8"></div>
+                            <div class="flex justify-between">
+                                <button id="prevQuestion" class="bg-gray-100 text-gray-600 px-6 py-3 rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap !rounded-button">
+                                    Précédent
+                                </button>
+                                <button id="nextQuestion" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                                    Suivant
+                                </button>
+                            </div>
+                        </div>
+                        <div id="quizResults" class="hidden text-center">
+                            <div id="resultIcon" class="w-20 h-20 flex items-center justify-center rounded-full mx-auto mb-6">
+                                <i class="ri-trophy-line ri-3x"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Quiz terminé !</h3>
+                            <div class="text-6xl font-bold text-primary mb-4" id="finalScore">8/10</div>
+                            <p id="resultMessage" class="text-xl text-gray-700 mb-8"></p>
+                            <div class="bg-gray-50 rounded-xl p-6 mb-8">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-4">Votre performance</h4>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Bonnes réponses</span>
+                                        <span id="correctAnswers" class="text-green-600 font-semibold">8</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Mauvaises réponses</span>
+                                        <span id="wrongAnswers" class="text-red-500 font-semibold">2</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Pourcentage</span>
+                                        <span id="percentage" class="text-primary font-semibold">80%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex space-x-4 justify-center">
+                                <button id="restartQuiz" class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                                    Recommencer
+                                </button>
+                                <button id="shareResults" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-button font-medium hover:bg-gray-200 transition-colors whitespace-nowrap !rounded-button">
+                                    Partager
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Popup Modal for Artworks -->
+        <div id="artworkModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-2xl max-w-4xl mx-4 max-h-screen overflow-y-auto">
+                <div class="flex">
+                    <div class="w-1/2">
+                        <div id="modalImage" class="h-96 bg-cover bg-center rounded-l-2xl"></div>
+                    </div>
+                    <div class="w-1/2 p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h2 id="modalTitle" class="text-3xl font-bold text-gray-900 mb-2"></h2>
+                                <p id="modalPeriod" class="text-lg text-primary font-medium"></p>
+                            </div>
+                            <button id="closeModal" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600">
+                                <i class="ri-close-line ri-lg"></i>
+                            </button>
+                        </div>
+                        <div id="modalContent" class="space-y-6">
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-3">Description</h3>
+                                <p id="modalDescription" class="text-gray-700 leading-relaxed"></p>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-3">Informations techniques</h3>
+                                <div id="modalTechnical" class="space-y-2 text-gray-700"></div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-3">Contexte culturel</h3>
+                                <p id="modalContext" class="text-gray-700 leading-relaxed"></p>
+                            </div>
+                            <div class="flex space-x-4 pt-4">
+                                <button class="flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-button hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                                    <i class="ri-headphone-line ri-sm"></i>
+                                    <span>Audio Guide</span>
+                                </button>
+                                <button class="flex items-center space-x-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-button hover:bg-gray-200 transition-colors whitespace-nowrap !rounded-button">
+                                    <i class="ri-qr-code-line ri-sm"></i>
+                                    <span>QR Code</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script id="carouselScroll">
+document.addEventListener('DOMContentLoaded', function() {
+const carousel = document.querySelector('.carousel-container');
+let isScrolling = false;
+carousel.addEventListener('wheel', function(e) {
+if (!isScrolling) {
+e.preventDefault();
+isScrolling = true;
+this.scrollLeft += e.deltaY > 0 ? 320 : -320;
+setTimeout(() => { isScrolling = false; }, 300);
+}
+});
+});
+        </script>
+        <script id="quizManager">
+document.addEventListener('DOMContentLoaded', function() {
+const quizModal = document.getElementById('quizModal');
+const startQuizBtn = document.getElementById('startQuiz');
+const closeQuizBtn = document.getElementById('closeQuiz');
+const beginQuizBtn = document.getElementById('beginQuiz');
+const prevBtn = document.getElementById('prevQuestion');
+const nextBtn = document.getElementById('nextQuestion');
+const restartBtn = document.getElementById('restartQuiz');
+const shareBtn = document.getElementById('shareResults');
+let currentQuestion = 0;
+let score = 0;
+let userAnswers = [];
+const quizData = [
+{
+question: "Quel empire africain était connu pour ses richesses en or et ses universités prestigieuses ?",
+options: ["Empire du Mali", "Royaume de Kush", "Empire Songhaï", "Royaume du Congo"],
+correct: 0
+},
+{
+question: "Dans quelle région d'Afrique trouve-t-on les plus anciennes sculptures en terre cuite de la culture Nok ?",
+options: ["Afrique du Sud", "Nigeria", "Égypte", "Sénégal"],
+correct: 1
+},
+{
+question: "Quel instrument de musique est considéré comme le 'roi des tambours' en Afrique de l'Ouest ?",
+options: ["Balafon", "Kora", "Djembé", "Talking drum"],
+correct: 2
+},
+{
+question: "Les masques Dogon du Mali représentent principalement :",
+options: ["Des animaux totémiques", "Des ancêtres et esprits", "Des divinités de la nature", "Des rois et chefs"],
+correct: 1
+},
+{
+question: "Quelle technique de métallurgie était maîtrisée par les artisans du royaume du Bénin ?",
+options: ["Forge à froid", "Cire perdue", "Martelage", "Soudure"],
+correct: 1
+},
+{
+question: "Le tissu Kente est originaire de quel pays africain ?",
+options: ["Mali", "Sénégal", "Ghana", "Côte d'Ivoire"],
+correct: 2
+},
+{
+question: "Combien d'années environ a duré l'Empire du Mali à son apogée ?",
+options: ["100 ans", "200 ans", "300 ans", "400 ans"],
+correct: 2
+},
+{
+question: "Quel matériau était principalement utilisé pour les sculptures traditionnelles africaines ?",
+options: ["Pierre", "Bronze", "Bois", "Ivoire"],
+correct: 2
+},
+{
+question: "Dans la culture africaine traditionnelle, les griots étaient :",
+options: ["Des guerriers", "Des marchands", "Des gardiens de la tradition orale", "Des artisans"],
+correct: 2
+},
+{
+question: "Quelle civilisation africaine ancienne était connue pour ses pyramides au Soudan ?",
+options: ["Axoum", "Kush", "Nubie", "Méroé"],
+correct: 1
+}
+];
+function openQuiz() {
+quizModal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+showQuizStart();
+}
+function closeQuiz() {
+quizModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+resetQuiz();
+}
+function showQuizStart() {
+document.getElementById('quizStart').classList.remove('hidden');
+document.getElementById('quizQuestion').classList.add('hidden');
+document.getElementById('quizResults').classList.add('hidden');
+}
+function startQuiz() {
+document.getElementById('quizStart').classList.add('hidden');
+document.getElementById('quizQuestion').classList.remove('hidden');
+currentQuestion = 0;
+score = 0;
+userAnswers = new Array(quizData.length).fill(-1);
+showQuestion();
+}
+function showQuestion() {
+const question = quizData[currentQuestion];
+document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1}/10`;
+document.getElementById('questionText').textContent = question.question;
+updateProgressDots();
+const optionsContainer = document.getElementById('answerOptions');
+optionsContainer.innerHTML = '';
+question.options.forEach((option, index) => {
+const button = document.createElement('button');
+button.className = 'w-full text-left p-4 rounded-lg border-2 border-gray-200 hover:border-primary hover:bg-primary hover:bg-opacity-5 transition-colors';
+button.textContent = option;
+button.addEventListener('click', () => selectAnswer(index));
+if (userAnswers[currentQuestion] === index) {
+button.classList.add('border-primary', 'bg-primary', 'bg-opacity-10');
+}
+optionsContainer.appendChild(button);
+});
+prevBtn.style.display = currentQuestion === 0 ? 'none' : 'block';
+nextBtn.textContent = currentQuestion === quizData.length - 1 ? 'Terminer' : 'Suivant';
+nextBtn.disabled = userAnswers[currentQuestion] === -1;
+nextBtn.className = userAnswers[currentQuestion] === -1
+? 'bg-gray-300 text-gray-500 px-6 py-3 rounded-button font-medium cursor-not-allowed whitespace-nowrap !rounded-button'
+: 'bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button';
+}
+function selectAnswer(answerIndex) {
+userAnswers[currentQuestion] = answerIndex;
+const buttons = document.querySelectorAll('#answerOptions button');
+buttons.forEach((button, index) => {
+button.classList.remove('border-primary', 'bg-primary', 'bg-opacity-10');
+if (index === answerIndex) {
+button.classList.add('border-primary', 'bg-primary', 'bg-opacity-10');
+}
+});
+nextBtn.disabled = false;
+nextBtn.className = 'bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button';
+}
+function updateProgressDots() {
+const dots = document.querySelectorAll('#quizQuestion .flex.space-x-2 .w-3');
+dots.forEach((dot, index) => {
+if (index < currentQuestion) {
+dot.className = 'w-3 h-3 bg-green-500 rounded-full';
+} else if (index === currentQuestion) {
+dot.className = 'w-3 h-3 bg-primary rounded-full';
+} else {
+dot.className = 'w-3 h-3 bg-gray-200 rounded-full';
+}
+});
+}
+function nextQuestion() {
+if (currentQuestion < quizData.length - 1) {
+currentQuestion++;
+showQuestion();
+} else {
+calculateScore();
+showResults();
+}
+}
+function prevQuestion() {
+if (currentQuestion > 0) {
+currentQuestion--;
+showQuestion();
+}
+}
+function calculateScore() {
+score = 0;
+userAnswers.forEach((answer, index) => {
+if (answer === quizData[index].correct) {
+score++;
+}
+});
+}
+function showResults() {
+document.getElementById('quizQuestion').classList.add('hidden');
+document.getElementById('quizResults').classList.remove('hidden');
+const percentage = Math.round((score / quizData.length) * 100);
+document.getElementById('finalScore').textContent = `${score}/10`;
+document.getElementById('correctAnswers').textContent = score;
+document.getElementById('wrongAnswers').textContent = quizData.length - score;
+document.getElementById('percentage').textContent = `${percentage}%`;
+const resultIcon = document.getElementById('resultIcon');
+const resultMessage = document.getElementById('resultMessage');
+if (percentage >= 80) {
+resultIcon.className = 'w-20 h-20 flex items-center justify-center bg-green-100 text-green-600 rounded-full mx-auto mb-6';
+resultIcon.innerHTML = '<i class="ri-trophy-line ri-3x"></i>';
+resultMessage.textContent = 'Excellent ! Vous maîtrisez parfaitement les civilisations africaines.';
+} else if (percentage >= 60) {
+resultIcon.className = 'w-20 h-20 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full mx-auto mb-6';
+resultIcon.innerHTML = '<i class="ri-medal-line ri-3x"></i>';
+resultMessage.textContent = 'Très bien ! Vous avez de bonnes connaissances sur le patrimoine africain.';
+} else {
+resultIcon.className = 'w-20 h-20 flex items-center justify-center bg-orange-100 text-orange-600 rounded-full mx-auto mb-6';
+resultIcon.innerHTML = '<i class="ri-book-line ri-3x"></i>';
+resultMessage.textContent = 'Continuez à apprendre ! Visitez notre musée pour en découvrir davantage.';
+}
+}
+function resetQuiz() {
+currentQuestion = 0;
+score = 0;
+userAnswers = [];
+showQuizStart();
+}
+function shareResults() {
+const percentage = Math.round((score / quizData.length) * 100);
+const text = `J'ai obtenu ${score}/10 (${percentage}%) au quiz culturel du Musée des Civilisations Noires ! 🏛️✨`;
+if (navigator.share) {
+navigator.share({
+title: 'Quiz Culturel MCN',
+text: text,
+url: window.location.href
+});
+} else {
+navigator.clipboard.writeText(text + ' ' + window.location.href);
+alert('Résultat copié dans le presse-papiers !');
+}
+}
+startQuizBtn.addEventListener('click', openQuiz);
+closeQuizBtn.addEventListener('click', closeQuiz);
+beginQuizBtn.addEventListener('click', startQuiz);
+nextBtn.addEventListener('click', nextQuestion);
+prevBtn.addEventListener('click', prevQuestion);
+restartBtn.addEventListener('click', startQuiz);
+shareBtn.addEventListener('click', shareResults);
+quizModal.addEventListener('click', function(e) {
+if (e.target === quizModal) {
+closeQuiz();
+}
+});
+});
+        </script>
+        <script id="audioGuide">
+document.addEventListener('DOMContentLoaded', function() {
+const audioGuideBtn = document.getElementById('audioGuideBtn');
+const audioIndicator = document.getElementById('audioIndicator');
+let currentAudio = null;
+let isPlaying = false;
+
+function createAudioPresentation() {
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const duration = 45000;
+const sampleRate = audioContext.sampleRate;
+const buffer = audioContext.createBuffer(1, duration * sampleRate / 1000, sampleRate);
+const data = buffer.getChannelData(0);
+
+for (let i = 0; i < data.length; i++) {
+const t = i / sampleRate;
+data[i] = Math.sin(2 * Math.PI * 220 * t) * 0.1 * Math.exp(-t * 0.5);
+}
+
+return buffer;
+}
+
+function playAudioGuide() {
+if (isPlaying && currentAudio) {
+currentAudio.stop();
+stopAudioGuide();
+return;
+}
+
+try {
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const buffer = createAudioPresentation();
+currentAudio = audioContext.createBufferSource();
+currentAudio.buffer = buffer;
+currentAudio.connect(audioContext.destination);
+currentAudio.start();
+isPlaying = true;
+
+audioIndicator.classList.remove('hidden');
+audioGuideBtn.innerHTML = '<i class="ri-stop-line ri-sm mr-2"></i>' + audioGuideBtn.textContent.replace(/^(Listen|Écouter|Escuchar)/, function(match) {
+return match === 'Listen' ? 'Stop' : match === 'Écouter' ? 'Arrêter' : 'Parar';
+});
+
+currentAudio.onended = function() {
+stopAudioGuide();
+};
+
+setTimeout(() => {
+if (isPlaying) stopAudioGuide();
+}, 45000);
+
+} catch (error) {
+console.log('Audio guide simulation started');
+isPlaying = true;
+audioIndicator.classList.remove('hidden');
+audioGuideBtn.innerHTML = '<i class="ri-stop-line ri-sm mr-2"></i>Arrêter';
+
+setTimeout(() => {
+stopAudioGuide();
+}, 45000);
+}
+}
+
+function stopAudioGuide() {
+isPlaying = false;
+audioIndicator.classList.add('hidden');
+
+const currentLang = document.querySelector('header button.bg-primary').textContent.toLowerCase();
+const stopText = currentLang === 'en' ? 'Listen' : currentLang === 'es' ? 'Escuchar' : 'Écouter';
+audioGuideBtn.innerHTML = stopText;
+
+if (currentAudio) {
+try {
+currentAudio.stop();
+} catch (e) {}
+currentAudio = null;
+}
+}
+
+if (audioGuideBtn) {
+audioGuideBtn.addEventListener('click', playAudioGuide);
+}
+
+audioIndicator.addEventListener('click', stopAudioGuide);
+});
+        </script>
+        <script id="artworkPopup">
+document.addEventListener('DOMContentLoaded', function() {
+const modal = document.getElementById('artworkModal');
+const closeBtn = document.getElementById('closeModal');
+const artworkBtns = document.querySelectorAll('.artwork-btn');
+const artworkData = {
+benin: {
+title: 'Masque Royal du Bénin',
+period: 'XVIe siècle',
+image: 'https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations&width=400&height=400&seq=art001detail&orientation=squarish',
+description: 'Ce masque en bronze représente l\'apogée de l\'art métallurgique du royaume du Bénin. Fondu selon la technique de la cire perdue, il témoigne de la maîtrise technique exceptionnelle des artisans de la cour royale. Les motifs gravés racontent l\'histoire des dynasties et des conquêtes militaires.',
+technical: [
+'Matériau : Bronze coulé à la cire perdue',
+'Dimensions : 35 cm x 28 cm x 12 cm',
+'Poids : 2,8 kg',
+'Provenance : Palais royal de Benin City'
+],
+context: 'Dans la société du Bénin, ces masques étaient portés lors des cérémonies royales et des rituels d\'intronisation. Ils symbolisaient la continuité dynastique et le lien sacré entre le souverain et les ancêtres. Chaque détail sculpté possède une signification spirituelle précise.'
+},
+dogon: {
+title: 'Statuette Dogon',
+period: 'XIVe siècle',
+image: 'https://readdy.ai/api/search-image?query=Traditional%20African%20wooden%20sculpture%20statue%20carved%20figure%20tribal%20art%20museum%20exhibition%20cultural%20artifact%20black%20wood%20craftsmanship%20ancestral%20heritage%20display&width=400&height=400&seq=art002detail&orientation=squarish',
+description: 'Cette statuette ancestrale dogon est sculptée dans un bois dur selon les canons esthétiques traditionnels. Elle représente un ancêtre mythique, gardien spirituel de la communauté. Les formes stylisées et les proportions allongées sont caractéristiques de l\'art dogon.',
+technical: [
+'Matériau : Bois de karité sculpté',
+'Dimensions : 42 cm x 15 cm x 8 cm',
+'Technique : Sculpture sur bois, patine naturelle',
+'Âge estimé : 600-700 ans'
+],
+context: 'Chez les Dogon du Mali, ces statuettes sont conservées dans les sanctuaires familiaux et consultées lors des prises de décisions importantes. Elles servent d\'intermédiaires entre le monde des vivants et celui des ancêtres, gardiennes de la mémoire collective.'
+},
+kente: {
+title: 'Tissu Kente Royal',
+period: 'XVIIe siècle',
+image: 'https://readdy.ai/api/search-image?query=African%20textile%20kente%20cloth%20colorful%20geometric%20patterns%20traditional%20weaving%20Ghana%20cultural%20fabric%20museum%20display%20vibrant%20colors%20heritage%20craftsmanship&width=400&height=400&seq=art003detail&orientation=squarish',
+description: 'Ce tissu kente aux motifs géométriques complexes était réservé exclusivement à la royauté ashanti. Chaque couleur et chaque motif possède une signification symbolique précise. Le tissage, entièrement manuel, nécessitait plusieurs mois de travail.',
+technical: [
+'Matériau : Soie et coton tissés main',
+'Dimensions : 2,5 m x 1,8 m',
+'Technique : Tissage sur métier traditionnel',
+'Couleurs : 12 teintes différentes'
+],
+context: 'Dans la culture ashanti du Ghana, le kente royal ne pouvait être porté que par le roi et sa famille lors des grandes cérémonies. Chaque bande de tissu raconte une histoire, évoque un proverbe ou célèbre un événement historique majeur du royaume.'
+},
+nok: {
+title: 'Poterie Nok',
+period: 'Ve siècle av. J.-C.',
+image: 'https://readdy.ai/api/search-image?query=Ancient%20African%20pottery%20ceramic%20vessel%20traditional%20craftsmanship%20museum%20artifact%20cultural%20heritage%20terracotta%20decorative%20patterns%20archaeological%20find&width=400&height=400&seq=art004detail&orientation=squarish',
+description: 'Cette céramique de la culture Nok représente l\'un des plus anciens témoignages artistiques d\'Afrique de l\'Ouest. Les techniques de modelage et de cuisson témoignent d\'une maîtrise remarquable pour l\'époque. Les motifs décoratifs révèlent une société organisée et raffinée.',
+technical: [
+'Matériau : Terre cuite, argile locale',
+'Dimensions : 28 cm x 22 cm',
+'Technique : Modelage, cuisson à foyer ouvert',
+'Datation : 500-200 av. J.-C.'
+],
+context: 'La civilisation Nok, découverte au Nigeria, représente l\'une des plus anciennes cultures de l\'Afrique subsaharienne. Ces poteries, souvent retrouvées dans des contextes funéraires, suggèrent des croyances complexes liées à l\'au-delà et au culte des ancêtres.'
+},
+djembe: {
+title: 'Djembé Mandingue',
+period: 'XIIe siècle',
+image: 'https://readdy.ai/api/search-image?query=Traditional%20African%20musical%20instruments%20drums%20djembe%20kora%20balafon%20museum%20display%20cultural%20heritage%20music%20artifacts%20wooden%20carved%20instruments&width=400&height=400&seq=art005detail&orientation=squarish',
+description: 'Ce djembé ancestral, sculpté dans un tronc d\'arbre sacré, est l\'instrument emblématique de la musique mandingue. Sa forme en calice et sa peau de chèvre tendue produisent une gamme sonore exceptionnelle. Il accompagne tous les moments importants de la vie sociale.',
+technical: [
+'Matériau : Bois de lenké, peau de chèvre',
+'Dimensions : 65 cm de hauteur, 35 cm de diamètre',
+'Technique : Sculpture traditionnelle, tensage à cordes',
+'Sonorité : 3 tonalités principales'
+],
+context: 'Dans l\'empire mandingue, le djembé était bien plus qu\'un instrument : il servait de moyen de communication à distance, accompagnait les griots dans leurs récits épiques et rythmait les cérémonies initiatiques. Chaque rythme possède sa signification sacrée.'
+}
+};
+artworkBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+const artworkId = this.getAttribute('data-artwork');
+const artwork = artworkData[artworkId];
+if (artwork) {
+document.getElementById('modalTitle').textContent = artwork.title;
+document.getElementById('modalPeriod').textContent = artwork.period;
+document.getElementById('modalImage').style.backgroundImage = `url('${artwork.image}')`;
+document.getElementById('modalDescription').textContent = artwork.description;
+document.getElementById('modalContext').textContent = artwork.context;
+const technicalDiv = document.getElementById('modalTechnical');
+technicalDiv.innerHTML = '';
+artwork.technical.forEach(info => {
+const p = document.createElement('p');
+p.textContent = info;
+p.className = 'text-sm';
+technicalDiv.appendChild(p);
+});
+modal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+});
+});
+closeBtn.addEventListener('click', function() {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+modal.addEventListener('click', function(e) {
+if (e.target === modal) {
+modal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+});
+        </script>
+        <script src="https://static.readdy.ai/static/share.js"></script>
+    </body>
+</html>

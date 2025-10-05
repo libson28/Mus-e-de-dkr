@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <script src="https://static.readdy.ai/static/e.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Histoire & Culture - Musée des Civilisations Africaines</title>
+        <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+        <script>tailwind.config={theme:{extend:{colors:{primary:'#8e3e0e',secondary:'#d97706'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+        <style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+        </style>
+    </head>
+    <body class="bg-white">
+        <header class="bg-amber-900 text-white shadow-lg sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center space-x-8">
+                        <div class="w-14"><img src="Logo_MCN.png" alt=""></div>
+                        <nav class="hidden md:flex space-x-8">
+                            <a href="/" class="hover:text-amber-200 transition-colors font-medium">Accueil</a>
+                            <a href="/catalogue" class="hover:text-amber-200 transition-colors font-medium ">Catalogue</a>
+                            <a href="/histoire" class="text-amber-200 transition-colors font-medium border-b-2 border-amber-200 pb-1">Histoire & Culture</a>
+                            <a href="/multimedia" class="hover:text-amber-200 transition-colors font-medium">Multimédia</a>
+                            <a href="/contact" class="hover:text-amber-200 transition-colors font-medium">Contact</a>
+                        </nav>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <button class="px-3 py-1 rounded-button bg-primary text-white text-sm font-medium whitespace-nowrap">FR</button>
+                            <button class="px-3 py-1 rounded-button text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
+                            <button class="px-3 py-1 rounded-button text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">WO</button>
+                        </div>
+                        <button class="md:hidden w-8 h-8 flex items-center justify-center">
+                            <i class="ri-menu-line ri-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="relative h-screen flex items-center justify-center overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=ancient%20african%20civilizations%20historical%20panorama%2C%20traditional%20african%20villages%20with%20thatched%20huts%2C%20baobab%20trees%2C%20african%20landscape%20with%20ancient%20kingdoms%2C%20historical%20african%20culture%2C%20left%20side%20gradient%20overlay%20for%20text%20readability%2C%20warm%20earth%20tones%20depicting%20african%20heritage%20through%20time&width=1920&height=1080&seq=herohistory001&orientation=landscape'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+                <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-2xl">
+                        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                            L'Histoire Millénaire de l'Afrique
+                        </h1>
+                        <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+                            Explorez 50 000 ans d'histoire africaine, des premiers berceaux de l'humanité aux grands empires,
+                            en passant par les traditions culturelles qui continuent de façonner le continent aujourd'hui.
+                            Une odyssée à travers le temps et les civilisations.
+                        </p>
+                        <button class="bg-secondary hover:bg-amber-800 text-white px-8 py-4 rounded-button text-lg font-semibold transition-colors whitespace-nowrap !rounded-button">
+                            Commencer le Voyage
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Les Grandes Périodes Historiques</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Parcourez les époques clés qui ont façonné l'Afrique, des civilisations antiques
+                            aux royaumes médiévaux, en découvrant les trésors de chaque période.
+                        </p>
+                    </div>
+                    <div class="space-y-16">
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <img src="https://readdy.ai/api/search-image?query=ancient%20african%20civilizations%20kush%20nubia%20egypt%2C%20archaeological%20sites%20along%20the%20nile%20river%2C%20ancient%20pyramids%20and%20temples%2C%20historical%20african%20kingdoms%2C%20desert%20landscape%20with%20ancient%20monuments%2C%20warm%20golden%20light&width=600&height=400&seq=period001&orientation=landscape" alt="Civilisations Antiques" class="w-full rounded-xl shadow-lg object-cover object-top">
+                            </div>
+                            <div>
+                                <div class="mb-4">
+                                    <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold">3000 av. J.-C. - 500 ap. J.-C.</span>
+                                </div>
+                                <h3 class="text-3xl font-bold text-gray-900 mb-4">Civilisations Antiques</h3>
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    Les grandes civilisations de la vallée du Nil : l'Égypte pharaonique, le royaume de Koush,
+                                    et la Nubie. Ces empires ont développé des architectures monumentales, des systèmes d'écriture
+                                    sophistiqués et des réseaux commerciaux s'étendant de la Méditerranée à l'Afrique centrale.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <img src="https://readdy.ai/api/search-image?query=ancient%20egyptian%20artifacts%20papyrus%20scrolls%20and%20hieroglyphics%2C%20museum%20display%20of%20pharaonic%20treasures%2C%20golden%20jewelry%20and%20ceremonial%20objects&width=300&height=200&seq=egypt001&orientation=landscape" alt="Artefacts Égyptiens" class="w-full h-24 object-cover object-top rounded-lg">
+                                    <img src="https://readdy.ai/api/search-image?query=nubian%20pottery%20and%20ceramics%2C%20ancient%20kush%20kingdom%20artifacts%2C%20traditional%20african%20clay%20vessels%20with%20decorative%20patterns%2C%20archaeological%20museum%20display&width=300&height=200&seq=nubia001&orientation=landscape" alt="Céramiques Nubiennes" class="w-full h-24 object-cover object-top rounded-lg">
+                                </div>
+                                <button class="bg-secondary hover:bg-amber-800 text-white px-6 py-3 rounded-button font-semibold transition-colors whitespace-nowrap !rounded-button">
+                                    Découvrir cette période
+                                </button>
+                            </div>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div class="lg:order-2">
+                                <img src="https://readdy.ai/api/search-image?query=medieval%20african%20empires%20ghana%20mali%20songhai%2C%20ancient%20trade%20routes%20across%20sahara%20desert%2C%20caravan%20with%20camels%2C%20golden%20age%20of%20african%20kingdoms%2C%20historical%20african%20cities%20timbuktu&width=600&height=400&seq=period002&orientation=landscape" alt="Empires Médiévaux" class="w-full rounded-xl shadow-lg object-cover object-top">
+                            </div>
+                            <div class="lg:order-1">
+                                <div class="mb-4">
+                                    <span class="inline-block bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-semibold">500 - 1500 ap. J.-C.</span>
+                                </div>
+                                <h3 class="text-3xl font-bold text-gray-900 mb-4">Empires Médiévaux</h3>
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    L'âge d'or des grands empires africains : Ghana, Mali, Songhaï, et Kanem-Bornou.
+                                    Ces royaumes contrôlaient les routes transsahariennes et développaient des centres
+                                    d'apprentissage prestigieux comme Tombouctou, véritables universités du monde médiéval.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <img src="https://readdy.ai/api/search-image?query=medieval%20african%20gold%20weights%20and%20trade%20items%2C%20akan%20goldweights%20from%20ghana%20empire%2C%20traditional%20brass%20weights%20with%20symbolic%20meanings%2C%20museum%20collection%20display&width=300&height=200&seq=trade001&orientation=landscape" alt="Poids à Or" class="w-full h-24 object-cover object-top rounded-lg">
+                                    <img src="https://readdy.ai/api/search-image?query=ancient%20african%20manuscripts%20and%20islamic%20texts%2C%20timbuktu%20library%20scrolls%2C%20medieval%20african%20literature%20and%20scholarship%2C%20historical%20documents%20from%20mali%20empire&width=300&height=200&seq=manuscripts001&orientation=landscape" alt="Manuscrits Anciens" class="w-full h-24 object-cover object-top rounded-lg">
+                                </div>
+                                <button class="bg-secondary hover:bg-amber-800 text-white px-6 py-3 rounded-button font-semibold transition-colors whitespace-nowrap !rounded-button">
+                                    Explorer les empires
+                                </button>
+                            </div>
+                        </div>
+                        <div class="grid lg:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <img src="https://readdy.ai/api/search-image?query=traditional%20african%20kingdoms%20and%20royal%20courts%2C%20ceremonial%20regalia%20and%20crowns%2C%20african%20palace%20architecture%2C%20traditional%20african%20royalty%2C%20cultural%20ceremonies%20and%20rituals&width=600&height=400&seq=period003&orientation=landscape" alt="Royaumes Traditionnels" class="w-full rounded-xl shadow-lg object-cover object-top">
+                            </div>
+                            <div>
+                                <div class="mb-4">
+                                    <span class="inline-block bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-semibold">1500 - 1900 ap. J.-C.</span>
+                                </div>
+                                <h3 class="text-3xl font-bold text-gray-900 mb-4">Royaumes Traditionnels</h3>
+                                <p class="text-gray-700 leading-relaxed mb-6">
+                                    L'époque des royaumes organisés : Buganda, Royaume Kongo, Empire Éthiopien, et les cités-états
+                                    swahilies. Ces sociétés développent des arts raffinés, des systèmes politiques complexes
+                                    et maintiennent des traditions culturelles riches qui perdurent aujourd'hui.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <img src="https://readdy.ai/api/search-image?query=traditional%20african%20royal%20regalia%2C%20ceremonial%20crowns%20and%20scepters%2C%20kente%20cloth%20and%20royal%20jewelry%2C%20african%20monarchy%20symbols%20and%20artifacts&width=300&height=200&seq=royal001&orientation=landscape" alt="Regalia Royaux" class="w-full h-24 object-cover object-top rounded-lg">
+                                    <img src="https://readdy.ai/api/search-image?query=african%20court%20music%20instruments%2C%20traditional%20drums%20and%20horns%2C%20royal%20ceremonial%20music%2C%20palace%20musicians%20and%20cultural%20performances&width=300&height=200&seq=music001&orientation=landscape" alt="Instruments de Cour" class="w-full h-24 object-cover object-top rounded-lg">
+                                </div>
+                                <button class="bg-secondary hover:bg-amber-800 text-white px-6 py-3 rounded-button font-semibold transition-colors whitespace-nowrap !rounded-button">
+                                    Visiter les cours royales
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Traditions Culturelles Vivantes</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Découvrez comment les traditions ancestrales continuent de s'épanouir
+                            dans l'Afrique contemporaine, créant des ponts entre passé et présent.
+                        </p>
+                    </div>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=african%20storytelling%20tradition%2C%20elderly%20griot%20narrator%20sharing%20oral%20history%2C%20traditional%20african%20village%20setting%2C%20cultural%20transmission%2C%20listeners%20gathered%20around%20storyteller%20under%20baobab%20tree&width=400&height=250&seq=tradition001&orientation=landscape" alt="Tradition Orale" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Tradition Orale</h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Les griots, gardiens de la mémoire collective, perpétuent depuis des siècles
+                                    les épopées, généalogies et savoirs traditionnels à travers leurs récits.
+                                </p>
+                                <div class="flex space-x-2">
+                                    <img src="https://readdy.ai/api/search-image?query=traditional%20african%20musical%20instruments%20kora%20and%20balafon%2C%20griot%20instruments%20for%20storytelling%2C%20wooden%20xylophone%20and%20string%20harp%2C%20cultural%20music%20heritage&width=80&height=60&seq=instruments001&orientation=landscape" alt="Instruments" class="w-16 h-12 object-cover object-top rounded">
+                                    <img src="https://readdy.ai/api/search-image?query=ancient%20african%20oral%20traditions%20manuscripts%2C%20written%20records%20of%20oral%20history%2C%20traditional%20stories%20and%20legends%2C%20cultural%20documentation&width=80&height=60&seq=oral001&orientation=landscape" alt="Traditions" class="w-16 h-12 object-cover object-top rounded">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=african%20initiation%20ceremonies%20and%20rites%20of%20passage%2C%20traditional%20cultural%20rituals%2C%20young%20people%20in%20ceremonial%20dress%2C%20community%20celebrations%2C%20african%20cultural%20traditions&width=400&height=250&seq=tradition002&orientation=landscape" alt="Rites de Passage" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Rites de Passage</h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Les cérémonies d'initiation marquent les étapes importantes de la vie
+                                    et renforcent les liens communautaires à travers des rituels sacrés.
+                                </p>
+                                <div class="flex space-x-2">
+                                    <img src="https://readdy.ai/api/search-image?query=traditional%20african%20ceremonial%20masks%20for%20initiation%20rites%2C%20carved%20wooden%20masks%20with%20cultural%20significance%2C%20ritual%20objects%20and%20sacred%20artifacts&width=80&height=60&seq=rites001&orientation=landscape" alt="Masques" class="w-16 h-12 object-cover object-top rounded">
+                                    <img src="https://readdy.ai/api/search-image?query=african%20ceremonial%20costumes%20and%20traditional%20clothing%2C%20colorful%20ritual%20garments%2C%20cultural%20dress%20for%20important%20ceremonies&width=80&height=60&seq=ceremony001&orientation=landscape" alt="Costumes" class="w-16 h-12 object-cover object-top rounded">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=traditional%20african%20craftsmanship%20pottery%20weaving%20and%20metalwork%2C%20artisans%20creating%20cultural%20objects%2C%20traditional%20african%20workshops%2C%20skilled%20craftspeople%20at%20work&width=400&height=250&seq=tradition003&orientation=landscape" alt="Artisanat Traditionnel" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Artisanat Vivant</h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Les savoir-faire ancestraux se transmettent de génération en génération,
+                                    créant des objets uniques qui allient beauté et fonctionnalité.
+                                </p>
+                                <div class="flex space-x-2">
+                                    <img src="https://readdy.ai/api/search-image?query=traditional%20african%20pottery%20techniques%2C%20clay%20vessels%20being%20shaped%20by%20skilled%20potter%2C%20cultural%20ceramic%20art%20creation%20process&width=80&height=60&seq=pottery001&orientation=landscape" alt="Poterie" class="w-16 h-12 object-cover object-top rounded">
+                                    <img src="https://readdy.ai/api/search-image?query=african%20textile%20weaving%20process%2C%20traditional%20loom%20and%20colorful%20threads%2C%20kente%20cloth%20creation%2C%20cultural%20fabric%20making&width=80&height=60&seq=weaving001&orientation=landscape" alt="Tissage" class="w-16 h-12 object-cover object-top rounded">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=african%20traditional%20dance%20and%20music%20performance%2C%20colorful%20costumes%20and%20rhythmic%20movements%2C%20cultural%20celebration%20with%20drums%2C%20community%20gathering%20for%20traditional%20festivities&width=400&height=250&seq=tradition004&orientation=landscape" alt="Danse et Musique" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Danse et Musique</h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Les expressions corporelles et musicales accompagnent tous les moments
+                                    importants de la vie communautaire, portant messages et émotions.
+                                </p>
+                                <div class="flex space-x-2">
+                                    <img src="https://readdy.ai/api/search-image?query=traditional%20african%20drums%20djembe%20and%20talking%20drums%2C%20percussion%20instruments%20with%20cultural%20significance%2C%20rhythmic%20heritage%20objects&width=80&height=60&seq=drums001&orientation=landscape" alt="Percussions" class="w-16 h-12 object-cover object-top rounded">
+                                    <img src="https://readdy.ai/api/search-image?query=traditional%20african%20dance%20costumes%20and%20accessories%2C%20colorful%20ceremonial%20clothing%2C%20cultural%20performance%20attire&width=80&height=60&seq=dance001&orientation=landscape" alt="Costumes de Danse" class="w-16 h-12 object-cover object-top rounded">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=african%20traditional%20medicine%20and%20healing%20practices%2C%20medicinal%20plants%20and%20herbs%2C%20traditional%20healers%20knowledge%2C%20cultural%20health%20wisdom%20and%20natural%20remedies&width=400&height=250&seq=tradition005&orientation=landscape" alt="Médecine Traditionnelle" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Médecine Ancestrale</h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Les guérisseurs traditionnels préservent un savoir millénaire sur les propriétés
+                                    thérapeutiques des plantes et les pratiques de soins holistiques.
+                                </p>
+                                <div class="flex space-x-2">
+                                    <img src="https://readdy.ai/api/search-image?query=traditional%20african%20medicinal%20plants%20and%20herbs%2C%20healing%20remedies%20and%20natural%20medicine%2C%20cultural%20health%20practices&width=80&height=60&seq=plants001&orientation=landscape" alt="Plantes" class="w-16 h-12 object-cover object-top rounded">
+                                    <img src="https://readdy.ai/api/search-image?query=traditional%20african%20healing%20instruments%20and%20tools%2C%20cultural%20medical%20artifacts%2C%20ancestral%20healing%20practices%20equipment&width=80&height=60&seq=healing001&orientation=landscape" alt="Instruments" class="w-16 h-12 object-cover object-top rounded">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=african%20culinary%20traditions%20food%20preparation%20and%20cooking%2C%20traditional%20dishes%20and%20ingredients%2C%20cultural%20gastronomy%20heritage%2C%20community%20cooking%20and%20sharing%20meals&width=400&height=250&seq=tradition006&orientation=landscape" alt="Traditions Culinaires" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Art Culinaire</h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    La gastronomie africaine reflète la diversité des terroirs et porte
+                                    les valeurs de partage et d'hospitalité au cœur des cultures du continent.
+                                </p>
+                                <div class="flex space-x-2">
+                                    <img src="https://readdy.ai/api/search-image?query=traditional%20african%20cooking%20utensils%20and%20vessels%2C%20wooden%20spoons%20and%20clay%20pots%2C%20cultural%20kitchen%20tools%20and%20cookware&width=80&height=60&seq=cooking001&orientation=landscape" alt="Ustensiles" class="w-16 h-12 object-cover object-top rounded">
+                                    <img src="https://readdy.ai/api/search-image?query=traditional%20african%20spices%20and%20ingredients%2C%20colorful%20markets%20with%20local%20produce%2C%20cultural%20food%20heritage%20and%20flavors&width=80&height=60&seq=spices001&orientation=landscape" alt="Épices" class="w-16 h-12 object-cover object-top rounded">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Parcours Thématiques Interactifs</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Explorez l'histoire et la culture africaines à travers nos parcours
+                            immersifs conçus pour tous les publics, des néophytes aux passionnés.
+                        </p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=african%20civilization%20timeline%20visual%20display%2C%20historical%20progression%20from%20ancient%20to%20modern%20africa%2C%20interactive%20museum%20exhibit%20with%20chronological%20artifacts%2C%20educational%20historical%20journey&width=500&height=300&seq=timeline001&orientation=landscape" alt="Chronologie Interactive" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Chronologie Interactive</h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Naviguez à travers 50 000 ans d'histoire africaine avec notre frise
+                                    chronologique interactive. Découvrez les événements clés, les personnages
+                                    emblématiques et les évolutions culturelles du continent.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex space-x-2">
+                                        <img src="https://readdy.ai/api/search-image?query=ancient%20african%20stone%20tools%20and%20prehistoric%20artifacts%2C%20early%20human%20civilization%20items%2C%20archaeological%20discoveries%20from%20africa&width=60&height=45&seq=prehistory001&orientation=landscape" alt="Préhistoire" class="w-12 h-9 object-cover object-top rounded">
+                                        <img src="https://readdy.ai/api/search-image?query=medieval%20african%20empire%20maps%20and%20trade%20routes%2C%20historical%20kingdoms%20ghana%20mali%20songhai%2C%20ancient%20african%20geography&width=60&height=45&seq=empires001&orientation=landscape" alt="Empires" class="w-12 h-9 object-cover object-top rounded">
+                                        <img src="https://readdy.ai/api/search-image?query=modern%20african%20independence%20movements%20and%20leaders%2C%20historical%20photographs%20of%20african%20freedom%20fighters%2C%20cultural%20liberation%20heritage&width=60&height=45&seq=independence001&orientation=landscape" alt="Indépendances" class="w-12 h-9 object-cover object-top rounded">
+                                    </div>
+                                    <button class="bg-secondary hover:bg-amber-800 text-white px-4 py-2 rounded-button text-sm font-semibold transition-colors whitespace-nowrap !rounded-button">
+                                        Commencer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=african%20languages%20and%20writing%20systems%20display%2C%20ancient%20scripts%20and%20modern%20alphabets%2C%20diversity%20of%20african%20languages%2C%20cultural%20linguistic%20heritage%20exhibition&width=500&height=300&seq=languages001&orientation=landscape" alt="Langues d'Afrique" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Langues d'Afrique</h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Explorez la richesse linguistique du continent avec plus de 2000 langues.
+                                    Découvrez les systèmes d'écriture anciens, les langues véhiculaires
+                                    et l'évolution des communications africaines.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex space-x-2">
+                                        <img src="https://readdy.ai/api/search-image?query=ancient%20african%20hieroglyphics%20and%20scripts%2C%20historical%20writing%20systems%20from%20egypt%20and%20nubia%2C%20cultural%20literacy%20heritage&width=60&height=45&seq=scripts001&orientation=landscape" alt="Hiéroglyphes" class="w-12 h-9 object-cover object-top rounded">
+                                        <img src="https://readdy.ai/api/search-image?query=traditional%20african%20oral%20poetry%20and%20storytelling%2C%20griots%20performing%20cultural%20narratives%2C%20linguistic%20traditions&width=60&height=45&seq=oral002&orientation=landscape" alt="Traditions Orales" class="w-12 h-9 object-cover object-top rounded">
+                                        <img src="https://readdy.ai/api/search-image?query=modern%20african%20literature%20and%20contemporary%20writing%2C%20books%20and%20texts%20by%20african%20authors%2C%20cultural%20literary%20heritage&width=60&height=45&seq=literature001&orientation=landscape" alt="Littérature" class="w-12 h-9 object-cover object-top rounded">
+                                    </div>
+                                    <button class="bg-secondary hover:bg-amber-800 text-white px-4 py-2 rounded-button text-sm font-semibold transition-colors whitespace-nowrap !rounded-button">
+                                        Découvrir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=african%20trade%20networks%20and%20commercial%20routes%2C%20historical%20caravan%20trails%20and%20maritime%20commerce%2C%20economic%20heritage%20of%20african%20civilizations%2C%20trade%20goods%20and%20merchant%20culture&width=500&height=300&seq=trade002&orientation=landscape" alt="Routes Commerciales" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Routes du Commerce</h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Suivez les grandes routes commerciales qui ont connecté l'Afrique au monde :
+                                    les pistes transsahariennes, les voies maritimes de l'océan Indien
+                                    et les réseaux d'échange régionaux.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex space-x-2">
+                                        <img src="https://readdy.ai/api/search-image?query=african%20gold%20trading%20and%20precious%20metals%2C%20historical%20gold%20weights%20and%20currency%2C%20economic%20heritage%20of%20african%20kingdoms&width=60&height=45&seq=gold001&orientation=landscape" alt="Or" class="w-12 h-9 object-cover object-top rounded">
+                                        <img src="https://readdy.ai/api/search-image?query=traditional%20african%20salt%20mines%20and%20trade%2C%20historical%20salt%20production%20and%20commerce%2C%20economic%20resources%20of%20africa&width=60&height=45&seq=salt001&orientation=landscape" alt="Sel" class="w-12 h-9 object-cover object-top rounded">
+                                        <img src="https://readdy.ai/api/search-image?query=african%20ivory%20trade%20and%20craftsmanship%2C%20historical%20elephant%20tusks%20and%20carved%20artifacts%2C%20traditional%20african%20ivory%20work&width=60&height=45&seq=ivory001&orientation=landscape" alt="Ivoire" class="w-12 h-9 object-cover object-top rounded">
+                                    </div>
+                                    <button class="bg-secondary hover:bg-amber-800 text-white px-4 py-2 rounded-button text-sm font-semibold transition-colors whitespace-nowrap !rounded-button">
+                                        Explorer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="https://readdy.ai/api/search-image?query=african%20spiritual%20beliefs%20and%20religious%20practices%2C%20traditional%20ceremonies%20and%20sacred%20rituals%2C%20cultural%20spirituality%20and%20ancestral%20worship%2C%20diverse%20religious%20heritage&width=500&height=300&seq=spirituality001&orientation=landscape" alt="Spiritualités" class="w-full h-48 object-cover object-top">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-900 mb-3">Spiritualités Africaines</h3>
+                                <p class="text-gray-600 leading-relaxed mb-4">
+                                    Découvrez la diversité des croyances et pratiques spirituelles :
+religions traditionnelles, christianisme copte, islam africain
+et syncrétismes religieux contemporains.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex space-x-2">
+                                        <img src="https://readdy.ai/api/search-image?query=traditional%20african%20ancestor%20worship%20and%20rituals%2C%20spiritual%20ceremonies%20and%20sacred%20objects%2C%20cultural%20religious%20practices&width=60&height=45&seq=ancestors001&orientation=landscape" alt="Culte des Ancêtres" class="w-12 h-9 object-cover object-top rounded">
+                                        <img src="https://readdy.ai/api/search-image?query=african%20coptic%20christianity%20and%20orthodox%20traditions%2C%20ancient%20christian%20churches%20in%20ethiopia%2C%20religious%20heritage%20of%20african%20christianity&width=60&height=45&seq=christianity001&orientation=landscape" alt="Christianisme" class="w-12 h-9 object-cover object-top rounded">
+                                        <img src="https://readdy.ai/api/search-image?query=islamic%20architecture%20and%20culture%20in%20africa%2C%20mosques%20and%20islamic%20art%20from%20african%20civilizations%2C%20cultural%20religious%20diversity&width=60&height=45&seq=islam001&orientation=landscape" alt="Islam" class="w-12 h-9 object-cover object-top rounded">
+                                    </div>
+                                    <button class="bg-secondary hover:bg-amber-800 text-white px-4 py-2 rounded-button text-sm font-semibold transition-colors whitespace-nowrap !rounded-button">
+                                        Approfondir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-gray-900 mb-4">Galerie Interactive</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Parcourez un aperçu de nos œuvres les plus admirées et laissez-vous
+séduire par la richesse des civilisations africaines.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <img src="https://readdy.ai/api/search-image?query=traditional%20african%20mask%20with%20geometric%20patterns%2C%20carved%20wood%20sculpture%2C%20tribal%20art%20from%20west%20africa%2C%20museum%20quality%20display%2C%20cultural%20heritage%20artifact&width=300&height=400&seq=gallery001&orientation=portrait" alt="Masque Traditionnel" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
+                                    <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <h4 class="font-semibold">Masque Baoulé</h4>
+                                        <p class="text-sm">Côte d'Ivoire</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <img src="https://readdy.ai/api/search-image?query=bronze%20sculpture%20from%20benin%20kingdom%2C%20detailed%20metalwork%20craftsmanship%2C%20african%20royal%20art%2C%20museum%20display%20with%20dramatic%20lighting%2C%20historical%20artifact&width=300&height=400&seq=gallery002&orientation=portrait" alt="Bronze du Bénin" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
+                                    <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <h4 class="font-semibold">Plaque Royale</h4>
+                                        <p class="text-sm">Royaume du Bénin</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <img src="https://readdy.ai/api/search-image?query=colorful%20african%20textile%20with%20traditional%20patterns%2C%20kente%20cloth%20from%20ghana%2C%20vibrant%20geometric%20designs%2C%20cultural%20fabric%20art%2C%20museum%20textile%20display&width=300&height=400&seq=gallery003&orientation=portrait" alt="Textile Kente" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
+                                    <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <h4 class="font-semibold">Kente Royal</h4>
+                                        <p class="text-sm">Ghana Ashanti</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <img src="https://readdy.ai/api/search-image?query=wooden%20african%20sculpture%20figurine%2C%20traditional%20carving%20art%2C%20ancestral%20statue%2C%20museum%20display%20lighting%2C%20cultural%20heritage%20from%20central%20africa&width=300&height=400&seq=gallery004&orientation=portrait" alt="Sculpture Ancestrale" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
+                                    <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <h4 class="font-semibold">Statuette Fang</h4>
+                                        <p class="text-sm">Gabon</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <img src="https://readdy.ai/api/search-image?query=african%20pottery%20and%20ceramics%2C%20traditional%20clay%20vessels%20with%20decorative%20patterns%2C%20terracotta%20artifacts%2C%20museum%20display%20of%20african%20ceramics&width=300&height=400&seq=gallery005&orientation=portrait" alt="Céramique Traditionnelle" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
+                                    <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <h4 class="font-semibold">Vase Rituel</h4>
+                                        <p class="text-sm">Terre Cuite Nok</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <img src="https://readdy.ai/api/search-image?query=african%20jewelry%20and%20ornaments%2C%20traditional%20gold%20and%20silver%20accessories%2C%20beaded%20necklaces%2C%20cultural%20adornments%2C%20museum%20jewelry%20display&width=300&height=400&seq=gallery006&orientation=portrait" alt="Bijoux Traditionnels" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
+                                    <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <h4 class="font-semibold">Collier Royal</h4>
+                                        <p class="text-sm">Royaume Akan</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <img src="https://readdy.ai/api/search-image?query=contemporary%20african%20painting%2C%20modern%20art%20by%20african%20artist%2C%20vibrant%20colors%20and%20cultural%20themes%2C%20gallery%20setting%2C%20artistic%20expression&width=300&height=400&seq=gallery007&orientation=portrait" alt="Peinture Contemporaine" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
+                                    <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <h4 class="font-semibold">Identité Moderne</h4>
+                                        <p class="text-sm">El Anatsui</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <img src="https://readdy.ai/api/search-image?query=african%20musical%20instruments%20display%2C%20traditional%20drums%20and%20xylophones%2C%20cultural%20music%20artifacts%2C%20wooden%20instruments%20with%20decorative%20carvings&width=300&height=400&seq=gallery008&orientation=portrait" alt="Instruments de Musique" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
+                                    <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <h4 class="font-semibold">Djembé Sacré</h4>
+                                        <p class="text-sm">Mali Mandingue</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <img src="https://readdy.ai/api/search-image?query=ancient%20african%20rock%20art%20and%20cave%20paintings%2C%20prehistoric%20african%20art%2C%20historical%20cultural%20expressions%2C%20archaeological%20museum%20display&width=300&height=400&seq=gallery009&orientation=portrait" alt="Art Rupestre" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
+                                    <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <h4 class="font-semibold">Peintures Rupestres</h4>
+                                        <p class="text-sm">Sahara Ancien</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <img src="https://readdy.ai/api/search-image?query=african%20ceremonial%20costume%20and%20regalia%2C%20traditional%20clothing%20with%20beadwork%20and%20embroidery%2C%20cultural%20dress%20from%20african%20tribes%2C%20museum%20textile%20display&width=300&height=400&seq=gallery010&orientation=portrait" alt="Costume Cérémoniel" class="w-full h-64 object-cover object-top transition-transform group-hover:scale-105">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
+                                    <div class="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <h4 class="font-semibold">Habit de Chef</h4>
+                                        <p class="text-sm">Royaume Buganda</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        <footer class="bg-gray-900 text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-8 h-8 flex items-center justify-center">
+                                <i class="ri-building-line text-xl text-white"></i>
+                            </div>
+                            <h3 class="font-['Pacifico'] text-xl">logo</h3>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed">
+                            Découvrez la richesse des civilisations africaines dans notre musée d'exception.
+Une immersion culturelle authentique dans l'héritage du continent africain.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Navigation</h4>
+                        <ul class="space-y-3 text-gray-400">
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Accueil</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Collections</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Expositions</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Visites Guidées</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Événements</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Services</h4>
+                        <ul class="space-y-3 text-gray-400">
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Billetterie</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Boutique</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Café du Musée</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Accessibilité</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Groupes</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                        <p class="text-gray-400 mb-4">
+                            Restez informé de nos dernières expositions et événements.
+                        </p>
+                        <div class="flex gap-2">
+                            <input type="email" placeholder="Votre email" class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent text-sm">
+                            <button class="bg-secondary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors whitespace-nowrap !rounded-button">
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-send-plane-line text-sm"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-12 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                        <div class="flex space-x-6 text-gray-400 text-sm">
+                            <a href="#" class="hover:text-white transition-colors">Mentions Légales</a>
+                            <a href="#" class="hover:text-white transition-colors">Politique de Confidentialité</a>
+                            <a href="#" class="hover:text-white transition-colors">CGU</a>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-gray-400 text-sm">Partenaires :</span>
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-visa-fill text-xl text-blue-600"></i>
+                            </div>
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-paypal-fill text-xl text-blue-500"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-6 text-gray-400 text-sm">
+                        <p>&copy; 2025 Musée des Civilisations Africaines. Tous droits réservés.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script id="gallery-interaction">
+document.addEventListener('DOMContentLoaded', function() {
+const galleryItems = document.querySelectorAll('.group.cursor-pointer');
+galleryItems.forEach(item => {
+item.addEventListener('click', function() {
+const title = this.querySelector('h4').textContent;
+const artist = this.querySelector('p').textContent;
+alert(`Vous avez sélectionné : ${title} par ${artist}`);
+});
+});
+});
+        </script>
+        <script id="search-functionality">
+document.addEventListener('DOMContentLoaded', function() {
+const searchInput = document.querySelector('input[type="text"]');
+searchInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+const query = this.value.trim();
+if (query) {
+alert(`Recherche pour : ${query}`);
+}
+}
+});
+});
+        </script>
+        <script id="newsletter-subscription">
+document.addEventListener('DOMContentLoaded', function() {
+const newsletterForm = document.querySelector('footer .flex.gap-2');
+const emailInput = newsletterForm.querySelector('input[type="email"]');
+const submitButton = newsletterForm.querySelector('button');
+submitButton.addEventListener('click', function(e) {
+e.preventDefault();
+const email = emailInput.value.trim();
+if (email && email.includes('@')) {
+alert(`Merci ! Vous êtes maintenant inscrit à notre newsletter avec l'email : ${email}`);
+emailInput.value = '';
+} else {
+alert('Veuillez saisir une adresse email valide.');
+}
+});
+});
+        </script>
+        <script src="https://static.readdy.ai/static/share.js"></script>
+    </body>
+</html>

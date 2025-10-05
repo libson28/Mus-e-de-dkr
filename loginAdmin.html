@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <script src="https://static.readdy.ai/static/e.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connexion Administrateur - Musée des Civilisations Noires</title>
+        <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+        <script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#D97706',
+secondary: '#92400E'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+        <style>
+            :where([class^="ri-"])::before {
+                content: "\f3c2";
+            }
+            body {
+                font-family: 'Inter', sans-serif;
+            }
+            .admin-bg {
+                background-image: linear-gradient(135deg, rgba(217, 119, 6, 0.1) 0%, rgba(146, 64, 14, 0.1) 100%), url('https://readdy.ai/api/search-image?query=African%20museum%20interior%20administrative%20office%20modern%20workspace%20elegant%20design%20cultural%20artifacts%20in%20background%20professional%20environment%20warm%20lighting%20administrative%20area&width=1920&height=1080&seq=adminbg001&orientation=landscape');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            }
+            .pulse-animation {
+                animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.5; }
+            }
+        </style>
+    </head>
+    <body class="admin-bg min-h-screen">
+        <!-- Header -->
+        <header class="bg-amber-900 text-white shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center space-x-8">
+                        <div class="font-['Pacifico'] text-2xl text-amber-200">MCN</div>
+                        <div class="text-amber-100 text-sm font-medium">Administration</div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="/" class="text-amber-200 hover:text-white transition-colors text-sm font-medium flex items-center">
+                            <i class="ri-arrow-left-line mr-1"></i>
+                            Retour au site
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Login Section -->
+        <section class="min-h-screen flex items-center justify-center py-12 px-4">
+            <div class="max-w-md w-full">
+                <!-- Login Card -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 card-hover">
+                    <div class="text-center mb-8">
+                        <div class="w-20 h-20 bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-shield-user-line ri-2x text-white"></i>
+                        </div>
+                        <h1 class="text-3xl font-bold text-gray-900 mb-2">Connexion Administrateur</h1>
+                        <p class="text-gray-600">Accédez au panneau d'administration du musée</p>
+                    </div>
+                    <!-- Login Form -->
+                    <form id="adminLoginForm" class="space-y-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                Adresse email
+                            </label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="ri-mail-line text-gray-400"></i>
+                                </div>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                    placeholder="admin@mcn.sn"
+                                >
+                            </div>
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
+                                Mot de passe
+                            </label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="ri-lock-line text-gray-400"></i>
+                                </div>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    required
+                                    class="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                    placeholder="Votre mot de passe"
+                                >
+                                <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                    <i class="ri-eye-line text-gray-400 hover:text-gray-600"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <input
+                                    type="checkbox"
+                                    id="remember"
+                                    name="remember"
+                                    class="opacity-0 absolute"
+                                >
+                                <div class="w-4 h-4 bg-white border border-gray-300 rounded flex items-center justify-center mr-2 cursor-pointer" id="rememberCheckbox">
+                                    <i class="ri-check-line text-primary text-xs opacity-0" id="checkIcon"></i>
+                                </div>
+                                <label for="remember" class="text-sm text-gray-600 cursor-pointer">Se souvenir de moi</label>
+                            </div>
+                            <a href="#" class="text-sm text-primary hover:text-secondary font-medium">
+                                Mot de passe oublié ?
+                            </a>
+                        </div>
+                        <button type="submit" id="loginButton" class="w-full bg-primary text-white py-3 px-4 rounded-button font-semibold hover:bg-secondary transition-colors whitespace-nowrap !rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                            <span id="loginText">Se connecter</span>
+                            <i class="ri-loader-4-line ri-spin hidden ml-2" id="loginSpinner"></i>
+                        </button>
+                    </form>
+                    <!-- Security Notice -->
+                    <div class="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+                        <div class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3 mt-0.5">
+                                <i class="ri-information-line text-amber-600"></i>
+                            </div>
+                            <div class="text-sm text-amber-800">
+                                <p class="font-medium mb-1">Accès sécurisé</p>
+                                <p>Cette zone est réservée aux administrateurs autorisés. Toutes les connexions sont enregistrées et surveillées.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quick Stats -->
+                    <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+                        <div class="bg-gray-50 rounded-xl p-3">
+                            <div class="text-lg font-bold text-primary">2,547</div>
+                            <div class="text-xs text-gray-600">Œuvres gérées</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-3">
+                            <div class="text-lg font-bold text-green-600">1,115</div>
+                            <div class="text-xs text-gray-600">Médias actifs</div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-3">
+                            <div class="text-lg font-bold text-blue-600">847</div>
+                            <div class="text-xs text-gray-600">Visiteurs/jour</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent Activity -->
+                <div class="mt-6 bg-white rounded-2xl shadow-lg p-6 card-hover">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="ri-time-line mr-2 text-gray-600"></i>
+                        Activité récente
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-sm">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-3 pulse-animation"></div>
+                            <span class="text-gray-600">Nouvelle œuvre ajoutée - Masque Baoulé</span>
+                            <span class="text-gray-400 ml-auto">Il y a 2h</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                            <span class="text-gray-600">Mise à jour audio guide - Salle 3</span>
+                            <span class="text-gray-400 ml-auto">Il y a 4h</span>
+                        </div>
+                        <div class="flex items-center text-sm">
+                            <div class="w-2 h-2 bg-amber-500 rounded-full mr-3"></div>
+                            <span class="text-gray-600">Maintenance programmée ce soir</span>
+                            <span class="text-gray-400 ml-auto">Il y a 6h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Content Categories -->
+        <section class="py-8 bg-white border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <!-- Search Bar -->
+                    <div class="flex-1">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                <i class="ri-search-line ri-lg text-gray-400"></i>
+                            </div>
+                            <input
+                                type="text"
+                                id="searchInput"
+                                placeholder="Rechercher dans la galerie multimédia..."
+                                class="w-full pl-12 pr-4 py-3 text-sm border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            >
+                        </div>
+                    </div>
+                    <!-- Content Type Filters -->
+                    <div class="flex flex-wrap gap-2">
+                        <button class="filter-btn active px-4 py-2 rounded-button text-sm font-medium whitespace-nowrap transition-colors" data-filter="all">
+                            Tout voir
+                        </button>
+                        <button class="filter-btn px-4 py-2 rounded-button text-sm font-medium whitespace-nowrap transition-colors" data-filter="photos">
+                            <i class="ri-image-line mr-2"></i>
+                            Photos
+                        </button>
+                        <button class="filter-btn px-4 py-2 rounded-button text-sm font-medium whitespace-nowrap transition-colors" data-filter="videos">
+                            <i class="ri-video-line mr-2"></i>
+                            Vidéos
+                        </button>
+                        <button class="filter-btn px-4 py-2 rounded-button text-sm font-medium whitespace-nowrap transition-colors" data-filter="audio">
+                            <i class="ri-headphone-line mr-2"></i>
+                            Audio
+                        </button>
+                        <button class="filter-btn px-4 py-2 rounded-button text-sm font-medium whitespace-nowrap transition-colors" data-filter="ar">
+                            <i class="ri-magic-line mr-2"></i>
+                            Réalité augmentée
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Content -->
+        <section class="py-12 bg-gradient-to-br from-gray-50 to-amber-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Contenus à la Une</h2>
+                    <p class="text-lg text-gray-600">Découvrez nos dernières productions multimédia</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Featured Video -->
+                    <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+                        <div class="h-80 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20traditional%20dance%20ceremony%20vibrant%20colorful%20costumes%20drums%20music%20cultural%20celebration%20heritage%20festival%20performers%20musicians%20ethnographic%20documentary&width=600&height=320&seq=featured001&orientation=landscape');"></div>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <div class="w-20 h-20 flex items-center justify-center bg-white bg-opacity-20 rounded-full mb-4 mx-auto group-hover:bg-opacity-30 transition-all">
+                                    <i class="ri-play-fill ri-2x"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Danse Sabar - Cérémonie Traditionnelle</h3>
+                                <p class="text-sm opacity-90">Documentaire • 12 min • Sénégal</p>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">Nouveau</span>
+                        </div>
+                    </div>
+                    <!-- Featured Audio Collection -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 flex items-center justify-center bg-amber-100 rounded-2xl mr-4">
+                                <i class="ri-headphone-line ri-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">Collection Audio Guides</h3>
+                                <p class="text-gray-600">Explorez nos contenus sonores</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer">
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mr-4">
+                                        <i class="ri-music-line"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Contes et Légendes Dogon</div>
+                                        <div class="text-sm text-gray-600">Français • 15 min</div>
+                                    </div>
+                                </div>
+                                <button class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-secondary transition-colors">
+                                    <i class="ri-play-fill"></i>
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer">
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-green-600 text-white rounded-full mr-4">
+                                        <i class="ri-mic-line"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Interview : Maître Sculpteur</div>
+                                        <div class="text-sm text-gray-600">Wolof • 22 min</div>
+                                    </div>
+                                </div>
+                                <button class="w-10 h-10 flex items-center justify-center bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors">
+                                    <i class="ri-play-fill"></i>
+                                </button>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors cursor-pointer">
+                                <div class="flex items-center">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-blue-600 text-white rounded-full mr-4">
+                                        <i class="ri-sound-module-line"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">Ambiances du Musée</div>
+                                        <div class="text-sm text-gray-600">Sons naturels • 8 min</div>
+                                    </div>
+                                </div>
+                                <button class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
+                                    <i class="ri-play-fill"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <button class="w-full bg-primary text-white py-3 rounded-button font-semibold hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                                Voir tous les audio guides
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Multimedia Gallery -->
+        <section class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="text-gray-600">
+                        <span id="resultsCount">1,115</span>
+                        contenus multimédia
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm text-gray-600">Affichage :</span>
+                            <button id="gridView" class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded">
+                                <i class="ri-grid-line"></i>
+                            </button>
+                            <button id="listView" class="w-8 h-8 flex items-center justify-center border border-gray-300 text-gray-600 rounded hover:bg-gray-50">
+                                <i class="ri-list-unordered"></i>
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm text-gray-600">Trier par :</span>
+                            <select id="sortBy" class="px-3 py-1 text-sm border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option value="recent">Plus récent</option>
+                                <option value="popular">Popularité</option>
+                                <option value="duration">Durée</option>
+                                <option value="title">Titre</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video Gallery Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="ri-video-line ri-lg mr-3 text-primary"></i>
+                        Vidéos Documentaires
+                    </h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Video Card 1 -->
+                        <div class="media-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-type="videos">
+                            <div class="relative">
+                                <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20craftsman%20artisan%20working%20on%20bronze%20sculpture%20casting%20traditional%20metalwork%20techniques%20documentary%20museum%20workshop%20cultural%20heritage%20skill%20transmission&width=400&height=192&seq=video001&orientation=landscape');"></div>
+                                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                    <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-play-fill ri-2x text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-3 right-3">
+                                    <span class="bg-black bg-opacity-60 text-white px-2 py-1 rounded text-xs">18:45</span>
+                                </div>
+                                <div class="absolute top-3 left-3">
+                                    <span class="bg-red-600 text-white px-2 py-1 rounded text-xs font-medium">4K</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">L'Art du Bronze au Bénin</h3>
+                                <p class="text-gray-600 text-sm mb-3">Découvrez les techniques ancestrales de fonte du bronze utilisées par les artisans de la cour royale du Bénin.</p>
+                                <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                    <span>Documentaire • Nigeria</span>
+                                    <div class="flex items-center">
+                                        <i class="ri-eye-line mr-1"></i>
+                                        <span>12.3k vues</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                                        Regarder
+                                    </button>
+                                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                                        <i class="ri-bookmark-line text-gray-600"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Video Card 2 -->
+                        <div class="media-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-type="videos">
+                            <div class="relative">
+                                <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20traditional%20textile%20weaving%20kente%20cloth%20production%20Ghana%20artisan%20woman%20working%20loom%20cultural%20heritage%20craft%20documentary%20colorful%20patterns&width=400&height=192&seq=video002&orientation=landscape');"></div>
+                                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                    <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-play-fill ri-2x text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-3 right-3">
+                                    <span class="bg-black bg-opacity-60 text-white px-2 py-1 rounded text-xs">14:22</span>
+                                </div>
+                                <div class="absolute top-3 left-3">
+                                    <span class="bg-green-600 text-white px-2 py-1 rounded text-xs font-medium">HD</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Tissage du Kente Ashanti</h3>
+                                <p class="text-gray-600 text-sm mb-3">Plongez dans l'univers fascinant du tissage traditionnel ghanéen et découvrez les secrets du kente royal.</p>
+                                <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                    <span>Documentaire • Ghana</span>
+                                    <div class="flex items-center">
+                                        <i class="ri-eye-line mr-1"></i>
+                                        <span>8.7k vues</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                                        Regarder
+                                    </button>
+                                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                                        <i class="ri-bookmark-line text-gray-600"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Video Card 3 -->
+                        <div class="media-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-type="videos">
+                            <div class="relative">
+                                <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20music%20instruments%20djembe%20kora%20balafon%20traditional%20musicians%20performing%20cultural%20ceremony%20Mali%20documentary%20heritage%20musical%20traditions&width=400&height=192&seq=video003&orientation=landscape');"></div>
+                                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                    <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-play-fill ri-2x text-white"></i>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-3 right-3">
+                                    <span class="bg-black bg-opacity-60 text-white px-2 py-1 rounded text-xs">25:18</span>
+                                </div>
+                                <div class="absolute top-3 left-3">
+                                    <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs font-medium">360°</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold text-gray-900 mb-2">Musiques Traditionnelles du Mali</h3>
+                                <p class="text-gray-600 text-sm mb-3">Une immersion à 360° dans un concert de musique traditionnelle malienne avec djembé, kora et balafon.</p>
+                                <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                    <span>Concert • Mali</span>
+                                    <div class="flex items-center">
+                                        <i class="ri-eye-line mr-1"></i>
+                                        <span>15.2k vues</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                                        Regarder
+                                    </button>
+                                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                                        <i class="ri-bookmark-line text-gray-600"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Audio Collection Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="ri-headphone-line ri-lg mr-3 text-green-600"></i>
+                        Guides Audio & Podcasts
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Audio Player Card 1 -->
+                        <div class="media-card bg-white rounded-2xl shadow-lg p-6 card-hover" data-type="audio">
+                            <div class="flex items-center mb-4">
+                                <div class="w-20 h-20 rounded-2xl bg-cover bg-center mr-4" style="background-image: url('https://readdy.ai/api/search-image?query=African%20elder%20storyteller%20griot%20traditional%20clothing%20sitting%20under%20baobab%20tree%20oral%20tradition%20cultural%20heritage%20wisdom%20transmission%20Mali&width=80&height=80&seq=audio001&orientation=squarish');"></div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-900">Contes du Griot Mamadou</h3>
+                                    <p class="text-gray-600 text-sm">Série de contes traditionnels mandingues</p>
+                                    <div class="flex items-center text-sm text-gray-500 mt-1">
+                                        <i class="ri-time-line mr-1"></i>
+                                        <span>8 épisodes • 45 min total</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 mb-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-medium text-gray-900">Épisode 1 : L'Épopée de Soundjata</span>
+                                    <span class="text-xs text-gray-500">12:34</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <button class="audio-play-btn w-8 h-8 flex items-center justify-center bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors" data-audio="episode1">
+                                        <i class="ri-play-fill"></i>
+                                    </button>
+                                    <div class="flex-1 bg-gray-200 rounded-full h-1">
+                                        <div class="bg-green-600 h-1 rounded-full" style="width: 0%"></div>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <button class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-gray-700">
+                                            <i class="ri-speed-line text-xs"></i>
+                                        </button>
+                                        <button class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-gray-700">
+                                            <i class="ri-volume-up-line text-xs"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Français</span>
+                                    <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Sous-titres</span>
+                                </div>
+                                <button class="text-primary hover:text-secondary text-sm font-medium">
+                                    Voir la série complète
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Audio Player Card 2 -->
+                        <div class="media-card bg-white rounded-2xl shadow-lg p-6 card-hover" data-type="audio">
+                            <div class="flex items-center mb-4">
+                                <div class="w-20 h-20 rounded-2xl bg-cover bg-center mr-4" style="background-image: url('https://readdy.ai/api/search-image?query=African%20museum%20curator%20expert%20archaeologist%20woman%20professional%20discussing%20artifacts%20cultural%20heritage%20interview%20podcast%20studio%20recording&width=80&height=80&seq=audio002&orientation=squarish');"></div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-900">Coulisses du Musée</h3>
+                                    <p class="text-gray-600 text-sm">Interviews avec les conservateurs</p>
+                                    <div class="flex items-center text-sm text-gray-500 mt-1">
+                                        <i class="ri-time-line mr-1"></i>
+                                        <span>12 épisodes • 2h15 total</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 mb-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-medium text-gray-900">Interview : Dr. Aminata Traoré</span>
+                                    <span class="text-xs text-gray-500">18:42</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <button class="audio-play-btn w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors" data-audio="interview1">
+                                        <i class="ri-play-fill"></i>
+                                    </button>
+                                    <div class="flex-1 bg-gray-200 rounded-full h-1">
+                                        <div class="bg-blue-600 h-1 rounded-full" style="width: 25%"></div>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <button class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-gray-700">
+                                            <i class="ri-speed-line text-xs"></i>
+                                        </button>
+                                        <button class="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-gray-700">
+                                            <i class="ri-volume-up-line text-xs"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Wolof</span>
+                                    <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full">Transcript</span>
+                                </div>
+                                <button class="text-primary hover:text-secondary text-sm font-medium">
+                                    Voir tous les épisodes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Photo Gallery Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="ri-image-line ri-lg mr-3 text-blue-600"></i>
+                        Galerie Photos
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <!-- Photo 1 -->
+                        <div class="media-card relative group overflow-hidden rounded-2xl shadow-lg card-hover cursor-pointer" data-type="photos">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20museum%20interior%20exhibition%20hall%20with%20traditional%20masks%20sculptures%20artifacts%20elegant%20display%20lighting%20visitors%20cultural%20heritage%20showcase&width=300&height=256&seq=photo001&orientation=portrait');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-search-line ri-lg text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <div class="bg-black bg-opacity-60 text-white p-2 rounded text-xs">
+                                    <div class="font-semibold">Salle des Masques</div>
+                                    <div class="opacity-90">Collection permanente</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Photo 2 -->
+                        <div class="media-card relative group overflow-hidden rounded-2xl shadow-lg card-hover cursor-pointer" data-type="photos">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20detailed%20close%20up%20museum%20artifact%20Benin%20kingdom%20royal%20art%20metalwork%20cultural%20heritage%20professional%20photography&width=300&height=256&seq=photo002&orientation=portrait');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-search-line ri-lg text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <div class="bg-black bg-opacity-60 text-white p-2 rounded text-xs">
+                                    <div class="font-semibold">Bronze du Bénin</div>
+                                    <div class="opacity-90">XVIe siècle</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Photo 3 -->
+                        <div class="media-card relative group overflow-hidden rounded-2xl shadow-lg card-hover cursor-pointer" data-type="photos">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20textile%20kente%20cloth%20colorful%20geometric%20patterns%20traditional%20weaving%20Ghana%20cultural%20heritage%20museum%20display%20vibrant%20colors%20detailed%20macro%20photography&width=300&height=256&seq=photo003&orientation=portrait');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-search-line ri-lg text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <div class="bg-black bg-opacity-60 text-white p-2 rounded text-xs">
+                                    <div class="font-semibold">Tissu Kente</div>
+                                    <div class="opacity-90">Motifs royaux</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Photo 4 -->
+                        <div class="media-card relative group overflow-hidden rounded-2xl shadow-lg card-hover cursor-pointer" data-type="photos">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20wooden%20sculpture%20statue%20traditional%20carving%20Dogon%20Mali%20museum%20artifact%20cultural%20heritage%20spiritual%20art%20detailed%20craftsmanship%20photography&width=300&height=256&seq=photo004&orientation=portrait');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-search-line ri-lg text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <div class="bg-black bg-opacity-60 text-white p-2 rounded text-xs">
+                                    <div class="font-semibold">Sculpture Dogon</div>
+                                    <div class="opacity-90">Ancêtre mythique</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Photo 5 -->
+                        <div class="media-card relative group overflow-hidden rounded-2xl shadow-lg card-hover cursor-pointer" data-type="photos">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20pottery%20ancient%20ceramic%20vessel%20Nok%20culture%20Nigeria%20archaeological%20museum%20artifact%20traditional%20craftsmanship%20terracotta%20historical%20heritage&width=300&height=256&seq=photo005&orientation=portrait');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-search-line ri-lg text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <div class="bg-black bg-opacity-60 text-white p-2 rounded text-xs">
+                                    <div class="font-semibold">Céramique Nok</div>
+                                    <div class="opacity-90">Ve siècle av. J.-C.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Photo 6 -->
+                        <div class="media-card relative group overflow-hidden rounded-2xl shadow-lg card-hover cursor-pointer" data-type="photos">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20musical%20instruments%20djembe%20drum%20kora%20harp%20balafon%20traditional%20music%20Mali%20museum%20display%20cultural%20heritage%20wooden%20carved%20instruments&width=300&height=256&seq=photo006&orientation=portrait');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-search-line ri-lg text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <div class="bg-black bg-opacity-60 text-white p-2 rounded text-xs">
+                                    <div class="font-semibold">Instruments Traditionnels</div>
+                                    <div class="opacity-90">Collection Mali</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Photo 7 -->
+                        <div class="media-card relative group overflow-hidden rounded-2xl shadow-lg card-hover cursor-pointer" data-type="photos">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20gold%20jewelry%20ancient%20ornaments%20necklace%20bracelets%20decorative%20artifacts%20Nubian%20craftsmanship%20luxury%20precious%20metals%20museum%20display%20heritage&width=300&height=256&seq=photo007&orientation=portrait');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-search-line ri-lg text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <div class="bg-black bg-opacity-60 text-white p-2 rounded text-xs">
+                                    <div class="font-semibold">Orfèvrerie Nubienne</div>
+                                    <div class="opacity-90">Parures royales</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Photo 8 -->
+                        <div class="media-card relative group overflow-hidden rounded-2xl shadow-lg card-hover cursor-pointer" data-type="photos">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20traditional%20mask%20wooden%20carved%20ceremonial%20Kuba%20Congo%20tribal%20art%20museum%20display%20geometric%20patterns%20cultural%20heritage%20ritual%20sacred&width=300&height=256&seq=photo008&orientation=portrait');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+                                <div class="opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                        <i class="ri-search-line ri-lg text-white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <div class="bg-black bg-opacity-60 text-white p-2 rounded text-xs">
+                                    <div class="font-semibold">Masque Kuba</div>
+                                    <div class="opacity-90">Esprit Bwoom</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <button class="bg-blue-600 text-white px-8 py-3 rounded-button font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap !rounded-button">
+                            Voir toute la galerie photos
+                        </button>
+                    </div>
+                </div>
+                <!-- AR Experiences Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <i class="ri-magic-line ri-lg mr-3 text-purple-600"></i>
+                        Expériences en Réalité Augmentée
+                    </h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- AR Experience 1 -->
+                        <div class="media-card bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 shadow-lg card-hover" data-type="ar">
+                            <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="ri-smartphone-line ri-2x text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Masque Interactif 3D</h3>
+                            <p class="text-gray-600 text-sm mb-4">Observez le masque royal du Bénin sous tous les angles et découvrez ses détails cachés.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Compatible iOS/Android</span>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="ri-download-line mr-1"></i>
+                                    <span>2.3k</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-3 rounded-button font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all whitespace-nowrap !rounded-button">
+                                Lancer l'expérience AR
+                            </button>
+                        </div>
+                        <!-- AR Experience 2 -->
+                        <div class="media-card bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6 shadow-lg card-hover" data-type="ar">
+                            <div class="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="ri-vr-box-line ri-2x text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Atelier de Poterie Virtuel</h3>
+                            <p class="text-gray-600 text-sm mb-4">Apprenez les techniques de poterie Nok dans un environnement virtuel immersif.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Expérience immersive</span>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="ri-download-line mr-1"></i>
+                                    <span>1.8k</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-gradient-to-r from-green-600 to-teal-600 text-white px-4 py-3 rounded-button font-semibold hover:from-green-700 hover:to-teal-700 transition-all whitespace-nowrap !rounded-button">
+                                Démarrer l'atelier
+                            </button>
+                        </div>
+                        <!-- AR Experience 3 -->
+                        <div class="media-card bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 shadow-lg card-hover" data-type="ar">
+                            <div class="w-16 h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl flex items-center justify-center mb-4">
+                                <i class="ri-camera-3-line ri-2x text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Visite Virtuelle 360°</h3>
+                            <p class="text-gray-600 text-sm mb-4">Explorez le musée depuis chez vous avec notre visite virtuelle interactive.</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">360° VR Ready</span>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="ri-download-line mr-1"></i>
+                                    <span>4.1k</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white px-4 py-3 rounded-button font-semibold hover:from-orange-700 hover:to-red-700 transition-all whitespace-nowrap !rounded-button">
+                                Commencer la visite
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Artwork Card 1 -->
+        <div
+            class="artwork-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
+            data-category="sculptures"
+            data-period="medieval"
+            data-region="west"
+            data-material="bronze"
+            data-function="ceremonial"
+        >
+            <div class="relative">
+                <div class="h-64 bg-cover bg-center bg-top" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations%20royal%20ceremonial&width=320&height=256&seq=cat001&orientation=landscape');"></div>
+                <div class="absolute top-3 right-3">
+                    <button class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full hover:bg-opacity-100 transition-all">
+                        <i class="ri-heart-line text-gray-600 hover:text-red-500"></i>
+                    </button>
+                </div>
+                <div class="absolute bottom-3 left-3">
+                    <div class="bg-primary text-white px-2 py-1 rounded text-xs font-medium">Audio disponible</div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-bold text-gray-900 line-clamp-2">Masque Royal du Bénin</h3>
+                    <div class="w-6 h-6 flex items-center justify-center ml-2">
+                        <i class="ri-qr-code-line text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="text-sm text-primary font-medium mb-1">XVIe siècle · Nigeria</div>
+                <div class="text-xs text-gray-500 mb-3">Bronze · Cérémoniel</div>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3">Bronze coulé selon les techniques ancestrales de la cour royale du Bénin, symbole de pouvoir et de prestige utilisé lors des cérémonies d'intronisation.</p>
+                <div class="flex space-x-2">
+                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                        Voir détails
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                        <i class="ri-play-line text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Artwork Card 2 -->
+        <div
+            class="artwork-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
+            data-category="sculptures"
+            data-period="medieval"
+            data-region="west"
+            data-material="wood"
+            data-function="religious"
+        >
+            <div class="relative">
+                <div class="h-64 bg-cover bg-center bg-top" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20wooden%20sculpture%20statue%20carved%20figure%20tribal%20art%20museum%20exhibition%20cultural%20artifact%20black%20wood%20craftsmanship%20ancestral%20heritage%20display%20Dogon%20Mali%20spiritual&width=320&height=256&seq=cat002&orientation=landscape');"></div>
+                <div class="absolute top-3 right-3">
+                    <button class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full hover:bg-opacity-100 transition-all">
+                        <i class="ri-heart-line text-gray-600 hover:text-red-500"></i>
+                    </button>
+                </div>
+                <div class="absolute bottom-3 left-3">
+                    <div class="bg-green-600 text-white px-2 py-1 rounded text-xs font-medium">Visite 3D</div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-bold text-gray-900 line-clamp-2">Statuette d'Ancêtre Dogon</h3>
+                    <div class="w-6 h-6 flex items-center justify-center ml-2">
+                        <i class="ri-qr-code-line text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="text-sm text-primary font-medium mb-1">XIVe siècle · Mali</div>
+                <div class="text-xs text-gray-500 mb-3">Bois · Religieux</div>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3">Sculpture en bois représentant un ancêtre mythique, pièce centrale des rituels spirituels dogon et gardienne de la mémoire collective.</p>
+                <div class="flex space-x-2">
+                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                        Voir détails
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                        <i class="ri-play-line text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Artwork Card 3 -->
+        <div
+            class="artwork-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
+            data-category="textiles"
+            data-period="modern"
+            data-region="west"
+            data-material="textile"
+            data-function="ceremonial"
+        >
+            <div class="relative">
+                <div class="h-64 bg-cover bg-center bg-top" style="background-image: url('https://readdy.ai/api/search-image?query=African%20textile%20kente%20cloth%20colorful%20geometric%20patterns%20traditional%20weaving%20Ghana%20cultural%20fabric%20museum%20display%20vibrant%20colors%20heritage%20craftsmanship%20royal%20ceremonial%20golden%20threads&width=320&height=256&seq=cat003&orientation=landscape');"></div>
+                <div class="absolute top-3 right-3">
+                    <button class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full hover:bg-opacity-100 transition-all">
+                        <i class="ri-heart-line text-gray-600 hover:text-red-500"></i>
+                    </button>
+                </div>
+                <div class="absolute bottom-3 left-3">
+                    <div class="bg-purple-600 text-white px-2 py-1 rounded text-xs font-medium">Réalité augmentée</div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-bold text-gray-900 line-clamp-2">Tissu Kente Royal Ashanti</h3>
+                    <div class="w-6 h-6 flex items-center justify-center ml-2">
+                        <i class="ri-qr-code-line text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="text-sm text-primary font-medium mb-1">XVIIe siècle · Ghana</div>
+                <div class="text-xs text-gray-500 mb-3">Textile · Cérémoniel</div>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3">Textile tissé à la main aux motifs géométriques complexes, réservé aux cérémonies royales ashanti et porteur de messages codés.</p>
+                <div class="flex space-x-2">
+                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                        Voir détails
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                        <i class="ri-play-line text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Artwork Card 4 -->
+        <div
+            class="artwork-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
+            data-category="ceramics"
+            data-period="ancient"
+            data-region="west"
+            data-material="ceramic"
+            data-function="daily"
+        >
+            <div class="relative">
+                <div class="h-64 bg-cover bg-center bg-top" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20pottery%20ceramic%20vessel%20traditional%20craftsmanship%20museum%20artifact%20cultural%20heritage%20terracotta%20decorative%20patterns%20archaeological%20find%20Nok%20culture%20Nigeria%20ancient%20civilization&width=320&height=256&seq=cat004&orientation=landscape');"></div>
+                <div class="absolute top-3 right-3">
+                    <button class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full hover:bg-opacity-100 transition-all">
+                        <i class="ri-heart-line text-gray-600 hover:text-red-500"></i>
+                    </button>
+                </div>
+                <div class="absolute bottom-3 left-3">
+                    <div class="bg-blue-600 text-white px-2 py-1 rounded text-xs font-medium">Scan 3D</div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-bold text-gray-900 line-clamp-2">Poterie Nok Ancestrale</h3>
+                    <div class="w-6 h-6 flex items-center justify-center ml-2">
+                        <i class="ri-qr-code-line text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="text-sm text-primary font-medium mb-1">Ve siècle av. J.-C. · Nigeria</div>
+                <div class="text-xs text-gray-500 mb-3">Céramique · Quotidien</div>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3">Céramique de la culture Nok, témoignage de l'une des plus anciennes civilisations d'Afrique de l'Ouest et de ses techniques artistiques raffinées.</p>
+                <div class="flex space-x-2">
+                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                        Voir détails
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                        <i class="ri-play-line text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Artwork Card 5 -->
+        <div
+            class="artwork-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
+            data-category="instruments"
+            data-period="medieval"
+            data-region="west"
+            data-material="wood"
+            data-function="ceremonial"
+        >
+            <div class="relative">
+                <div class="h-64 bg-cover bg-center bg-top" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20musical%20instruments%20drums%20djembe%20kora%20balafon%20museum%20display%20cultural%20heritage%20music%20artifacts%20wooden%20carved%20instruments%20Mandinka%20Mali%20ceremonial%20sacred&width=320&height=256&seq=cat005&orientation=landscape');"></div>
+                <div class="absolute top-3 right-3">
+                    <button class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full hover:bg-opacity-100 transition-all">
+                        <i class="ri-heart-line text-gray-600 hover:text-red-500"></i>
+                    </button>
+                </div>
+                <div class="absolute bottom-3 left-3">
+                    <div class="bg-red-600 text-white px-2 py-1 rounded text-xs font-medium">Sons authentiques</div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-bold text-gray-900 line-clamp-2">Djembé Sacré Mandingue</h3>
+                    <div class="w-6 h-6 flex items-center justify-center ml-2">
+                        <i class="ri-qr-code-line text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="text-sm text-primary font-medium mb-1">XIIe siècle · Mali</div>
+                <div class="text-xs text-gray-500 mb-3">Bois · Cérémoniel</div>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3">Tambour sacré sculpté dans un tronc d'arbre, instrument central de la musique traditionnelle mandingue et messager des ancêtres.</p>
+                <div class="flex space-x-2">
+                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                        Voir détails
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                        <i class="ri-play-line text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Artwork Card 6 -->
+        <div
+            class="artwork-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
+            data-category="jewelry"
+            data-period="ancient"
+            data-region="north"
+            data-material="metal"
+            data-function="decorative"
+        >
+            <div class="relative">
+                <div class="h-64 bg-cover bg-center bg-top" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20gold%20jewelry%20ornaments%20necklace%20bracelets%20decorative%20artifacts%20Egyptian%20Nubian%20craftsmanship%20museum%20display%20precious%20metals%20cultural%20heritage%20luxury&width=320&height=256&seq=cat006&orientation=landscape');"></div>
+                <div class="absolute top-3 right-3">
+                    <button class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full hover:bg-opacity-100 transition-all">
+                        <i class="ri-heart-line text-gray-600 hover:text-red-500"></i>
+                    </button>
+                </div>
+                <div class="absolute bottom-3 left-3">
+                    <div class="bg-yellow-600 text-white px-2 py-1 rounded text-xs font-medium">Pièce rare</div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-bold text-gray-900 line-clamp-2">Collier Royal Nubien</h3>
+                    <div class="w-6 h-6 flex items-center justify-center ml-2">
+                        <i class="ri-qr-code-line text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="text-sm text-primary font-medium mb-1">IIIe siècle av. J.-C. · Soudan</div>
+                <div class="text-xs text-gray-500 mb-3">Or · Décoratif</div>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3">Parure en or massif ornée de pierres précieuses, témoignage du raffinement des cours royales nubiennes et de leur maîtrise de l'orfèvrerie.</p>
+                <div class="flex space-x-2">
+                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                        Voir détails
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                        <i class="ri-play-line text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Artwork Card 7 -->
+        <div
+            class="artwork-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
+            data-category="masks"
+            data-period="contemporary"
+            data-region="central"
+            data-material="wood"
+            data-function="ceremonial"
+        >
+            <div class="relative">
+                <div class="h-64 bg-cover bg-center bg-top" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20wooden%20mask%20carved%20ceremonial%20tribal%20art%20museum%20display%20Kuba%20kingdom%20Congo%20cultural%20heritage%20ritual%20sacred%20decorative%20patterns%20geometric%20designs&width=320&height=256&seq=cat007&orientation=landscape');"></div>
+                <div class="absolute top-3 right-3">
+                    <button class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full hover:bg-opacity-100 transition-all">
+                        <i class="ri-heart-line text-gray-600 hover:text-red-500"></i>
+                    </button>
+                </div>
+                <div class="absolute bottom-3 left-3">
+                    <div class="bg-indigo-600 text-white px-2 py-1 rounded text-xs font-medium">Interactif</div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-bold text-gray-900 line-clamp-2">Masque Kuba Bwoom</h3>
+                    <div class="w-6 h-6 flex items-center justify-center ml-2">
+                        <i class="ri-qr-code-line text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="text-sm text-primary font-medium mb-1">XIXe siècle · RD Congo</div>
+                <div class="text-xs text-gray-500 mb-3">Bois · Cérémoniel</div>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3">Masque de danse kuba aux motifs géométriques complexes, représentant un esprit ancestral lors des cérémonies d'initiation et de passage.</p>
+                <div class="flex space-x-2">
+                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                        Voir détails
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                        <i class="ri-play-line text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Artwork Card 8 -->
+        <div
+            class="artwork-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
+            data-category="tools"
+            data-period="modern"
+            data-region="east"
+            data-material="metal"
+            data-function="daily"
+        >
+            <div class="relative">
+                <div class="h-64 bg-cover bg-center bg-top" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20metal%20tools%20weapons%20spears%20shields%20craftsmanship%20museum%20display%20cultural%20heritage%20Maasai%20Kenya%20traditional%20metalwork%20daily%20life%20hunting&width=320&height=256&seq=cat008&orientation=landscape');"></div>
+                <div class="absolute top-3 right-3">
+                    <button class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-80 rounded-full hover:bg-opacity-100 transition-all">
+                        <i class="ri-heart-line text-gray-600 hover:text-red-500"></i>
+                    </button>
+                </div>
+                <div class="absolute bottom-3 left-3">
+                    <div class="bg-teal-600 text-white px-2 py-1 rounded text-xs font-medium">Démonstration</div>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="flex items-start justify-between mb-2">
+                    <h3 class="text-lg font-bold text-gray-900 line-clamp-2">Lance Cérémonielle Maasaï</h3>
+                    <div class="w-6 h-6 flex items-center justify-center ml-2">
+                        <i class="ri-qr-code-line text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="text-sm text-primary font-medium mb-1">XVIIIe siècle · Kenya</div>
+                <div class="text-xs text-gray-500 mb-3">Métal · Quotidien</div>
+                <p class="text-gray-600 text-sm mb-4 line-clamp-3">Lance forgée selon les traditions maasaï, symbole de passage à l'âge adulte et outil essentiel de la vie pastorale dans les plaines d'Afrique de l'Est.</p>
+                <div class="flex space-x-2">
+                    <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                        Voir détails
+                    </button>
+                    <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
+                        <i class="ri-play-line text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Load More Button -->
+    <div class="text-center mt-12">
+        <button id="loadMore" class="bg-primary text-white px-8 py-3 rounded-button font-semibold hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+            Voir plus d'œuvres
+        </button>
+        <p class="text-gray-500 text-sm mt-2">Affichage de 8 œuvres sur 2,547</p>
+    </div>
+</div>
+</section>
+<!-- Quick Actions -->
+<section class="py-12 bg-gradient-to-r from-amber-50 to-orange-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover">
+                <div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-4">
+                    <i class="ri-qr-scan-line ri-lg text-primary"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Scanner QR</h3>
+                <p class="text-gray-600 text-sm mb-4">Accédez aux détails de chaque œuvre</p>
+                <button class="w-full bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                    Lancer le scanner
+                </button>
+            </div>
+            <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover">
+                <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
+                    <i class="ri-heart-line ri-lg text-green-600"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Mes Favoris</h3>
+                <p class="text-gray-600 text-sm mb-4">Retrouvez vos œuvres préférées</p>
+                <button class="w-full bg-green-600 text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-green-700 transition-colors whitespace-nowrap !rounded-button">
+                    Voir favoris (3)
+                </button>
+            </div>
+            <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover">
+                <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mx-auto mb-4">
+                    <i class="ri-route-line ri-lg text-blue-600"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Parcours Guidé</h3>
+                <p class="text-gray-600 text-sm mb-4">Suivez nos itinéraires thématiques</p>
+                <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-blue-700 transition-colors whitespace-nowrap !rounded-button">
+                    Choisir parcours
+                </button>
+            </div>
+            <div class="bg-white rounded-2xl p-6 text-center shadow-sm card-hover">
+                <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-full mx-auto mb-4">
+                    <i class="ri-share-line ri-lg text-purple-600"></i>
+                </div>
+                <h3 class="font-bold text-gray-900 mb-2">Partager</h3>
+                <p class="text-gray-600 text-sm mb-4">Créez votre collection personnelle</p>
+                <button class="w-full bg-purple-600 text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-purple-700 transition-colors whitespace-nowrap !rounded-button">
+                    Créer sélection
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Histoire & Culture -->
+<section id="histoire" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Histoire & Culture</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Plongez dans l'histoire millénaire des civilisations africaines
+            </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4">
+                    <i class="ri-ancient-gate-line ri-lg"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Royaumes Anciens</h3>
+                <p class="text-gray-600 text-sm">Explorez l'histoire des grands empires africains : Ghana, Mali, Songhaï, Kush...</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4">
+                    <i class="ri-palette-line ri-lg"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Arts Traditionnels</h3>
+                <p class="text-gray-600 text-sm">Découvrez les techniques ancestrales de sculpture, poterie, tissage et métallurgie.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4">
+                    <i class="ri-music-line ri-lg"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Musiques & Danses</h3>
+                <p class="text-gray-600 text-sm">Immergez-vous dans la richesse des traditions musicales et chorégraphiques africaines.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg card-hover">
+                <div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mb-4">
+                    <i class="ri-book-open-line ri-lg"></i>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Littérature Orale</h3>
+                <p class="text-gray-600 text-sm">Écoutez les contes, légendes et épopées transmis de génération en génération.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Galerie Multimédia -->
+<section id="multimedia" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Galerie Multimédia</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Une expérience immersive à travers photos, vidéos et contenus audio
+            </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="relative group overflow-hidden rounded-2xl">
+                <div class="h-80 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20museum%20gallery%20visitors%20exploring%20exhibitions%20cultural%20artifacts%20display%20modern%20interior%20architecture%20people%20admiring%20traditional%20art%20collections&width=600&height=320&seq=gallery001&orientation=landscape');"></div>
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <button class="bg-white text-gray-900 px-6 py-3 rounded-button font-semibold whitespace-nowrap !rounded-button">
+                        Voir la galerie photos
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="relative group overflow-hidden rounded-2xl">
+                    <div class="h-36 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20traditional%20dance%20performance%20cultural%20ceremony%20colorful%20costumes%20drums%20music%20heritage%20celebration%20museum%20event&width=300&height=144&seq=media001&orientation=landscape');"></div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                            <i class="ri-play-fill ri-lg text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl">
+                    <div class="h-36 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20craftsman%20artisan%20working%20traditional%20pottery%20sculpture%20workshop%20cultural%20heritage%20skills%20transmission%20museum%20documentation&width=300&height=144&seq=media002&orientation=landscape');"></div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                            <i class="ri-play-fill ri-lg text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl">
+                    <div class="h-36 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20museum%20conservation%20restoration%20expert%20working%20on%20ancient%20artifacts%20preservation%20cultural%20heritage%20laboratory%20scientific%20approach&width=300&height=144&seq=media003&orientation=landscape');"></div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                            <i class="ri-volume-up-fill ri-lg text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-2xl">
+                    <div class="h-36 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20children%20learning%20about%20cultural%20heritage%20museum%20educational%20program%20traditional%20stories%20cultural%20transmission%20young%20generation&width=300&height=144&seq=media004&orientation=landscape');"></div>
+                    <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                        <div class="w-12 h-12 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                            <i class="ri-play-fill ri-lg text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="bg-primary text-white px-8 py-4 rounded-button text-lg font-semibold hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                Voir toute la galerie
+            </button>
+        </div>
+    </div>
+</section>
+<!-- Partenaires -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Nos Partenaires</h2>
+            <p class="text-lg text-gray-600">Ensemble pour valoriser le patrimoine culturel africain</p>
+        </div>
+        <div class="flex justify-center items-center space-x-12">
+            <div class="flex items-center space-x-3 text-gray-600">
+                <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full">
+                    <i class="ri-rocket-line ri-lg text-blue-600"></i>
+                </div>
+                <span class="text-xl font-semibold">Dakar Slush'D</span>
+            </div>
+            <div class="flex items-center space-x-3 text-gray-600">
+                <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full">
+                    <i class="ri-lightbulb-line ri-lg text-green-600"></i>
+                </div>
+                <span class="text-xl font-semibold">Senstartup</span>
+            </div>
+            <div class="flex items-center space-x-3 text-gray-600">
+                <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-full">
+                    <i class="ri-government-line ri-lg text-purple-600"></i>
+                </div>
+                <span class="text-xl font-semibold">Ministère de la Culture</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer id="contact" class="bg-amber-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="font-['Pacifico'] text-3xl text-amber-200 mb-4">MCN</div>
+                <p class="text-amber-100 mb-6 leading-relaxed">
+                    Le Musée des Civilisations Noires préserve et valorise le patrimoine culturel africain pour les générations futures.
+                </p>
+                <div class="flex space-x-4">
+                    <div class="w-10 h-10 flex items-center justify-center bg-amber-800 hover:bg-amber-700 rounded-full transition-colors">
+                        <i class="ri-facebook-fill ri-lg"></i>
+                    </div>
+                    <div class="w-10 h-10 flex items-center justify-center bg-amber-800 hover:bg-amber-700 rounded-full transition-colors">
+                        <i class="ri-twitter-fill ri-lg"></i>
+                    </div>
+                    <div class="w-10 h-10 flex items-center justify-center bg-amber-800 hover:bg-amber-700 rounded-full transition-colors">
+                        <i class="ri-instagram-fill ri-lg"></i>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Informations Pratiques</h3>
+                <div class="space-y-3 text-amber-100">
+                    <div class="flex items-start">
+                        <i class="ri-map-pin-line ri-sm mr-3 mt-1"></i>
+                        <span>
+                            Route de la Corniche Ouest
+                            <br>
+                            Dakar, Sénégal
+                        </span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="ri-phone-line ri-sm mr-3"></i>
+                        <span>+221 33 823 90 23</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="ri-mail-line ri-sm mr-3"></i>
+                        <span>contact@mcn.sn</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Horaires</h3>
+                <div class="space-y-2 text-amber-100">
+                    <div class="flex justify-between">
+                        <span>Lun - Ven</span>
+                        <span>9h - 18h</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Samedi</span>
+                        <span>9h - 19h</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Dimanche</span>
+                        <span>10h - 17h</span>
+                    </div>
+                    <div class="text-sm mt-4 text-amber-200">
+                        Fermé les jours fériés
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                <p class="text-amber-100 mb-4">Restez informé de nos actualités et événements</p>
+                <div class="flex">
+                    <input type="email" placeholder="Votre email" class="flex-1 px-4 py-3 rounded-l-button text-gray-900 border-none focus:outline-none">
+                    <button class="bg-primary hover:bg-secondary px-6 py-3 rounded-r-button transition-colors whitespace-nowrap !rounded-button">
+                        <i class="ri-send-plane-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-amber-800 mt-12 pt-8 text-center text-amber-200">
+            <p>&copy; 2024 Musée des Civilisations Noires. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>
+<!-- Footer -->
+<footer class="bg-amber-900 text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <div class="font-['Pacifico'] text-2xl text-amber-200 mb-2">MCN</div>
+            <p class="text-amber-200 text-sm mb-4">Administration - Musée des Civilisations Noires</p>
+            <div class="flex justify-center space-x-6 text-sm text-amber-100">
+                <a href="#" class="hover:text-white transition-colors">Support technique</a>
+                <a href="#" class="hover:text-white transition-colors">Politique de sécurité</a>
+                <a href="#" class="hover:text-white transition-colors">Conditions d'utilisation</a>
+            </div>
+            <div class="border-t border-amber-800 mt-6 pt-6 text-amber-200 text-xs">
+                <p>&copy; 2024 Musée des Civilisations Noires. Accès administrateur sécurisé.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script id="navigation">
+document.addEventListener('DOMContentLoaded', function() {
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+navLinks.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href').substring(1);
+const targetElement = document.getElementById(targetId);
+if (targetElement) {
+targetElement.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+});
+</script>
+<script id="languageSelector">
+document.addEventListener('DOMContentLoaded', function() {
+const langButtons = document.querySelectorAll('header button[class*="px-3"]');
+langButtons.forEach(button => {
+button.addEventListener('click', function() {
+langButtons.forEach(btn => {
+btn.classList.remove('bg-primary', 'text-white');
+btn.classList.add('text-amber-200', 'hover:bg-amber-800');
+});
+this.classList.remove('text-amber-200', 'hover:bg-amber-800');
+this.classList.add('bg-primary', 'text-white');
+});
+});
+});
+</script>
+<script id="accessibilityControls">
+document.addEventListener('DOMContentLoaded', function() {
+let textSizeLevel = 0;
+let audioModeActive = false;
+let highContrastActive = false;
+document.getElementById('textSize').addEventListener('click', function() {
+textSizeLevel = (textSizeLevel + 1) % 3;
+document.body.classList.remove('text-sm', 'text-lg', 'text-xl');
+if (textSizeLevel === 1) document.body.classList.add('text-lg');
+if (textSizeLevel === 2) document.body.classList.add('text-xl');
+});
+document.getElementById('audioMode').addEventListener('click', function() {
+audioModeActive = !audioModeActive;
+this.classList.toggle('bg-secondary', audioModeActive);
+if (audioModeActive) {
+console.log('Mode audio activé');
+}
+});
+document.getElementById('highContrast').addEventListener('click', function() {
+highContrastActive = !highContrastActive;
+this.classList.toggle('bg-secondary', highContrastActive);
+document.body.classList.toggle('contrast-125', highContrastActive);
+});
+});
+</script>
+<script id="multimediaFilters">
+document.addEventListener('DOMContentLoaded', function() {
+const searchInput = document.getElementById('searchInput');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const sortSelect = document.getElementById('sortBy');
+const mediaCards = document.querySelectorAll('.media-card');
+const resultsCount = document.getElementById('resultsCount');
+const gridViewBtn = document.getElementById('gridView');
+const listViewBtn = document.getElementById('listView');
+function updateResults() {
+let visibleCount = 0;
+const searchTerm = searchInput.value.toLowerCase();
+const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+mediaCards.forEach(card => {
+const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+const cardType = card.dataset.type;
+let isVisible = true;
+if (searchTerm && !title.includes(searchTerm)) isVisible = false;
+if (activeFilter !== 'all' && cardType !== activeFilter) isVisible = false;
+if (isVisible) {
+card.style.display = 'block';
+visibleCount++;
+} else {
+card.style.display = 'none';
+}
+});
+resultsCount.textContent = visibleCount.toLocaleString();
+}
+searchInput.addEventListener('input', updateResults);
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+filterButtons.forEach(btn => btn.classList.remove('active'));
+this.classList.add('active');
+updateResults();
+});
+});
+gridViewBtn.addEventListener('click', function() {
+this.classList.add('bg-primary', 'text-white');
+this.classList.remove('border', 'border-gray-300', 'text-gray-600');
+listViewBtn.classList.remove('bg-primary', 'text-white');
+listViewBtn.classList.add('border', 'border-gray-300', 'text-gray-600');
+});
+listViewBtn.addEventListener('click', function() {
+this.classList.add('bg-primary', 'text-white');
+this.classList.remove('border', 'border-gray-300', 'text-gray-600');
+gridViewBtn.classList.remove('bg-primary', 'text-white');
+gridViewBtn.classList.add('border', 'border-gray-300', 'text-gray-600');
+});
+sortSelect.addEventListener('change', function() {
+console.log('Tri par:', this.value);
+});
+});
+</script>
+<script id="multimediaInteractions">
+document.addEventListener('DOMContentLoaded', function() {
+const audioPlayButtons = document.querySelectorAll('.audio-play-btn');
+const bookmarkButtons = document.querySelectorAll('.ri-bookmark-line');
+const videoCards = document.querySelectorAll('[data-type="videos"]');
+const photoCards = document.querySelectorAll('[data-type="photos"]');
+let currentAudio = null;
+audioPlayButtons.forEach(button => {
+button.addEventListener('click', function(e) {
+e.stopPropagation();
+const audioId = this.dataset.audio;
+const icon = this.querySelector('i');
+const progressBar = this.parentNode.querySelector('.bg-green-600, .bg-blue-600');
+if (currentAudio && currentAudio !== this) {
+const currentIcon = currentAudio.querySelector('i');
+currentIcon.classList.remove('ri-pause-fill');
+currentIcon.classList.add('ri-play-fill');
+}
+if (icon.classList.contains('ri-play-fill')) {
+icon.classList.remove('ri-play-fill');
+icon.classList.add('ri-pause-fill');
+currentAudio = this;
+console.log('Lecture audio:', audioId);
+simulateAudioProgress(progressBar);
+} else {
+icon.classList.remove('ri-pause-fill');
+icon.classList.add('ri-play-fill');
+currentAudio = null;
+console.log('Pause audio:', audioId);
+}
+});
+});
+function simulateAudioProgress(progressBar) {
+let width = parseInt(progressBar.style.width) || 0;
+const interval = setInterval(() => {
+if (currentAudio && width < 100) {
+width += 2;
+progressBar.style.width = width + '%';
+} else {
+clearInterval(interval);
+if (currentAudio) {
+const icon = currentAudio.querySelector('i');
+icon.classList.remove('ri-pause-fill');
+icon.classList.add('ri-play-fill');
+currentAudio = null;
+}
+}
+}, 200);
+}
+bookmarkButtons.forEach(button => {
+button.addEventListener('click', function(e) {
+e.stopPropagation();
+this.classList.toggle('ri-bookmark-line');
+this.classList.toggle('ri-bookmark-fill');
+this.classList.toggle('text-primary');
+});
+});
+videoCards.forEach(card => {
+card.addEventListener('click', function() {
+const title = this.querySelector('h3').textContent;
+console.log('Ouverture vidéo:', title);
+showVideoModal(title);
+});
+});
+photoCards.forEach(card => {
+card.addEventListener('click', function() {
+const title = this.querySelector('.font-semibold').textContent;
+console.log('Ouverture photo:', title);
+showPhotoModal(title);
+});
+});
+function showVideoModal(title) {
+const modal = document.createElement('div');
+modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50';
+modal.innerHTML = `
+<div class="bg-white rounded-2xl p-6 max-w-4xl w-full mx-4">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-xl font-bold">${title}</h3>
+<button class="close-modal w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-gray-200">
+<i class="ri-close-line"></i>
+</button>
+</div>
+<div class="bg-gray-900 rounded-xl h-96 flex items-center justify-center">
+<div class="text-white text-center">
+<i class="ri-play-circle-line ri-3x mb-4"></i>
+<p>Lecteur vidéo - ${title}</p>
+</div>
+</div>
+</div>
+`;
+document.body.appendChild(modal);
+modal.querySelector('.close-modal').addEventListener('click', () => {
+document.body.removeChild(modal);
+});
+modal.addEventListener('click', (e) => {
+if (e.target === modal) {
+document.body.removeChild(modal);
+}
+});
+}
+function showPhotoModal(title) {
+const modal = document.createElement('div');
+modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50';
+modal.innerHTML = `
+<div class="bg-white rounded-2xl p-6 max-w-4xl w-full mx-4">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-xl font-bold">${title}</h3>
+<button class="close-modal w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full hover:bg-gray-200">
+<i class="ri-close-line"></i>
+</button>
+</div>
+<div class="bg-gray-100 rounded-xl h-96 flex items-center justify-center">
+<div class="text-gray-600 text-center">
+<i class="ri-image-line ri-3x mb-4"></i>
+<p>Image haute résolution - ${title}</p>
+</div>
+</div>
+</div>
+`;
+document.body.appendChild(modal);
+modal.querySelector('.close-modal').addEventListener('click', () => {
+document.body.removeChild(modal);
+});
+modal.addEventListener('click', (e) => {
+if (e.target === modal) {
+document.body.removeChild(modal);
+}
+});
+}
+});
+</script>
+<script id="filterStyles">
+document.addEventListener('DOMContentLoaded', function() {
+const style = document.createElement('style');
+style.textContent = `
+.filter-btn {
+background: white;
+color: #6B7280;
+border: 1px solid #D1D5DB;
+}
+.filter-btn.active {
+background: #D97706;
+color: white;
+border-color: #D97706;
+}
+.filter-btn:hover:not(.active) {
+background: #F3F4F6;
+border-color: #9CA3AF;
+}
+.line-clamp-2 {
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+.line-clamp-3 {
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+`;
+document.head.appendChild(style);
+});
+</script>
+<script src="https://static.readdy.ai/static/share.js"></script>
+</body>
+</html>
