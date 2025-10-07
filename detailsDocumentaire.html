@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Documentaires – Musée Digital</title>
+        <!-- TailwindCSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Remix Icons -->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+        <!-- Animation on Scroll -->
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        <style>
+    body {
+      background-color: #fff;
+      color: #111;
+      font-family: 'Inter', sans-serif;
+    }
+    .card {
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+        </style>
+    </head>
+    <body class="bg-white text-gray-900">
+        <!-- Header -->
+        <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+            <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+                 <a href="multimedia.html" class="text-amber-600 hover:text-amber-800"><i class="ri-arrow-left-line text-lg"></i> retourner au gallerie</a>
+            </div>
+        </header>
+        <!-- Contenu principal -->
+        <main class="max-w-6xl mx-auto py-10 px-6 space-y-20">
+            <!-- SECTION VIDÉOS -->
+            <section data-aos="fade-up">
+                <div class="flex items-center mb-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-gradient-to-br from-amber-500 to-yellow-400 rounded-2xl mr-4 shadow-lg">
+                        <i class="ri-video-line ri-2x text-white"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold mb-2 text-gray-900">Documentaires Vidéo</h2>
+                        <p class="text-gray-600">Découvrez nos films et témoignages visuels</p>
+                    </div>
+                </div>
+                <!-- Grande vidéo YouTube -->
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg">
+                    <iframe
+                        class="w-full h-full"
+                        src="https://www.youtube.com/embed/iMW1VzUpphQ?si=txRmeEUowDKfQeGk"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <br>
+                <br>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Video Card 1 -->
+                    <div class="media-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-type="videos">
+                        <div class="relative">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20craftsman%20artisan%20working%20on%20bronze%20sculpture%20casting%20traditional%20metalwork%20techniques%20documentary%20museum%20workshop%20cultural%20heritage%20skill%20transmission&width=400&height=192&seq=video001&orientation=landscape');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-play-fill ri-2x text-white"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 right-3">
+                                <span class="bg-black bg-opacity-60 text-white px-2 py-1 rounded text-xs">18:45</span>
+                            </div>
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-red-600 text-white px-2 py-1 rounded text-xs font-medium">4K</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">L'Art du Bronze au Bénin</h3>
+                            <p class="text-gray-600 text-sm mb-3">Découvrez les techniques ancestrales de fonte du bronze utilisées par les artisans de la cour royale du Bénin.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span>Documentaire • Nigeria</span>
+                                <div class="flex items-center">
+                                    <i class="ri-eye-line mr-1"></i>
+                                    <span>12.3k vues</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 bg-amber-700 text-white px-4 py-2 rounded-2xl text-sm font-medium hover:bg-amber-600 transition-colors whitespace-nowrap !rounded-button">
+                                    Regarder
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Card 2 -->
+                    <div class="media-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-type="videos">
+                        <div class="relative">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20traditional%20textile%20weaving%20kente%20cloth%20production%20Ghana%20artisan%20woman%20working%20loom%20cultural%20heritage%20craft%20documentary%20colorful%20patterns&width=400&height=192&seq=video002&orientation=landscape');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-play-fill ri-2x text-white"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 right-3">
+                                <span class="bg-black bg-opacity-60 text-white px-2 py-1 rounded text-xs">14:22</span>
+                            </div>
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-green-600 text-white px-2 py-1 rounded text-xs font-medium">HD</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Tissage du Kente Ashanti</h3>
+                            <p class="text-gray-600 text-sm mb-3">Plongez dans l'univers fascinant du tissage traditionnel ghanéen et découvrez les secrets du kente royal.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span>Documentaire • Ghana</span>
+                                <div class="flex items-center">
+                                    <i class="ri-eye-line mr-1"></i>
+                                    <span>8.7k vues</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 bg-amber-700 text-white px-4 py-2 rounded-2xl text-sm font-medium hover:bg-amber-600 transition-colors whitespace-nowrap !rounded-button">
+                                    Regarder
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Card 3 -->
+                    <div class="media-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-type="videos">
+                        <div class="relative">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20music%20instruments%20djembe%20kora%20balafon%20traditional%20musicians%20performing%20cultural%20ceremony%20Mali%20documentary%20heritage%20musical%20traditions&width=400&height=192&seq=video003&orientation=landscape');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-play-fill ri-2x text-white"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 right-3">
+                                <span class="bg-black bg-opacity-60 text-white px-2 py-1 rounded text-xs">25:18</span>
+                            </div>
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs font-medium">360°</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Musiques Traditionnelles du Mali</h3>
+                            <p class="text-gray-600 text-sm mb-3">Une immersion à 360° dans un concert de musique traditionnelle malienne avec djembé, kora et balafon.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span>Concert • Mali</span>
+                                <div class="flex items-center">
+                                    <i class="ri-eye-line mr-1"></i>
+                                    <span>15.2k vues</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 bg-amber-700 text-white px-4 py-2 rounded-2xl text-sm font-medium hover:bg-amber-600 transition-colors whitespace-nowrap !rounded-button">
+                                    Regarder
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Card 3 -->
+                    <div class="media-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-type="videos">
+                        <div class="relative">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('data:image/jpeg;base64,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');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-play-fill ri-2x text-white"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 right-3">
+                                <span class="bg-black bg-opacity-60 text-white px-2 py-1 rounded text-xs">15:18</span>
+                            </div>
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs font-medium">360°</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Musiques Danse classique</h3>
+                            <p class="text-gray-600 text-sm mb-3">Un concert de danse classique italienne à l'opéra</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span>Concert • France</span>
+                                <div class="flex items-center">
+                                    <i class="ri-eye-line mr-1"></i>
+                                    <span>15.2k vues</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 bg-amber-700 text-white px-4 py-2 rounded-2xl text-sm font-medium hover:bg-amber-600 transition-colors whitespace-nowrap !rounded-button">
+                                    Regarder
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Card 3 -->
+                    <div class="media-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-type="videos">
+                        <div class="relative">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8biZwgBTcBPfJAoedMmtTi0-VoGtaEOjA4g&s');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-play-fill ri-2x text-white"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 right-3">
+                                <span class="bg-black bg-opacity-60 text-white px-2 py-1 rounded text-xs">12:24</span>
+                            </div>
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs font-medium">360°</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Atelier de peinture</h3>
+                            <p class="text-gray-600 text-sm mb-3">L'artiste mauritanien Oumar Ball face à la beauté et à la violence du monde.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span>Documentaire • Senegal</span>
+                                <div class="flex items-center">
+                                    <i class="ri-eye-line mr-1"></i>
+                                    <span>15.2k vues</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 bg-amber-700 text-white px-4 py-2 rounded-2xl text-sm font-medium hover:bg-amber-600 transition-colors whitespace-nowrap !rounded-button">
+                                    Regarder
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Video Card 3 -->
+                    <div class="media-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover" data-type="videos">
+                        <div class="relative">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=African%20music%20instruments%20djembe%20kora%20balafon%20traditional%20musicians%20performing%20cultural%20ceremony%20Mali%20documentary%20heritage%20musical%20traditions&width=400&height=192&seq=video003&orientation=landscape');"></div>
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                                <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full">
+                                    <i class="ri-play-fill ri-2x text-white"></i>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-3 right-3">
+                                <span class="bg-black bg-opacity-60 text-white px-2 py-1 rounded text-xs">25:18</span>
+                            </div>
+                            <div class="absolute top-3 left-3">
+                                <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs font-medium">360°</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2">Musiques Traditionnelles du Mali</h3>
+                            <p class="text-gray-600 text-sm mb-3">Une immersion à 360° dans un concert de musique traditionnelle malienne avec djembé, kora et balafon.</p>
+                            <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                                <span>Concert • Mali</span>
+                                <div class="flex items-center">
+                                    <i class="ri-eye-line mr-1"></i>
+                                    <span>15.2k vues</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="flex-1 bg-amber-700 text-white px-4 py-2 rounded-2xl text-sm font-medium hover:bg-amber-600 transition-colors whitespace-nowrap !rounded-button">
+                                    Regarder
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Pagination -->
+            <div class="flex justify-center items-center space-x-2 mt-8">
+                <!-- Bouton précédent -->
+                <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">
+                    Précédent
+                </a>
+                <!-- Pages -->
+                <a href="#" class="px-3 py-2 rounded-lg bg-amber-600 text-white">1</a>
+                <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">2</a>
+                <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">3</a>
+                <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">4</a>
+                <!-- Bouton suivant -->
+                <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">
+                    Suivant
+                </a>
+            </div>
+            <script>
+    AOS.init({ duration: 800, once: true });
+            </script>
+        </body>
+    </html>

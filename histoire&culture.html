@@ -15,35 +15,98 @@
 :where([class^="ri-"])::before {
 content: "\f3c2";
 }
+
+     .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            max-height: 500px;
+        }
         </style>
     </head>
     <body class="bg-white">
-        <header class="bg-amber-900 text-white shadow-lg sticky top-0 z-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <div class="flex items-center space-x-8">
-                        <div class="w-14"><img src="Logo_MCN.png" alt=""></div>
-                        <nav class="hidden md:flex space-x-8">
-                            <a href="/" class="hover:text-amber-200 transition-colors font-medium">Accueil</a>
-                            <a href="/catalogue" class="hover:text-amber-200 transition-colors font-medium ">Catalogue</a>
-                            <a href="/histoire" class="text-amber-200 transition-colors font-medium border-b-2 border-amber-200 pb-1">Histoire & Culture</a>
-                            <a href="/multimedia" class="hover:text-amber-200 transition-colors font-medium">Multimédia</a>
-                            <a href="/contact" class="hover:text-amber-200 transition-colors font-medium">Contact</a>
-                        </nav>
+         <header class="bg-amber-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-0.5">
+                <div class="flex items-center space-x-8">
+                    <div>
+                        <a href="#">
+                            <img src="Logo_MCN.png" style="width: 75px;" alt="Logo" onerror="this.style.display='none'">
+                        </a>
                     </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="flex items-center space-x-2">
-                            <button class="px-3 py-1 rounded-button bg-primary text-white text-sm font-medium whitespace-nowrap">FR</button>
-                            <button class="px-3 py-1 rounded-button text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
-                            <button class="px-3 py-1 rounded-button text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">WO</button>
-                        </div>
-                        <button class="md:hidden w-8 h-8 flex items-center justify-center">
-                            <i class="ri-menu-line ri-xl"></i>
-                        </button>
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#accueil" class="text-amber-200 transition-colors font-medium border-b-2 border-amber-200 pb-1">Accueil</a>
+                        <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium">Catalogue</a>
+                        <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium">Histoire & Culture</a>
+                        <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium">Multimédia</a>
+                        <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium">Actualités</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
+                        <button class="px-3 py-1 rounded text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
+                        <button class="px-3 py-1 rounded text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">ES</button>
                     </div>
+                    <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center">
+                        <i id="menuIcon" class="ri-menu-line ri-xl"></i>
+                    </button>
                 </div>
             </div>
-        </header>
+            
+            <!-- Menu Mobile -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <nav class="flex flex-col space-y-4 py-4 border-t border-amber-800">
+                    <a href="#accueil" class="text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Accueil</a>
+                    <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Catalogue</a>
+                    <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Histoire & Culture</a>
+                    <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Multimédia</a>
+                    <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Actualités</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            
+            // Changer l'icône
+            if (mobileMenu.classList.contains('active')) {
+                menuIcon.classList.remove('ri-menu-line');
+                menuIcon.classList.add('ri-close-line');
+            } else {
+                menuIcon.classList.remove('ri-close-line');
+                menuIcon.classList.add('ri-menu-line');
+            }
+        });
+
+        // Fermer le menu lors du clic sur un lien
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.remove('ri-close-line');
+                menuIcon.classList.add('ri-menu-line');
+            });
+        });
+
+        // Fermer le menu si on redimensionne vers desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768 && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.remove('ri-close-line');
+                menuIcon.classList.add('ri-menu-line');
+            }
+        });
+    </script>
+
         <main>
             <section class="relative h-screen flex items-center justify-center overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=ancient%20african%20civilizations%20historical%20panorama%2C%20traditional%20african%20villages%20with%20thatched%20huts%2C%20baobab%20trees%2C%20african%20landscape%20with%20ancient%20kingdoms%2C%20historical%20african%20culture%2C%20left%20side%20gradient%20overlay%20for%20text%20readability%2C%20warm%20earth%20tones%20depicting%20african%20heritage%20through%20time&width=1920&height=1080&seq=herohistory001&orientation=landscape'); background-size: cover; background-position: center;">
                 <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
@@ -92,7 +155,7 @@ content: "\f3c2";
                                     <img src="https://readdy.ai/api/search-image?query=nubian%20pottery%20and%20ceramics%2C%20ancient%20kush%20kingdom%20artifacts%2C%20traditional%20african%20clay%20vessels%20with%20decorative%20patterns%2C%20archaeological%20museum%20display&width=300&height=200&seq=nubia001&orientation=landscape" alt="Céramiques Nubiennes" class="w-full h-24 object-cover object-top rounded-lg">
                                 </div>
                                 <button class="bg-secondary hover:bg-amber-800 text-white px-6 py-3 rounded-button font-semibold transition-colors whitespace-nowrap !rounded-button">
-                                    Découvrir cette période
+                                   <a href="detailsCivilisationsAntique.html"> Découvrir cette période</a>
                                 </button>
                             </div>
                         </div>
@@ -464,24 +527,21 @@ séduire par la richesse des civilisations africaines.
             </section>
             
         </main>
-        <footer class="bg-gray-900 text-white py-16">
+        <footer class="bg-amber-900 text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
                         <div class="flex items-center space-x-3 mb-6">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <i class="ri-building-line text-xl text-white"></i>
-                            </div>
-                            <h3 class="font-['Pacifico'] text-xl">logo</h3>
+                              <img src="Logo_MCN.png" style="width: 75px;" alt="">
                         </div>
-                        <p class="text-gray-400 leading-relaxed">
+                        <p class="text-white-400 leading-relaxed">
                             Découvrez la richesse des civilisations africaines dans notre musée d'exception.
-Une immersion culturelle authentique dans l'héritage du continent africain.
+                            Une immersion culturelle authentique dans l'héritage du continent africain.
                         </p>
                     </div>
                     <div>
                         <h4 class="text-lg font-bold mb-6">Navigation</h4>
-                        <ul class="space-y-3 text-gray-400">
+                        <ul class="space-y-3 text-white-400">
                             <li>
                                 <a href="#" class="hover:text-white transition-colors">Accueil</a>
                             </li>
@@ -501,7 +561,7 @@ Une immersion culturelle authentique dans l'héritage du continent africain.
                     </div>
                     <div>
                         <h4 class="text-lg font-bold mb-6">Services</h4>
-                        <ul class="space-y-3 text-gray-400">
+                        <ul class="space-y-3 text-white-400">
                             <li>
                                 <a href="#" class="hover:text-white transition-colors">Billetterie</a>
                             </li>
@@ -521,11 +581,11 @@ Une immersion culturelle authentique dans l'héritage du continent africain.
                     </div>
                     <div>
                         <h4 class="text-lg font-bold mb-6">Newsletter</h4>
-                        <p class="text-gray-400 mb-4">
+                        <p class="text-white-400 mb-4">
                             Restez informé de nos dernières expositions et événements.
                         </p>
                         <div class="flex gap-2">
-                            <input type="email" placeholder="Votre email" class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent text-sm">
+                            <input type="email" placeholder="Votre email" class="flex-1 px-4 py-2 bg-white-800 border border-white-700 rounded-lg text-white placeholder-white-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent text-sm">
                             <button class="bg-secondary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors whitespace-nowrap !rounded-button">
                                 <div class="w-4 h-4 flex items-center justify-center">
                                     <i class="ri-send-plane-line text-sm"></i>
@@ -534,24 +594,18 @@ Une immersion culturelle authentique dans l'héritage du continent africain.
                         </div>
                     </div>
                 </div>
-                <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="border-t border-white-800 mt-12 pt-8">
                     <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <div class="flex space-x-6 text-gray-400 text-sm">
+                        <div class="flex space-x-6 text-white-400 text-sm">
                             <a href="#" class="hover:text-white transition-colors">Mentions Légales</a>
                             <a href="#" class="hover:text-white transition-colors">Politique de Confidentialité</a>
                             <a href="#" class="hover:text-white transition-colors">CGU</a>
                         </div>
                         <div class="flex items-center space-x-4">
-                            <span class="text-gray-400 text-sm">Partenaires :</span>
-                            <div class="w-6 h-6 flex items-center justify-center">
-                                <i class="ri-visa-fill text-xl text-blue-600"></i>
-                            </div>
-                            <div class="w-6 h-6 flex items-center justify-center">
-                                <i class="ri-paypal-fill text-xl text-blue-500"></i>
-                            </div>
+                           
                         </div>
                     </div>
-                    <div class="text-center mt-6 text-gray-400 text-sm">
+                    <div class="text-center mt-6 text-white-400 text-sm">
                         <p>&copy; 2025 Musée des Civilisations Africaines. Tous droits réservés.</p>
                     </div>
                 </div>

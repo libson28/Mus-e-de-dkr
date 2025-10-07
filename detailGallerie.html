@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Galerie d'Art</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+        <style>
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            z-index: 10;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+        </style>
+    </head>
+    <body class="bg-black p-4 md:p-8">
+         <!-- Header -->
+        <header >
+            <a href="multimedia.html" class="text-white hover:text-amber-800" style="text-decoration: underline;"><i class="ri-arrow-left-line text-lg"></i> retourner au Galerie</a>
+        </header>
+        <br><br>
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-2">Galerie d'Art</h1>
+                <p class="text-amber-500 text-lg">Collection Contemporaine</p>
+            </div>
+            <!-- Mobile: Simple grid -->
+            <div class="grid grid-cols-2 gap-3 md:hidden">
+    <div class="gallery-item aspect-square bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=African%20pottery%20ancient%20ceramic%20vessel%20Nok%20culture%20Nigeria%20archaeological%20museum%20artifact%20traditional%20craftsmanship%20terracotta%20historical%20heritage&width=300&height=256&seq=photo005&orientation=portrait" alt="Art Abstrait">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Rêves Abstraits</h3>
+            <p class="text-gray-300 text-xs">Huile sur toile</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=African%20wooden%20sculpture%20statue%20traditional%20carving%20Dogon%20Mali%20museum%20artifact%20cultural%20heritage%20spiritual%20art%20detailed%20craftsmanship%20photography&width=300&height=256&seq=photo004&orientation=portrait" alt="Art Moderne">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Perspectives</h3>
+            <p class="text-gray-300 text-xs">Acrylique</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-green-500 to-teal-400 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=African%20textile%20kente%20cloth%20colorful%20geometric%20patterns%20traditional%20weaving%20Ghana%20cultural%20heritage%20museum%20display%20vibrant%20colors%20detailed%20macro%20photography&width=300&height=256&seq=photo003&orientation=portrait" alt="Art Contemporain">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Nature Vivante</h3>
+            <p class="text-gray-300 text-xs">Technique mixte</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-yellow-500 to-red-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20detailed%20close%20up%20museum%20artifact%20Benin%20kingdom%20royal%20art%20metalwork%20cultural%20heritage%20professional%20photography&width=300&height=256&seq=photo002&orientation=portrait" alt="Expressionnisme">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Énergie</h3>
+            <p class="text-gray-300 text-xs">Art numérique</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-indigo-600 to-purple-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=African%20museum%20interior%20exhibition%20hall%20with%20traditional%20masks%20sculptures%20artifacts%20elegant%20display%20lighting%20visitors%20cultural%20heritage%20showcase&width=300&height=256&seq=photo001&orientation=portrait" alt="Minimalisme">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Sérénité</h3>
+            <p class="text-gray-300 text-xs">Minimaliste</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=African%20children%20learning%20about%20cultural%20heritage%20museum%20educational%20program%20traditional%20stories%20cultural%20transmission%20young%20generation&width=300&height=144&seq=media004&orientation=landscape" alt="Pop Art">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Vibrant</h3>
+            <p class="text-gray-300 text-xs">Pop Art</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=African%20museum%20conservation%20restoration%20expert%20working%20on%20ancient%20artifacts%20preservation%20cultural%20heritage%20laboratory%20scientific%20approach&width=300&height=144&seq=media003&orientation=landscape" alt="Surréalisme">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Rêverie</h3>
+            <p class="text-gray-300 text-xs">Surréaliste</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=African%20craftsman%20artisan%20working%20traditional%20pottery%20sculpture%20workshop%20cultural%20heritage%20skills%20transmission%20museum%20documentation&width=300&height=144&seq=media002&orientation=landscape" alt="Impressionnisme">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Lumière et Ombre</h3>
+            <p class="text-gray-300 text-xs">Impressionniste</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-lime-500 to-green-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=African%20traditional%20dance%20performance%20cultural%20ceremony%20colorful%20costumes%20drums%20music%20heritage%20celebration%20museum%20event&width=300&height=144&seq=media001&orientation=landscape" alt="Art Urbain">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Urbain</h3>
+            <p class="text-gray-300 text-xs">Street Art</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=African%20museum%20gallery%20visitors%20exploring%20exhibitions%20cultural%20artifacts%20display%20modern%20interior%20architecture%20people%20admiring%20traditional%20art%20collections&width=600&height=320&seq=gallery001&orientation=landscape" alt="Cubisme">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Géométrie</h3>
+            <p class="text-gray-300 text-xs">Cubiste</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-sky-500 to-indigo-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations&width=320&height=256&seq=art001&orientation=landscape" alt="Expressionnisme">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Émotion</h3>
+            <p class="text-gray-300 text-xs">Expressionniste</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-red-500 to-pink-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=Traditional%20African%20wooden%20sculpture%20statue%20carved%20figure%20tribal%20art%20museum%20exhibition%20cultural%20artifact%20black%20wood%20craftsmanship%20ancestral%20heritage%20display&width=320&height=256&seq=art002&orientation=landscape" alt="Art Conceptuel">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Concept</h3>
+            <p class="text-gray-300 text-xs">Art conceptuel</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations&width=320&height=256&seq=art001&orientation=landscape" alt="Réalisme">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Réalité</h3>
+            <p class="text-gray-300 text-xs">Réaliste</p>
+        </div>
+    </div>
+    <div class="gallery-item aspect-square bg-gradient-to-br from-orange-500 to-red-500 rounded-lg shadow-xl">
+        <img src="https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations&width=320&height=256&seq=art001&orientation=landscape" alt="Fauvisme">
+        <div class="overlay">
+            <h3 class="text-white font-bold text-sm">Couleur Sauvage</h3>
+            <p class="text-gray-300 text-xs">Fauviste</p>
+        </div>
+    </div>
+</div>
+
+            <div class="grid grid-cols-2 gap-3 md:hidden">
+                <div class="gallery-item aspect-square bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800" alt="Art Abstrait">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Rêves Abstraits</h3>
+                        <p class="text-gray-300 text-xs">Huile sur toile</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800" alt="Art Moderne">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Perspectives</h3>
+                        <p class="text-gray-300 text-xs">Acrylique</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-green-500 to-teal-400 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=800" alt="Art Contemporain">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Nature Vivante</h3>
+                        <p class="text-gray-300 text-xs">Technique mixte</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-yellow-500 to-red-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800" alt="Expressionnisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Énergie</h3>
+                        <p class="text-gray-300 text-xs">Art numérique</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-indigo-600 to-purple-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1578301978162-7aae4d755744?w=800" alt="Minimalisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Sérénité</h3>
+                        <p class="text-gray-300 text-xs">Minimaliste</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=800" alt="Pop Art">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Vibrant</h3>
+                        <p class="text-gray-300 text-xs">Pop Art</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800" alt="Surréalisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Rêverie</h3>
+                        <p class="text-gray-300 text-xs">Surréaliste</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800" alt="Impressionnisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Lumière et Ombre</h3>
+                        <p class="text-gray-300 text-xs">Impressionniste</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-lime-500 to-green-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800" alt="Art Urbain">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Urbain</h3>
+                        <p class="text-gray-300 text-xs">Street Art</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800" alt="Cubisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Géométrie</h3>
+                        <p class="text-gray-300 text-xs">Cubiste</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-sky-500 to-indigo-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1583225214464-9296029427aa?w=800" alt="Expressionnisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Émotion</h3>
+                        <p class="text-gray-300 text-xs">Expressionniste</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-red-500 to-pink-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1549887534-1541e9326642?w=800" alt="Art Conceptuel">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Concept</h3>
+                        <p class="text-gray-300 text-xs">Art conceptuel</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800" alt="Réalisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Réalité</h3>
+                        <p class="text-gray-300 text-xs">Réaliste</p>
+                    </div>
+                </div>
+                <div class="gallery-item aspect-square bg-gradient-to-br from-orange-500 to-red-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800" alt="Fauvisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-sm">Couleur Sauvage</h3>
+                        <p class="text-gray-300 text-xs">Fauviste</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Desktop: Complex grid layout -->
+            <div class="hidden md:grid md:grid-cols-5 md:grid-rows-8 gap-3 h-[800px]">
+                <!-- Image 1 -->
+                <div class="gallery-item col-span-2 row-span-2 bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20pottery%20ancient%20ceramic%20vessel%20Nok%20culture%20Nigeria%20archaeological%20museum%20artifact%20traditional%20craftsmanship%20terracotta%20historical%20heritage&width=300&height=256&seq=photo005&orientation=portrait" alt="Poterie Nok">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Céramique Nok</h3>
+                        <p class="text-gray-300 text-sm">Terre cuite traditionnelle</p>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="gallery-item row-span-2 col-start-3 bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20wooden%20sculpture%20statue%20traditional%20carving%20Dogon%20Mali%20museum%20artifact%20cultural%20heritage%20spiritual%20art%20detailed%20craftsmanship%20photography&width=300&height=256&seq=photo004&orientation=portrait" alt="Sculpture Dogon">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Sculpture Dogon</h3>
+                        <p class="text-gray-300 text-sm">Bois sculpté du Mali</p>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="gallery-item row-span-2 col-start-4 bg-gradient-to-br from-green-500 to-teal-400 rounded-lg shadow-xl">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpQBrHHolkCHl7A_XnI77eBhMbX_4l3M6lCA&s" alt="Tissu Kente">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">pot Kente</h3>
+                        <p class="text-gray-300 text-sm">Conserve ancien venant du Ghana</p>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="gallery-item row-span-2 col-start-5 bg-gradient-to-br from-yellow-500 to-red-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20detailed%20close%20up%20museum%20artifact%20Benin%20kingdom%20royal%20art%20metalwork%20cultural%20heritage%20professional%20photography&width=300&height=256&seq=photo002&orientation=portrait" alt="Bronze du Bénin">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Bronze du Bénin</h3>
+                        <p class="text-gray-300 text-sm">Art royal en métal</p>
+                    </div>
+                </div>
+                <!-- Image 9 -->
+                <div class="gallery-item row-span-3 col-start-1 row-start-3 bg-gradient-to-br from-indigo-600 to-purple-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20museum%20interior%20exhibition%20hall%20with%20traditional%20masks%20sculptures%20artifacts%20elegant%20display%20lighting%20visitors%20cultural%20heritage%20showcase&width=300&height=256&seq=photo001&orientation=portrait" alt="Musée Africain">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Galerie du Musée</h3>
+                        <p class="text-gray-300 text-sm">Exposition permanente</p>
+                    </div>
+                </div>
+                <!-- Image 8 -->
+                <div class="gallery-item row-span-2 col-start-2 row-start-3 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20children%20learning%20about%20cultural%20heritage%20museum%20educational%20program%20traditional%20stories%20cultural%20transmission%20young%20generation&width=300&height=144&seq=media004&orientation=landscape" alt="Éducation Culturelle">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Transmission</h3>
+                        <p class="text-gray-300 text-sm">Programme éducatif</p>
+                    </div>
+                </div>
+                <!-- Image 7 -->
+                <div class="gallery-item row-span-2 col-start-3 row-start-3 bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20museum%20conservation%20restoration%20expert%20working%20on%20ancient%20artifacts%20preservation%20cultural%20heritage%20laboratory%20scientific%20approach&width=300&height=144&seq=media003&orientation=landscape" alt="Conservation">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Conservation</h3>
+                        <p class="text-gray-300 text-sm">Restauration d'artifacts</p>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-4 row-start-3 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20craftsman%20artisan%20working%20traditional%20pottery%20sculpture%20workshop%20cultural%20heritage%20skills%20transmission%20museum%20documentation&width=300&height=144&seq=media002&orientation=landscape" alt="Artisan">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Savoir-Faire</h3>
+                        <p class="text-gray-300 text-sm">Artisan potier</p>
+                    </div>
+                </div>
+                <!-- Image 10 -->
+                <div class="gallery-item row-span-2 col-start-2 row-start-5 bg-gradient-to-br from-lime-500 to-green-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20traditional%20dance%20performance%20cultural%20ceremony%20colorful%20costumes%20drums%20music%20heritage%20celebration%20museum%20event&width=300&height=144&seq=media001&orientation=landscape" alt="Danse Traditionnelle">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Danse Rituelle</h3>
+                        <p class="text-gray-300 text-sm">Cérémonie culturelle</p>
+                    </div>
+                </div>
+                <!-- Image 11 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-3 row-start-5 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20museum%20gallery%20visitors%20exploring%20exhibitions%20cultural%20artifacts%20display%20modern%20interior%20architecture%20people%20admiring%20traditional%20art%20collections&width=600&height=320&seq=gallery001&orientation=landscape" alt="Visiteurs">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Espace d'Exposition</h3>
+                        <p class="text-gray-300 text-sm">Architecture moderne</p>
+                    </div>
+                </div>
+                <!-- Image 12 -->
+                <div class="gallery-item row-span-2 col-start-5 row-start-5 bg-gradient-to-br from-sky-500 to-indigo-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations&width=320&height=256&seq=art001&orientation=landscape" alt="Masque du Bénin">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Masque Royal</h3>
+                        <p class="text-gray-300 text-sm">Royaume du Bénin</p>
+                    </div>
+                </div>
+                <!-- Image 13 -->
+                <div class="gallery-item row-span-3 row-start-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20African%20wooden%20sculpture%20statue%20carved%20figure%20tribal%20art%20museum%20exhibition%20cultural%20artifact%20black%20wood%20craftsmanship%20ancestral%20heritage%20display&width=320&height=256&seq=art002&orientation=landscape" alt="Statue Ancestrale">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Statue Ancestrale</h3>
+                        <p class="text-gray-300 text-sm">Sculpture en bois noir</p>
+                    </div>
+                </div>
+                <!-- Image 15 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-2 row-start-7 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20pottery%20ancient%20ceramic%20vessel%20Nok%20culture%20Nigeria%20archaeological%20museum%20artifact%20traditional%20craftsmanship%20terracotta%20historical%20heritage&width=300&height=256&seq=photo005&orientation=portrait" alt="Vase Ancien">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Vase Cérémoniel</h3>
+                        <p class="text-gray-300 text-sm">Culture Nok</p>
+                    </div>
+                </div>
+                <!-- Image 14 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-4 row-start-7 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20wooden%20sculpture%20statue%20traditional%20carving%20Dogon%20Mali%20museum%20artifact%20cultural%20heritage%20spiritual%20art%20detailed%20craftsmanship%20photography&width=300&height=256&seq=photo004&orientation=portrait" alt="Art Dogon">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Art Spirituel</h3>
+                        <p class="text-gray-300 text-sm">Tradition Dogon</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:grid md:grid-cols-5 md:grid-rows-8 gap-3 h-[800px]">
+                <!-- Image 1 -->
+                <div class="gallery-item col-span-2 row-span-2 bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20textile%20kente%20cloth%20colorful%20geometric%20patterns%20traditional%20weaving%20Ghana%20cultural%20heritage%20museum%20display%20vibrant%20colors%20detailed%20macro%20photography&width=300&height=256&seq=photo003&orientation=portrait" alt="Textile Traditionnel">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Motifs Géométriques</h3>
+                        <p class="text-gray-300 text-sm">Kente du Ghana</p>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="gallery-item row-span-2 col-start-3 bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20museum%20interior%20exhibition%20hall%20with%20traditional%20masks%20sculptures%20artifacts%20elegant%20display%20lighting%20visitors%20cultural%20heritage%20showcase&width=300&height=256&seq=photo001&orientation=portrait" alt="Collection">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Collection Permanente</h3>
+                        <p class="text-gray-300 text-sm">Masques et sculptures</p>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="gallery-item row-span-2 col-start-4 bg-gradient-to-br from-green-500 to-teal-400 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20children%20learning%20about%20cultural%20heritage%20museum%20educational%20program%20traditional%20stories%20cultural%20transmission%20young%20generation&width=300&height=144&seq=media004&orientation=landscape" alt="Jeunesse">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Nouvelle Génération</h3>
+                        <p class="text-gray-300 text-sm">Apprentissage culturel</p>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="gallery-item row-span-2 col-start-5 bg-gradient-to-br from-yellow-500 to-red-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20museum%20conservation%20restoration%20expert%20working%20on%20ancient%20artifacts%20preservation%20cultural%20heritage%20laboratory%20scientific%20approach&width=300&height=144&seq=media003&orientation=landscape" alt="Laboratoire">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Préservation</h3>
+                        <p class="text-gray-300 text-sm">Approche scientifique</p>
+                    </div>
+                </div>
+                <!-- Image 9 -->
+                <div class="gallery-item row-span-3 col-start-1 row-start-3 bg-gradient-to-br from-indigo-600 to-purple-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20craftsman%20artisan%20working%20traditional%20pottery%20sculpture%20workshop%20cultural%20heritage%20skills%20transmission%20museum%20documentation&width=300&height=144&seq=media002&orientation=landscape" alt="Atelier">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Atelier Traditionnel</h3>
+                        <p class="text-gray-300 text-sm">Transmission des savoirs</p>
+                    </div>
+                </div>
+                <!-- Image 8 -->
+                <div class="gallery-item row-span-2 col-start-2 row-start-3 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20traditional%20dance%20performance%20cultural%20ceremony%20colorful%20costumes%20drums%20music%20heritage%20celebration%20museum%20event&width=300&height=144&seq=media001&orientation=landscape" alt="Performance">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Célébration</h3>
+                        <p class="text-gray-300 text-sm">Musique et danse</p>
+                    </div>
+                </div>
+                <!-- Image 7 -->
+                <div class="gallery-item row-span-2 col-start-3 row-start-3 bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20museum%20gallery%20visitors%20exploring%20exhibitions%20cultural%20artifacts%20display%20modern%20interior%20architecture%20people%20admiring%20traditional%20art%20collections&width=600&height=320&seq=gallery001&orientation=landscape" alt="Découverte">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Découverte</h3>
+                        <p class="text-gray-300 text-sm">Parcours muséal</p>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-4 row-start-3 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations&width=320&height=256&seq=art001&orientation=landscape" alt="Trésor">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Trésor Royal</h3>
+                        <p class="text-gray-300 text-sm">Métallurgie ancienne</p>
+                    </div>
+                </div>
+                <!-- Image 10 -->
+                <div class="gallery-item row-span-2 col-start-2 row-start-5 bg-gradient-to-br from-lime-500 to-green-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=Traditional%20African%20wooden%20sculpture%20statue%20carved%20figure%20tribal%20art%20museum%20exhibition%20cultural%20artifact%20black%20wood%20craftsmanship%20ancestral%20heritage%20display&width=320&height=256&seq=art002&orientation=landscape" alt="Sculpture Tribale">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Art Tribal</h3>
+                        <p class="text-gray-300 text-sm">Figure sculptée</p>
+                    </div>
+                </div>
+                <!-- Image 11 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-3 row-start-5 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-lg shadow-xl">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSHOjmscN74lkFH3vMbGol03MeI7N_hTujjw&s" alt="Héritage">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Héritage Ancien</h3>
+                        <p class="text-gray-300 text-sm">Civilisations noires</p>
+                    </div>
+                </div>
+                <!-- Image 12 -->
+                <div class="gallery-item row-span-2 col-start-5 row-start-5 bg-gradient-to-br from-sky-500 to-indigo-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20pottery%20ancient%20ceramic%20vessel%20Nok%20culture%20Nigeria%20archaeological%20museum%20artifact%20traditional%20craftsmanship%20terracotta%20historical%20heritage&width=300&height=256&seq=photo005&orientation=portrait" alt="Archéologie">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Archéologie</h3>
+                        <p class="text-gray-300 text-sm">Artefact historique</p>
+                    </div>
+                </div>
+                <!-- Image 13 -->
+                <div class="gallery-item row-span-3 row-start-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20wooden%20sculpture%20statue%20traditional%20carving%20Dogon%20Mali%20museum%20artifact%20cultural%20heritage%20spiritual%20art%20detailed%20craftsmanship%20photography&width=300&height=256&seq=photo004&orientation=portrait" alt="Spiritualité">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Spiritualité</h3>
+                        <p class="text-gray-300 text-sm">Art sacré Dogon</p>
+                    </div>
+                </div>
+                <!-- Image 15 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-2 row-start-7 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=African%20textile%20kente%20cloth%20colorful%20geometric%20patterns%20traditional%20weaving%20Ghana%20cultural%20heritage%20museum%20display%20vibrant%20colors%20detailed%20macro%20photography&width=300&height=256&seq=photo003&orientation=portrait" alt="Textile Royal">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Textile Royal</h3>
+                        <p class="text-gray-300 text-sm">Couleurs vibrantes</p>
+                    </div>
+                </div>
+                <!-- Image 14 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-4 row-start-7 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg shadow-xl">
+                    <img src="https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20detailed%20close%20up%20museum%20artifact%20Benin%20kingdom%20royal%20art%20metalwork%20cultural%20heritage%20professional%20photography&width=300&height=256&seq=photo002&orientation=portrait" alt="Artisanat Royal">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Artisanat Royal</h3>
+                        <p class="text-gray-300 text-sm">Détails raffinés</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:grid md:grid-cols-5 md:grid-rows-8 gap-3 h-[800px]">
+                <!-- Image 1 -->
+                <div class="gallery-item col-span-2 row-span-2 bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800" alt="Art Abstrait">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Rêves Abstraits</h3>
+                        <p class="text-gray-300 text-sm">Huile sur toile</p>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="gallery-item row-span-2 col-start-3 bg-gradient-to-br from-pink-500 to-orange-400 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800" alt="Art Moderne">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Perspectives</h3>
+                        <p class="text-gray-300 text-sm">Acrylique</p>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="gallery-item row-span-2 col-start-4 bg-gradient-to-br from-green-500 to-teal-400 rounded-lg shadow-xl">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy2A3OTWHitzRVV__snISsiDitiCwrP1obvw&s" alt="Art Contemporain">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Nature Vivante</h3>
+                        <p class="text-gray-300 text-sm">Technique mixte</p>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="gallery-item row-span-2 col-start-5 bg-gradient-to-br from-yellow-500 to-red-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=800" alt="Expressionnisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Énergie</h3>
+                        <p class="text-gray-300 text-sm">Art numérique</p>
+                    </div>
+                </div>
+                <!-- Image 9 -->
+                <div class="gallery-item row-span-3 col-start-1 row-start-3 bg-gradient-to-br from-indigo-600 to-purple-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1578301978162-7aae4d755744?w=800" alt="Minimalisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Sérénité</h3>
+                        <p class="text-gray-300 text-sm">Minimaliste</p>
+                    </div>
+                </div>
+                <!-- Image 8 -->
+                <div class="gallery-item row-span-2 col-start-2 row-start-3 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg shadow-xl">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzqHDeWsaOaXAKSrLSAovpAHg186cMO0Rw8A&s" alt="Pop Art">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Vibrant</h3>
+                        <p class="text-gray-300 text-sm">Pop Art</p>
+                    </div>
+                </div>
+                <!-- Image 7 -->
+                <div class="gallery-item row-span-2 col-start-3 row-start-3 bg-gradient-to-br from-rose-500 to-pink-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800" alt="Surréalisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Rêverie</h3>
+                        <p class="text-gray-300 text-sm">Surréaliste</p>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-4 row-start-3 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=800" alt="Impressionnisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Lumière et Ombre</h3>
+                        <p class="text-gray-300 text-sm">Impressionniste</p>
+                    </div>
+                </div>
+                <!-- Image 10 -->
+                <div class="gallery-item row-span-2 col-start-2 row-start-5 bg-gradient-to-br from-lime-500 to-green-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800" alt="Art Urbain">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Urbain</h3>
+                        <p class="text-gray-300 text-sm">Street Art</p>
+                    </div>
+                </div>
+                <!-- Image 11 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-3 row-start-5 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-lg shadow-xl">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHhZt4KFdvq1b-D-zQyG6wtmOU_AGFMAM0Ug&s" alt="Cubisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Géométrie</h3>
+                        <p class="text-gray-300 text-sm">Cubiste</p>
+                    </div>
+                </div>
+                <!-- Image 12 -->
+                <div class="gallery-item row-span-2 col-start-5 row-start-5 bg-gradient-to-br from-sky-500 to-indigo-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1583225214464-9296029427aa?w=800" alt="Expressionnisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Émotion</h3>
+                        <p class="text-gray-300 text-sm">Expressionniste</p>
+                    </div>
+                </div>
+                <!-- Image 13 -->
+                <div class="gallery-item row-span-3 row-start-6 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg shadow-xl">
+                    <img src="data:image/jpeg;base64,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" alt="Art Conceptuel">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Concept</h3>
+                        <p class="text-gray-300 text-sm">Art conceptuel</p>
+                    </div>
+                </div>
+                <!-- Image 15 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-2 row-start-7 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=800" alt="Réalisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Réalité</h3>
+                        <p class="text-gray-300 text-sm">Réaliste</p>
+                    </div>
+                </div>
+                <!-- Image 14 -->
+                <div class="gallery-item col-span-2 row-span-2 col-start-4 row-start-7 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800" alt="Fauvisme">
+                    <div class="overlay">
+                        <h3 class="text-white font-bold text-lg">Couleur Sauvage</h3>
+                        <p class="text-gray-300 text-sm">Fauviste</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

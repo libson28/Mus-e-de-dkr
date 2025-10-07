@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Liste des Podcasts</title>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+        <script>
+            tailwind.config = {
+            theme: {
+            extend: {
+            colors: {
+            primary: '#D97706',
+            secondary: '#92400E'
+            },
+            borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+            }
+            }
+            }
+            }
+        </script>
+        <style>
+        .card-hover:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+        }
+        .active-lang {
+          background-color: rgb(217 119 6); /* amber-600 */
+          color: white;
+        }
+        .accent {
+          background-color: rgb(217 119 6); /* amber-600 */
+        }
+        .accent-text {
+          color: rgb(217 119 6);
+        }
+
+        @media screen and (max-width:700px){
+          #page-title{
+            font-size: 19px !important;
+          }
+        }
+        @media screen and (max-width:530px){
+        .inverse{
+          flex-direction: column !important;
+          padding-bottom: 10px;
+        }
+
+        .SearchBar{
+          margin-top: -17px;
+        }
+        }
+        </style>
+    </head>
+    <body class="bg-amber-50 min-h-screen text-gray-800">
+        <!-- Header -->
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+                <!-- Retour -->
+                <button onclick="window.location.href='index.html'" class="text-sm accent-text hover:underline">
+                    <a href="multimedia.html">
+                        <i class="ri-arrow-left-line text-lg"></i> Retour à l’accueil
+                    </a>
+                </button>
+                <div class="flex items-center gap-3">
+                    <!-- Sélecteur de langue -->
+                    <div class="flex bg-gray-100 rounded-full overflow-hidden text-sm">
+                        <button class="lang-btn px-3 py-1 hover:bg-amber-600 hover:text-white" data-lang="fr">FR</button>
+                        <button class="lang-btn px-3 py-1 hover:bg-amber-600 hover:text-white" data-lang="wo">WO</button>
+                        <button class="lang-btn px-3 py-1 hover:bg-amber-600 hover:text-white" data-lang="en">EN</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Contenu principal -->
+        <main class="max-w-6xl mx-auto px-6 py-10">
+            <div class="flex justify-between inverse">
+                <div>
+                    <h2 id="page-title" class="text-3xl font-bold mb-8 accent-text">🎧 Nos Séries de Podcasts</h2>
+                </div>
+                <div>
+                    <!-- Search Bar -->
+                    <div class="flex-1 SearchBar">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                <i class="ri-search-line ri-lg text-gray-400"></i>
+                            </div>
+                            <input
+                                type="text"
+                                id="searchInput"
+                                placeholder="Rechercher une Podcast"
+                                class="w-full pl-12 pr-4 py-3 text-sm border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Conteneur des séries -->
+            <div id="series-container" class="grid gap-10">
+                <!-- Contenu généré par JS --></div>
+        </main>
+        <!-- Pagination -->
+        <div class="flex justify-center items-center space-x-2 mt-8">
+            <!-- Bouton précédent -->
+            <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">
+                Précédent
+            </a>
+            <!-- Pages -->
+            <a href="#" class="px-3 py-2 rounded-lg bg-amber-600 text-white">1</a>
+            <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">2</a>
+            <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">3</a>
+            <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">4</a>
+            <!-- Bouton suivant -->
+            <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">
+                Suivant
+            </a>
+        </div>
+        <br>
+        <script>
+    const data = {
+      fr: [
+        {
+          title: "Contes du Griot Mamadou",
+          desc: "Découvrez la série complète des contes mandingues racontés par le griot Mamadou.",
+          episodes: [
+            { title: "Épisode 1 : L’Épopée de Soundjata", desc: "L’histoire du roi Soundjata Keïta, fondateur de l’empire du Mali.", duration: "12:34" },
+            { title: "Épisode 2 : La Sagesse du Baobab", desc: "Les leçons de patience apprises auprès d’un vieux baobab.", duration: "10:12" },
+          ],
+        },
+        {
+          title: "Coulisses du Musée",
+          desc: "Plongez dans les entretiens avec les conservateurs et historiens du Musée.",
+          episodes: [
+            { title: "Interview : Dr. Aminata Traoré", desc: "Une discussion sur la conservation du patrimoine africain.", duration: "18:42" },
+            { title: "Épisode : Restaurer les Trésors", desc: "Comment les artefacts anciens reprennent vie.", duration: "14:20" },
+          ],
+        },
+        {
+          title: "Voix de l’Héritage",
+          desc: "Des artistes, griots et penseurs partagent leur vision du patrimoine africain.",
+          episodes: [
+            { title: "Épisode 1 : Les Tambours de la Mémoire", desc: "L’art du tambour comme gardien de l’histoire.", duration: "11:30" },
+            { title: "Épisode 2 : Les Femmes et la Transmission", desc: "La parole féminine au cœur de la tradition orale.", duration: "13:05" },
+          ],
+        },
+      ],
+      wo: [
+        {
+          title: "Leeral yi Mamadou Griot",
+          desc: "Tale yi ci cosaan manding gi ak waxi griot bi Mamadou.",
+          episodes: [
+            { title: "Tale 1 : Soundjata Keita", desc: "Nataal bu nekk ci njaboot bu Mag gi ci Mali.", duration: "12:34" },
+            { title: "Tale 2 : Xam-xam bu Baobab", desc: "Jàng ci géej gi ak njub ak muñ.", duration: "10:12" },
+          ],
+        },
+        {
+          title: "Ci Biir Musé bi",
+          desc: "Nataal ak waa musé yi ci liggéey ak cosaan.",
+          episodes: [
+            { title: "Interview : Dr. Aminata Traoré", desc: "Wax ci cosaan ak ndam-u Afrig.", duration: "18:42" },
+            { title: "Episode : Jàpp ci Trezo yi", desc: "Ndax nuy def jàngalekat ci kër gi.", duration: "14:20" },
+          ],
+        },
+        {
+          title: "Dëggu Cosaan bi",
+          desc: "Nit ñi di wax ci leeral ak xam-xam Afrig.",
+          episodes: [
+            { title: "Episode 1 : Tambour yi", desc: "Njàng ci artu tambour ak gëstu.", duration: "11:30" },
+            { title: "Episode 2 : Jigéen ak làkk gi", desc: "Li jigéen di jàpp ci cosaan gi.", duration: "13:05" },
+          ],
+        },
+      ],
+      en: [
+        {
+          title: "Tales of Griot Mamadou",
+          desc: "Discover the Mandinka tales narrated by Griot Mamadou.",
+          episodes: [
+            { title: "Episode 1: The Epic of Soundjata", desc: "The story of Soundjata Keïta, founder of the Mali Empire.", duration: "12:34" },
+            { title: "Episode 2: The Wisdom of the Baobab", desc: "Lessons of patience from an ancient baobab tree.", duration: "10:12" },
+          ],
+        },
+        {
+          title: "Behind the Museum",
+          desc: "Go behind the scenes with the museum’s curators and historians.",
+          episodes: [
+            { title: "Interview: Dr. Aminata Traoré", desc: "A talk about African heritage preservation.", duration: "18:42" },
+            { title: "Episode: Restoring the Treasures", desc: "The art of bringing ancient artifacts back to life.", duration: "14:20" },
+          ],
+        },
+        {
+          title: "Voices of Heritage",
+          desc: "Artists and thinkers share their views on African legacy.",
+          episodes: [
+            { title: "Episode 1: Drums of Memory", desc: "How drums preserve history and unity.", duration: "11:30" },
+            { title: "Episode 2: Women and Transmission", desc: "The role of women in oral storytelling.", duration: "13:05" },
+          ],
+        },
+      ],
+    };
+
+    // --- Affichage d'une langue donnée ---
+    function renderLang(lang = 'fr') {
+      const seriesList = data[lang];
+      const container = document.getElementById('series-container');
+      container.innerHTML = '';
+
+      seriesList.forEach(serie => {
+        const serieCard = document.createElement('div');
+        serieCard.className = 'bg-white rounded-2xl shadow-md card-hover overflow-hidden';
+
+        // Bandeau supérieur amber
+        serieCard.innerHTML = `
+          <div class="accent px-6 py-4 text-white">
+            <h3 class="text-xl font-semibold">${serie.title}</h3>
+            <p class="text-sm opacity-90">${serie.desc}</p>
+          </div>
+          <div class="p-6 space-y-4">
+            ${serie.episodes.map((ep, i) => `
+              <div class="bg-amber-50 rounded-xl p-4">
+                <div class="flex justify-between items-center mb-1">
+                  <h4 class="font-medium text-gray-900">${ep.title}</h4>
+                  <span class="text-xs text-gray-600">${ep.duration}</span>
+                </div>
+                <p class="text-sm text-gray-700 mb-2">${ep.desc}</p>
+                <audio controls class="w-full rounded-lg">
+                  <source src="audio/${serie.title.replace(/\s+/g,'').toLowerCase()}${i+1}.mp3" type="audio/mpeg">
+                  Votre navigateur ne supporte pas la lecture audio.
+                </audio>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        container.appendChild(serieCard);
+      });
+
+      // Mise à jour du bouton de langue actif
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active-lang', btn.dataset.lang === lang);
+      });
+    }
+
+    // Initialisation
+    renderLang('fr');
+
+    // Gestion du changement de langue
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => renderLang(btn.dataset.lang));
+    });
+        </script>
+    </body>
+</html>

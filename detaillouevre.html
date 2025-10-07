@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Détails de l'œuvre - Lance Cérémonielle Maasaï</title>
+
+  <!-- ✅ Lien Tailwind CSS officiel (CDN propre et fonctionnel) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Lien pour les icônes Remix -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- ✅ Couleur personnalisée du thème -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#d97706',  // amber-600
+            secondary: '#b45309' // amber-700
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Conteneur principal -->
+  <main class="max-w-5xl mx-auto px-4 py-10">
+
+    <!-- Bouton retour -->
+    <a href="index.html"
+       class="inline-flex items-center text-primary hover:text-secondary mb-6 transition">
+      <i class="ri-arrow-left-line mr-2"></i> Retour aux œuvres
+    </a>
+
+    <!-- Bloc principal : image + contenu -->
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+      <div class="md:flex">
+
+        <!-- Image -->
+        <div class="md:w-1/2 h-80 md:h-auto bg-cover bg-center"
+             style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20metal%20tools%20weapons%20spears%20shields%20craftsmanship%20museum%20display%20cultural%20heritage%20Maasai%20Kenya%20traditional%20metalwork%20daily%20life%20hunting&width=640&height=480&orientation=landscape');">
+        </div>
+
+        <!-- Contenu -->
+        <div class="md:w-1/2 p-8 flex flex-col justify-between">
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900 mb-2">
+              Lance Cérémonielle Maasaï
+            </h1>
+            <p class="text-sm text-primary font-medium mb-3">XVIIIe siècle · Kenya</p>
+
+            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+              Cette lance cérémonielle, forgée selon les traditions maasaï, symbolise le passage à l'âge adulte. 
+              Utilisée lors de rituels d’initiation, elle représente la bravoure et l’honneur des jeunes guerriers. 
+              Fabriquée à partir de métal local et de bois, elle témoigne d’un savoir-faire ancestral transmis de génération en génération.
+            </p>
+
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Exposée dans la collection d’objets rituels, cette lance illustre la richesse culturelle des peuples 
+              de la vallée du Rift et l’importance du symbolisme dans les objets du quotidien.
+            </p>
+          </div>
+
+          <!-- Bloc audio -->
+          <div class="mt-6">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm font-medium text-gray-700">Écouter la description audio</span>
+              <button id="playAudio"
+                      class="w-9 h-9 flex items-center justify-center rounded-full bg-primary hover:bg-secondary text-white transition">
+                <i id="audioIcon" class="ri-play-fill text-lg"></i>
+              </button>
+            </div>
+
+            <!-- Barre de progression -->
+            <div class="relative w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+              <div id="audioProgress"
+                   class="absolute top-0 left-0 h-full bg-primary transition-all duration-200 ease-linear"
+                   style="width: 0%;"></div>
+            </div>
+
+            <audio id="audio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Galerie -->
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold mb-4 text-gray-900">Autres vues et détails</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="https://readdy.ai/api/search-image?query=African%20spear%20metal%20closeup&width=400&height=300"
+             class="rounded-xl shadow-sm hover:shadow-md transition"
+             alt="Détail 1">
+        <img src="https://readdy.ai/api/search-image?query=Maasai%20ceremonial%20weapon%20handle&width=400&height=300"
+             class="rounded-xl shadow-sm hover:shadow-md transition"
+             alt="Détail 2">
+        <img src="https://readdy.ai/api/search-image?query=African%20metal%20smith%20tool%20crafting&width=400&height=300"
+             class="rounded-xl shadow-sm hover:shadow-md transition"
+             alt="Détail 3">
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const playAudio = document.getElementById('playAudio');
+    const audioIcon = document.getElementById('audioIcon');
+    const audio = document.getElementById('audio');
+    const audioProgress = document.getElementById('audioProgress');
+
+    playAudio.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        audioIcon.classList.replace('ri-play-fill', 'ri-pause-fill');
+      } else {
+        audio.pause();
+        audioIcon.classList.replace('ri-pause-fill', 'ri-play-fill');
+      }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      const progress = (audio.currentTime / audio.duration) * 100;
+      audioProgress.style.width = `${progress}%`;
+    });
+
+    audio.addEventListener('ended', () => {
+      audioIcon.classList.replace('ri-pause-fill', 'ri-play-fill');
+      audioProgress.style.width = '0%';
+    });
+  </script>
+</body>
+</html>

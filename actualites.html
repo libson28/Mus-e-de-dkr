@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Actualités Musée</title>
+         <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+           <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+        <script>
+            tailwind.config = {
+            theme: {
+            extend: {
+            colors: {
+            primary: '#D97706',
+            secondary: '#92400E'
+            },
+            borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+            }
+            }
+            }
+            }
+        </script>
+    </head>
+    <style>
+        
+             .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+    </style>
+    <body class="bg-gray-50 text-gray-800">
+         <header class="bg-amber-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-0.5">
+                <div class="flex items-center space-x-8">
+                    <div>
+                        <a href="#">
+                            <img src="Logo_MCN.png" style="width: 75px;" alt="Logo" onerror="this.style.display='none'">
+                        </a>
+                    </div>
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="#accueil" class="text-amber-200 transition-colors font-medium border-b-2 border-amber-200 pb-1">Accueil</a>
+                        <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium">Catalogue</a>
+                        <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium">Histoire & Culture</a>
+                        <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium">Multimédia</a>
+                        <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium">Actualités</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
+                        <button class="px-3 py-1 rounded text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
+                        <button class="px-3 py-1 rounded text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">ES</button>
+                    </div>
+                    <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center">
+                        <i id="menuIcon" class="ri-menu-line ri-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Menu Mobile -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <nav class="flex flex-col space-y-4 py-4 border-t border-amber-800">
+                    <a href="#accueil" class="text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Accueil</a>
+                    <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Catalogue</a>
+                    <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Histoire & Culture</a>
+                    <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Multimédia</a>
+                    <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Actualités</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            
+            // Changer l'icône
+            if (mobileMenu.classList.contains('active')) {
+                menuIcon.classList.remove('ri-menu-line');
+                menuIcon.classList.add('ri-close-line');
+            } else {
+                menuIcon.classList.remove('ri-close-line');
+                menuIcon.classList.add('ri-menu-line');
+            }
+        });
+
+        // Fermer le menu lors du clic sur un lien
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.remove('ri-close-line');
+                menuIcon.classList.add('ri-menu-line');
+            });
+        });
+
+        // Fermer le menu si on redimensionne vers desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768 && mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                menuIcon.classList.remove('ri-close-line');
+                menuIcon.classList.add('ri-menu-line');
+            }
+        });
+    </script>
+
+         <!-- Hero Section -->
+        <section class="bg-gradient-to-r from-amber-900 to-amber-800 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center text-white">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-amber-300">
+                        Actualités
+                        <!-- <span class="text-amber-300">Multimédia</span> -->
+                    </h1>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto">
+                        Une expérience immersive à travers photos, vidéos, audio guides et contenus interactifs
+                    </p>
+                  
+                </div>
+            </div>
+        </section>
+
+        <!-- Container -->
+        <div>
+            <div class="max-w-7xl mx-auto p-4 grid lg:grid-cols-3 gap-6">
+                <!-- Colonne gauche (articles) -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Article principal -->
+                    <div class="relative rounded-xl overflow-hidden group cursor-pointer shadow-lg">
+                        <img src="https://mcn-sn.com/wp-content/uploads/2025/06/panaf-1536x1025.jpg" class="w-full h-72 object-cover group-hover:scale-105 transition duration-500" alt="Exposition principale">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-primary px-3 py-1 text-sm rounded-full">Exposition</span>
+                            <h2 class="text-2xl font-bold mt-2">Journées Culturelles Panafricaines</h2>
+                            <p class="text-sm mt-1">Publié le 6 Octobre 2025</p>
+                        </div>
+                    </div>
+                    <!-- Mini-cards -->
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <a href="#" class="block rounded-lg overflow-hidden shadow hover:shadow-xl transition group">
+                            <img src="https://mcn-sn.com/wp-content/uploads/2025/06/aba-1536x1023.jpg" class="h-40 w-full object-cover group-hover:scale-105 transition" alt="">
+                            <div class="p-3">
+                                <h3 class="font-semibold">Association of Black Anthropologists</h3>
+                            </div>
+                        </a>
+                        <a href="#" class="block rounded-lg overflow-hidden shadow hover:shadow-xl transition group">
+                            <img src="https://mcn-sn.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-14-at-12.19.27.jpeg" class="h-40 w-full object-cover group-hover:scale-105 transition" alt="">
+                            <div class="p-3">
+                                <h3 class="font-semibold">Hommage à Koyo</h3>
+                            </div>
+                        </a>
+                        <a href="#" class="block rounded-lg overflow-hidden shadow hover:shadow-xl transition group">
+                            <img src="https://mcn-sn.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-05-14-at-12.18.16-1.jpeg" class="h-40 w-full object-cover group-hover:scale-105 transition" alt="">
+                            <div class="p-3">
+                                <h3 class="font-semibold">CINE – DEBAT Omar Blondin DIOP</h3>
+                            </div>
+                        </a>
+                    </div>
+                  
+                </div>
+                <!-- Colonne droite (pub & réseaux sociaux) -->
+                <div class="space-y-6">
+                    <!-- Bloc pub / podcast -->
+                    <div class="bg-primary rounded-xl p-6 text-white shadow">
+                        <h3 class="font-bold text-lg">Podcast du Musée</h3>
+                        <p class="text-sm mt-2">Découvrez nos coulisses et interviews exclusives.</p>
+                        <a href="#" class="mt-4 inline-block bg-white text-orange-600 px-4 py-2 rounded-full font-semibold hover:bg-orange-100 transition">Écouter maintenant</a>
+                    </div>
+                    <!-- Réseaux sociaux -->
+                    <div class="bg-black rounded-xl p-6 shadow">
+                        <h3 class="font-bold text-lg mb-4 text-white">Suivez-nous</h3>
+                        <div class="space-y-2 text-white">
+                            <div class="flex justify-between">
+                                <span>Facebook</span>
+                                <span>35 590 Likes</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Instagram</span>
+                                <span>12 100 Abonnés</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Twitter</span>
+                                <span>933 Followers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-amber-900 rounded-xl p-6 shadow">
+                        <h3 class="font-bold text-lg mb-4 text-white">Horaires d'ouverture :</h3>
+                        <div class="space-y-2 text-white">
+                            <div class="flex justify-between">
+                                <span>tous les jours de : 10h00 à 19H00 Dimanches : fermé</span>
+                            </div>
+                            <h3 class="font-bold text-lg mb-4 text-white">Localisation</h3>
+                            <div class="flex justify-between">
+                                <span>Autoroute prolongée Place de la Gare/span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <!-- Articles de la semaine -->
+           <div class="p-4">
+            <div class="grid md:grid-cols-3 gap-4 container" style="margin: 0 auto;">
+                   <h2 class="text-xl font-bold mt-8 mb-4">Articles de la semaine</h2>
+            </div>
+                    <div class="grid md:grid-cols-3 gap-4 container" style="margin: 0 auto;">
+                        <a href="#" class="block rounded-lg overflow-hidden shadow hover:shadow-xl transition group">
+                            <img src="https://mcn-sn.com/wp-content/uploads/2025/05/WhatsApp-Image-2025-04-30-at-16.17.14-1.jpeg" class="h-42 w-full object-cover group-hover:scale-105 transition" alt="">
+                            <div class="p-4 text-sm">
+                                <h1 class="font-bold">Première ligne</h1>
+                            </div>
+                        </a>
+                        <a href="#" class="block rounded-lg overflow-hidden shadow hover:shadow-xl transition group">
+                            <img src="https://mcn-sn.com/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-10-at-13.23.30.jpeg" class="h-42 w-full object-cover group-hover:scale-105 transition" alt="">
+                            <div class="p-4 text-sm">
+                                <h1 class="font-bold">Vernissage de l’exposition ABAFA(BA)ZI</h1>
+                            </div>
+                        </a>
+                        <a href="#" class="block rounded-lg overflow-hidden shadow hover:shadow-xl transition group">
+                            <img src="https://mcn-sn.com/wp-content/uploads/2024/10/bien5-1536x1044.jpg" class="h-42 w-full object-cover group-hover:scale-105 transition" alt="">
+                            <div class="p-4 text-sm">
+                                <h1 class="font-bold">vernissage de l’Exposition «Li Demoon Dikkaat-Les restitués »</h1>
+                            </div>
+                        </a>
+                        <a href="#" class="block rounded-lg overflow-hidden shadow hover:shadow-xl transition group">
+                            <img src="https://mcn-sn.com/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-14-at-16.37.10-1.jpeg" class="h-42 w-full object-cover group-hover:scale-105 transition" alt="">
+                            <div class="p-4 text-sm">
+                                <h1 class="font-bold">Album-photo du vernissage de l’exposition « Kéeman-Faire des merveilles »</h1>
+                            </div>
+                        </a>
+                        <a href="#" class="block rounded-lg overflow-hidden shadow hover:shadow-xl transition group">
+                            <img src="https://mcn-sn.com/wp-content/uploads/2024/12/Visuel_MCN_Site_web_Plan-de-travail-1.png" class="h-42 w-full object-cover group-hover:scale-105 transition" alt="">
+                            <div class="p-4 text-sm">
+                                <h1 class="font-bold">FAIRE DES MERVEILLES</h1>
+                            </div>
+                        </a>
+                        <a href="#" class="block rounded-lg overflow-hidden shadow hover:shadow-xl transition group">
+                            <img src="https://mcn-sn.com/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-14-at-16.37.10-1.jpeg" class="h-42 w-full object-cover group-hover:scale-105 transition" alt="">
+                            <div class="p-4 text-sm">
+                                <h1 class="font-bold">Album-photo du vernissage de l’exposition « Kéeman-Faire des merveilles »</h1>
+                            </div>
+                        </a>
+                    </div>
+           </div>
+                  <!-- Pagination -->
+                <div class="flex justify-center items-center space-x-2 mt-8">
+                    <!-- Bouton précédent -->
+                    <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">
+                        Précédent
+                    </a>
+                    <!-- Pages -->
+                    <a href="#" class="px-3 py-2 rounded-lg bg-amber-600 text-white">1</a>
+                    <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">2</a>
+                    <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">3</a>
+                    <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">4</a>
+                    <!-- Bouton suivant -->
+                    <a href="#" class="px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-amber-600 hover:text-white transition">
+                        Suivant
+                    </a>
+                </div><br> 
+
+                 <!-- Footer -->
+        <footer class="bg-amber-900 text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                              <img src="Logo_MCN.png" style="width: 75px;" alt="">
+                        </div>
+                        <p class="text-white-400 leading-relaxed">
+                            Découvrez la richesse des civilisations africaines dans notre musée d'exception.
+                            Une immersion culturelle authentique dans l'héritage du continent africain.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Navigation</h4>
+                        <ul class="space-y-3 text-white-400">
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Accueil</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Collections</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Expositions</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Visites Guidées</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Événements</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Services</h4>
+                        <ul class="space-y-3 text-white-400">
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Billetterie</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Boutique</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Café du Musée</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Accessibilité</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:text-white transition-colors">Groupes</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                        <p class="text-white-400 mb-4">
+                            Restez informé de nos dernières expositions et événements.
+                        </p>
+                        <div class="flex gap-2">
+                            <input type="email" placeholder="Votre email" class="flex-1 px-4 py-2 bg-white-800 border border-white-700 rounded-lg text-white placeholder-white-400 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent text-sm">
+                            <button class="bg-secondary hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors whitespace-nowrap !rounded-button">
+                                <div class="w-4 h-4 flex items-center justify-center">
+                                    <i class="ri-send-plane-line text-sm"></i>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-white-800 mt-12 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                        <div class="flex space-x-6 text-white-400 text-sm">
+                            <a href="#" class="hover:text-white transition-colors">Mentions Légales</a>
+                            <a href="#" class="hover:text-white transition-colors">Politique de Confidentialité</a>
+                            <a href="#" class="hover:text-white transition-colors">CGU</a>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                           
+                        </div>
+                    </div>
+                    <div class="text-center mt-6 text-white-400 text-sm">
+                        <p>&copy; 2025 Musée des Civilisations Africaines. Tous droits réservés.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
