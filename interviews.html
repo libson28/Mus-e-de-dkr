@@ -1,159 +1,198 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coulisses du Musée – Podcasts</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .audio-card {
-      transition: all 0.3s ease;
-    }
-    .audio-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
-    .audio-img {
-      transition: transform 0.3s ease;
-    }
-    .audio-card:hover .audio-img {
-      transform: scale(1.05);
-    }
-    .lang-btn.active {
-      background-color: rgb(217 119 6); /* amber-600 */
-      color: white;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musée des Civilisations Noires</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#d97706',
+                        secondary: '#b45309',
+                        darkbrown: '#4b2e05', // Marron foncé pour le header sombre
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Menu mobile */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        /* Mode sombre section */
+        .section-dark {
+            background-color: #000 !important;
+            color: #f9fafb !important;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Texte de la partie gauche */
+        .section-dark h2,
+        .section-dark p,
+        .section-dark span,
+        .section-dark li {
+            color: #f9fafb !important;
+        }
+
+        /* ✅ Exclure le bloc "Événements & Expositions" */
+        .section-dark .bg-gradient-to-br {
+            background: linear-gradient(to bottom right, var(--tw-gradient-from), var(--tw-gradient-to)) !important;
+            color: inherit !important;
+        }
+
+        /* ✅ Le bouton à l’intérieur du bloc garde son style initial */
+        .section-dark .bg-gradient-to-br button {
+            background-color: white !important;
+            color: var(--tw-gradient-from) !important;
+        }
+    </style>
 </head>
-<body class="bg-neutral-900 text-gray-100 font-sans">
+<body class="bg-gray-50">
 
-  <!-- Header -->
-  <header class="bg-amber-600 text-white py-4 shadow-lg sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold flex items-center gap-2">
-        🎙️ <span>Coulisses du Musée</span>
-      </h1>
+    <!-- Header -->
+    <header id="mainHeader" class="bg-white text-white shadow-lg sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-0.5">
+                <div class="flex items-center space-x-8">
+                    <div>
+                        <a href="#">
+                            <img src="Logo_MCN.png" style="width: 75px;" alt="Logo" onerror="this.style.display='none'">
+                        </a>
+                    </div>
+                    <nav class="hidden md:flex space-x-8 text-black" id="desktopNav">
+                        <a href="#accueil" class="text-amber-600 transition-colors font-medium border-b-2 border-amber-500 pb-1">Accueil</a>
+                        <a href="catalogue.html" class="hover:text-amber-600 transition-colors font-medium">Catalogue</a>
+                        <a href="histoire&culture.html" class="hover:text-amber-600 transition-colors font-medium">Histoire & Culture</a>
+                        <a href="multimedia.html" class="hover:text-amber-600 transition-colors font-medium">Galerie & Multimédia</a>
+                        <a href="actualites.html" class="hover:text-amber-600 transition-colors font-medium">Actualités</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
+                        <button class="px-3 py-1 rounded text-amber-600 hover:bg-amber-800 hover:text-white text-sm font-medium whitespace-nowrap transition-colors">EN</button>
+                        <button class="px-3 py-1 rounded text-amber-600 hover:bg-amber-800 hover:text-white text-sm font-medium whitespace-nowrap transition-colors">ES</button>
+                    </div>
+                    <!-- Bouton Mode Sombre/Clair -->
+                    <button id="themeToggle" class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-gray-100 transition-colors" style="color: black;">
+                        <i id="themeIcon" class="ri-sun-line ri-lg"></i>
+                    </button>
+                    <!-- Menu Mobile -->
+                    <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center" style="color: black;">
+                        <i id="menuIcon" class="ri-menu-line ri-xl"></i>
+                    </button>
+                </div>
+            </div>
 
-      <!-- Sélecteur de langue -->
-      <div class="flex gap-2">
-        <button class="lang-btn px-3 py-1 rounded-md text-sm font-medium active" data-lang="wolof">Wolof</button>
-        <button class="lang-btn px-3 py-1 rounded-md text-sm font-medium" data-lang="fr">Français</button>
-      </div>
-    </div>
-  </header>
+            <!-- Menu Mobile -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <nav class="flex flex-col space-y-4 py-4 border-t border-amber-800 text-black">
+                    <a href="#" class="text-amber-600 transition-colors font-medium px-2 py-2 hover:bg-amber-800 hover:text-white rounded border-b-2 border-amber-500 pb-1">Accueil</a>
+                    <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Catalogue</a>
+                    <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Histoire & Culture</a>
+                    <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Galerie & Multimédia</a>
+                    <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Actualités</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-  <!-- Section intro -->
-  <section class="max-w-6xl mx-auto px-4 py-10 text-center">
-    <div class="flex flex-col items-center mb-6">
-      <img src="https://readdy.ai/api/search-image?query=African%20museum%20curator%20expert%20archaeologist%20woman%20professional%20discussing%20artifacts%20cultural%20heritage%20interview%20podcast%20studio%20recording&width=200&height=200"
-           alt="Coulisses du Musée" 
-           class="w-40 h-40 object-cover rounded-2xl mb-4 shadow-md border-4 border-amber-600">
-      <h2 class="text-3xl font-bold text-amber-500">Coulisses du Musée</h2>
-      <p class="text-gray-400 mt-2 max-w-2xl">
-        Une série d’entretiens exclusifs avec les conservateurs, restaurateurs et passionnés du Musée des Civilisations Noires.  
-        Découvrez l’histoire derrière les œuvres et la vie du musée.
-      </p>
-    </div>
-  </section>
+    <!-- Section Présentation -->
+    <section id="presentation" class="py-20 bg-white transition-colors duration-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Notre Mission</h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Le Musée des Civilisations Noires de Dakar est un espace dédié à la préservation, à la valorisation et à la transmission du patrimoine culturel africain. Nous célébrons la diversité et la richesse des civilisations noires à travers le monde.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Projet au long cours, pensé tour à tour par un militant anticolonialiste (Lamine Senghor), un penseur de la négritude (Léopold Sédar Senghor) et un chantre de la renaissance africaine (Abdoulaye Wade)...
+                    </p>
+                </div>
 
-  <!-- Liste des épisodes -->
-  <main class="max-w-6xl mx-auto px-4 space-y-6">
-    
-    <!-- Épisode 1 -->
-    <div class="audio-card bg-neutral-800 rounded-2xl overflow-hidden flex flex-col sm:flex-row">
-      <div class="relative sm:w-1/3">
-        <img src="https://readdy.ai/api/search-image?query=African%20historian%20woman%20museum%20expert%20interview%20podcast%20studio&width=400&height=300"
-             class="audio-img w-full h-full object-cover">
-        <button class="absolute bottom-4 right-4 bg-amber-600 text-white rounded-full p-3 hover:bg-amber-700 transition">
-          <i class="ri-play-fill text-xl"></i>
-        </button>
-      </div>
-      <div class="flex-1 p-6">
-        <h3 class="text-xl font-semibold text-amber-400 mb-2">🎧 Dr. Aminata Traoré – Les trésors cachés</h3>
-        <p class="text-gray-300 mb-4">Plongez dans les coulisses des collections archéologiques rarement exposées.</p>
-        <audio controls class="w-full mb-2">
-          <source src="audios/aminata-traore.mp3" type="audio/mpeg">
-        </audio>
-        <div class="text-xs text-gray-500">Durée : 18:42 • Langue : Wolof / Français</div>
-      </div>
-    </div>
+                <!-- ✅ Ce bloc reste inchangé même en mode sombre -->
+                <div class="bg-gradient-to-br from-primary to-secondary p-8 rounded-2xl text-white">
+                    <h3 class="text-2xl font-bold mb-4">Événements & Expositions</h3>
+                    <p class="text-amber-100 mb-6 leading-relaxed">
+                        Découvrez nos expositions temporaires et événements culturels qui célèbrent la richesse des civilisations africaines à travers des installations immersives et des rencontres artistiques.
+                    </p>
+                    <button class="mt-6 bg-white text-primary px-6 py-3 rounded-button font-semibold hover:bg-amber-50 transition">
+                        Voir le programme
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Épisode 2 -->
-    <div class="audio-card bg-neutral-800 rounded-2xl overflow-hidden flex flex-col sm:flex-row-reverse">
-      <div class="relative sm:w-1/3">
-        <img src="https://readdy.ai/api/search-image?query=African%20curator%20museum%20audio%20interview%20male&width=400&height=300"
-             class="audio-img w-full h-full object-cover">
-        <button class="absolute bottom-4 left-4 bg-amber-600 text-white rounded-full p-3 hover:bg-amber-700 transition">
-          <i class="ri-play-fill text-xl"></i>
-        </button>
-      </div>
-      <div class="flex-1 p-6">
-        <h3 class="text-xl font-semibold text-amber-400 mb-2">🎙️ Moussa Diop – Les secrets des expositions</h3>
-        <p class="text-gray-300 mb-4">Découvrez comment sont imaginées et montées les expositions du musée.</p>
-        <audio controls class="w-full mb-2">
-          <source src="audios/moussa-diop.mp3" type="audio/mpeg">
-        </audio>
-        <div class="text-xs text-gray-500">Durée : 15:27 • Langue : Français</div>
-      </div>
-    </div>
+    <!-- Scripts -->
+    <script>
+        // Menu mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
 
-    <!-- Épisode 3 -->
-    <div class="audio-card bg-neutral-800 rounded-2xl overflow-hidden flex flex-col sm:flex-row">
-      <div class="relative sm:w-1/3">
-        <img src="https://readdy.ai/api/search-image?query=African%20art%20curator%20woman%20interview%20cultural%20heritage&width=400&height=300"
-             class="audio-img w-full h-full object-cover">
-        <button class="absolute bottom-4 right-4 bg-amber-600 text-white rounded-full p-3 hover:bg-amber-700 transition">
-          <i class="ri-play-fill text-xl"></i>
-        </button>
-      </div>
-      <div class="flex-1 p-6">
-        <h3 class="text-xl font-semibold text-amber-400 mb-2">🎧 Fatou Ndiaye – L’art et la mémoire</h3>
-        <p class="text-gray-300 mb-4">Discussion autour du rôle de l’art dans la préservation de la mémoire africaine.</p>
-        <audio controls class="w-full mb-2">
-          <source src="audios/fatou-ndiaye.mp3" type="audio/mpeg">
-        </audio>
-        <div class="text-xs text-gray-500">Durée : 21:10 • Langue : Wolof</div>
-      </div>
-    </div>
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            menuIcon.className = mobileMenu.classList.contains('active')
+                ? 'ri-close-line ri-xl'
+                : 'ri-menu-line ri-xl';
+        });
 
-    <!-- Épisode 4 -->
-    <div class="audio-card bg-neutral-800 rounded-2xl overflow-hidden flex flex-col sm:flex-row-reverse">
-      <div class="relative sm:w-1/3">
-        <img src="https://readdy.ai/api/search-image?query=African%20restoration%20expert%20museum%20art%20heritage&width=400&height=300"
-             class="audio-img w-full h-full object-cover">
-        <button class="absolute bottom-4 left-4 bg-amber-600 text-white rounded-full p-3 hover:bg-amber-700 transition">
-          <i class="ri-play-fill text-xl"></i>
-        </button>
-      </div>
-      <div class="flex-1 p-6">
-        <h3 class="text-xl font-semibold text-amber-400 mb-2">🛠️ Cheikh Ba – Restaurer le patrimoine</h3>
-        <p class="text-gray-300 mb-4">Dans les ateliers secrets du musée, découvrez le travail minutieux de restauration.</p>
-        <audio controls class="w-full mb-2">
-          <source src="audios/cheikh-ba.mp3" type="audio/mpeg">
-        </audio>
-        <div class="text-xs text-gray-500">Durée : 19:54 • Langue : Français</div>
-      </div>
-    </div>
+        // Mode sombre / clair
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const mainHeader = document.getElementById('mainHeader');
+        const desktopNav = document.getElementById('desktopNav');
+        const presentationSection = document.getElementById('presentation');
 
-  </main>
+        let currentTheme = 'light';
 
-  <!-- Footer -->
-  <footer class="bg-amber-600 text-white text-center py-6 mt-12">
-    © 2025 Musée des Civilisations Noires – Série “Coulisses du Musée”
-  </footer>
+        themeToggle.addEventListener('click', () => {
+            if (currentTheme === 'light') {
+                currentTheme = 'dark';
 
-  <!-- Script changement de langue -->
-  <script>
-    const langBtns = document.querySelectorAll('.lang-btn');
-    langBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        langBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const lang = btn.dataset.lang;
-        alert(`Langue changée : ${lang === 'wolof' ? 'Wolof' : 'Français'}`);
-      });
-    });
-  </script>
+                // Header marron foncé
+                mainHeader.classList.remove('bg-white');
+                mainHeader.classList.add('bg-darkbrown');
+                desktopNav.classList.remove('text-black');
+                desktopNav.classList.add('text-white');
+                themeToggle.style.color = 'white';
+                menuToggle.style.color = 'white';
+                themeIcon.className = 'ri-moon-line ri-lg';
+
+                // Section sombre (noir)
+                presentationSection.classList.add('section-dark');
+            } else {
+                currentTheme = 'light';
+
+                // Header clair
+                mainHeader.classList.remove('bg-darkbrown');
+                mainHeader.classList.add('bg-white');
+                desktopNav.classList.remove('text-white');
+                desktopNav.classList.add('text-black');
+                themeToggle.style.color = 'black';
+                menuToggle.style.color = 'black';
+                themeIcon.className = 'ri-sun-line ri-lg';
+
+                // Section claire
+                presentationSection.classList.remove('section-dark');
+            }
+        });
+    </script>
+
 </body>
 </html>
