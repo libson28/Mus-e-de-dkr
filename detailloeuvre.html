@@ -96,6 +96,7 @@
                 <!-- Lecteur audio -->
                 <div class="p-6 bg-gradient-to-r from-amber-50 to-orange-50 border-b border-gray-200">
                     <div class="flex items-center justify-between mb-4">
+                        <!-- Partie gauche -->
                         <div class="flex items-center space-x-3">
                             <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                                 <i class="ri-headphone-line text-white text-xl"></i>
@@ -105,9 +106,25 @@
                                 <p class="text-sm text-gray-600">Description détaillée de l'œuvre</p>
                             </div>
                         </div>
-                        <button id="playAudio" class="w-14 h-14 flex items-center justify-center rounded-full bg-primary hover:bg-secondary text-white transition-all transform hover:scale-110 shadow-lg">
-                            <i id="audioIcon" class="ri-play-fill text-2xl"></i>
-                        </button>
+                        <!-- Partie droite -->
+                        <div class="flex items-center space-x-3">
+                            <!-- Boutons de transcription -->
+                            <div id="transcriptionButtons" class="flex space-x-2">
+                                <button data-lang="FR" class="trans-btn px-3 py-1 text-sm font-medium bg-primary text-white border border-gray-300 rounded-full shadow-sm ring-2 ring-primary transition-all active">
+                                    FR
+                                </button>
+                                <button data-lang="EN" class="trans-btn px-3 py-1 text-sm font-medium bg-white text-gray-800 border border-gray-300 rounded-full shadow-sm hover:bg-primary hover:text-white transition-all">
+                                    EN
+                                </button>
+                                <button data-lang="WO" class="trans-btn px-3 py-1 text-sm font-medium bg-white text-gray-800 border border-gray-300 rounded-full shadow-sm hover:bg-primary hover:text-white transition-all">
+                                    WO
+                                </button>
+                            </div>
+                            <!-- Bouton lecture -->
+                            <button id="playAudio" class="w-14 h-14 flex items-center justify-center rounded-full bg-primary hover:bg-secondary text-white transition-all transform hover:scale-110 shadow-lg">
+                                <i id="audioIcon" class="ri-play-fill text-2xl"></i>
+                            </button>
+                        </div>
                     </div>
                     <!-- Barre de progression -->
                     <div class="relative w-full h-2 bg-white rounded-full overflow-hidden cursor-pointer shadow-inner" id="progressBar">
@@ -171,29 +188,29 @@
                     </div>
                 </div>
                 <!-- Galerie connexe -->
-                  <div class="p-6">
-                <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                    <i class="ri-gallery-line text-primary mr-2"></i>
-                    Œuvres similaires
-                </h3>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
-                    <div class="aspect-square bg-cover bg-center rounded-xl cursor-pointer hover:shadow-lg transition-all transform hover:scale-105" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20wooden%20sculpture%20statue%20carved%20figure%20tribal%20art%20museum%20exhibition%20cultural%20artifact%20black%20wood%20craftsmanship%20ancestral%20heritage%20display%20Dogon%20Mali%20spiritual&width=320&height=256&seq=cat002&orientation=landscape');"></div>
-                    <div class="aspect-square bg-cover bg-center rounded-xl cursor-pointer hover:shadow-lg transition-all transform hover:scale-105" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations%20royal%20ceremonial&width=320&height=256&seq=cat001&orientation=landscape');"></div>
-                    <div class="aspect-square bg-cover bg-center rounded-xl cursor-pointer hover:shadow-lg transition-all transform hover:scale-105 col-span-2 sm:col-span-1" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations%20royal%20ceremonial&width=320&height=256&seq=cat001&orientation=landscape');"></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="ri-gallery-line text-primary mr-2"></i>
+                        Œuvres similaires
+                    </h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+                        <div class="aspect-square bg-cover bg-center rounded-xl cursor-pointer hover:shadow-lg transition-all transform hover:scale-105" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20wooden%20sculpture%20statue%20carved%20figure%20tribal%20art%20museum%20exhibition%20cultural%20artifact%20black%20wood%20craftsmanship%20ancestral%20heritage%20display%20Dogon%20Mali%20spiritual&width=320&height=256&seq=cat002&orientation=landscape');"></div>
+                        <div class="aspect-square bg-cover bg-center rounded-xl cursor-pointer hover:shadow-lg transition-all transform hover:scale-105" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations%20royal%20ceremonial&width=320&height=256&seq=cat001&orientation=landscape');"></div>
+                        <div class="aspect-square bg-cover bg-center rounded-xl cursor-pointer hover:shadow-lg transition-all transform hover:scale-105 col-span-2 sm:col-span-1" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations%20royal%20ceremonial&width=320&height=256&seq=cat001&orientation=landscape');"></div>
+                    </div>
                 </div>
             </div>
-
+            <!-- Actions en bas -->
+            <div class="mt-6 grid grid-cols gap-4 r">
+                <button onclick="shareArtwork()" class="bg-white border-2 border-primary text-primary px-6 py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center space-x-2 shadow-lg">
+                    <span>
+                        <i class="ri-share-line text-xl"></i>
+                        Partager
+                    </span>
+                </button>
+            </div>
         </div>
-                <!-- Actions en bas -->
-                <div class="mt-6 grid grid-cols gap-4 r">
-                    <button onclick="shareArtwork()" class="bg-white border-2 border-primary text-primary px-6 py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center space-x-2 shadow-lg">
-                        <span>
-                            <i class="ri-share-line text-xl"></i> Partager
-                        </span>
-                    </button>
-                </div>
-            </div>
-            <script>
+        <script>
         const audio = document.getElementById('audio');
         const playButton = document.getElementById('playAudio');
         const audioIcon = document.getElementById('audioIcon');
@@ -294,6 +311,20 @@
                 document.body.removeChild(textArea);
             });
         }
-            </script>
-        </body>
-    </html>
+
+            // --- Gestion boutons de transcription ---
+    const buttons = document.querySelectorAll(".trans-btn");
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            buttons.forEach(b => {
+                b.classList.remove("bg-primary", "text-white", "ring-2", "ring-primary", "active");
+                b.classList.add("bg-white", "text-gray-800");
+            });
+
+            btn.classList.add("bg-primary", "text-black", "ring-2", "ring-primary", "active");
+            btn.focus(); // Garde le focus visible sur le bouton actif
+        });
+    });
+        </script>
+    </body>
+</html>
