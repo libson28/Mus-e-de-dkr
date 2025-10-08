@@ -668,61 +668,220 @@
                 Expériences en Réalité Augmentée
             </h2>
             <div class="grid md:grid-cols-3 gap-6">
-                <!-- AR Experience 1 -->
-                <div class="media-card bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 shadow-lg card-hover" data-type="ar">
-                    <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-4">
-                        <i class="ri-smartphone-line ri-2x text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Masque Interactif 3D</h3>
-                    <p class="text-gray-600 text-sm mb-4">Observez le masque royal du Bénin sous tous les angles et découvrez ses détails cachés.</p>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Compatible iOS/Android</span>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="ri-download-line mr-1"></i>
-                            <span>2.3k</span>
-                        </div>
-                    </div>
-                    <button class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-3 rounded-button font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all whitespace-nowrap !rounded-button">
-                        Lancer l'expérience AR
-                    </button>
-                </div>
-                <!-- AR Experience 2 -->
-                <div class="media-card bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6 shadow-lg card-hover" data-type="ar">
-                    <div class="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl flex items-center justify-center mb-4">
-                        <i class="ri-vr-box-line ri-2x text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Atelier de Poterie Virtuel</h3>
-                    <p class="text-gray-600 text-sm mb-4">Apprenez les techniques de poterie Nok dans un environnement virtuel immersif.</p>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Expérience immersive</span>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="ri-download-line mr-1"></i>
-                            <span>1.8k</span>
-                        </div>
-                    </div>
-                    <button class="w-full bg-gradient-to-r from-green-600 to-teal-600 text-white px-4 py-3 rounded-button font-semibold hover:from-green-700 hover:to-teal-700 transition-all whitespace-nowrap !rounded-button">
-                        Démarrer l'atelier
-                    </button>
-                </div>
-                <!-- AR Experience 3 -->
-                <div class="media-card bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 shadow-lg card-hover" data-type="ar">
-                    <div class="w-16 h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl flex items-center justify-center mb-4">
-                        <i class="ri-camera-3-line ri-2x text-white"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-2">Visite Virtuelle 360°</h3>
-                    <p class="text-gray-600 text-sm mb-4">Explorez le musée depuis chez vous avec notre visite virtuelle interactive.</p>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">360° VR Ready</span>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="ri-download-line mr-1"></i>
-                            <span>4.1k</span>
-                        </div>
-                    </div>
-                    <button class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white px-4 py-3 rounded-button font-semibold hover:from-orange-700 hover:to-red-700 transition-all whitespace-nowrap !rounded-button">
-                        Commencer la visite
-                    </button>
-                </div>
+    <!-- AR Experience 1 -->
+    <div class="media-card bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 shadow-lg card-hover" data-type="ar">
+        <div class="w-16 h-16 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center mb-4">
+            <i class="ri-smartphone-line ri-2x text-white"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Masque Interactif 3D</h3>
+        <p class="text-gray-600 text-sm mb-4">Observez le masque royal du Bénin sous tous les angles et découvrez ses détails cachés.</p>
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Compatible iOS/Android</span>
+            <div class="flex items-center text-sm text-gray-500">
+                <i class="ri-download-line mr-1"></i>
+                <span>2.3k</span>
             </div>
+        </div>
+        <button 
+            onclick="openVideoModal('https://www.youtube.com/embed/yjxYXeCLdW0', 'Masque Interactif 3D - Masque Royal du Bénin')" 
+            class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-3 rounded-button font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all whitespace-nowrap !rounded-button"
+        >
+            Lancer l'expérience AR
+        </button>
+    </div>
+    
+    <!-- AR Experience 2 -->
+    <div class="media-card bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6 shadow-lg card-hover" data-type="ar">
+        <div class="w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-2xl flex items-center justify-center mb-4">
+            <i class="ri-vr-box-line ri-2x text-white"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Atelier de Poterie Virtuel</h3>
+        <p class="text-gray-600 text-sm mb-4">Apprenez les techniques de poterie Nok dans un environnement virtuel immersif.</p>
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Expérience immersive</span>
+            <div class="flex items-center text-sm text-gray-500">
+                <i class="ri-download-line mr-1"></i>
+                <span>1.8k</span>
+            </div>
+        </div>
+        <button 
+            onclick="openVideoModal('https://www.youtube.com/embed/vo60czyD-P0', 'Atelier de Poterie Virtuel - Techniques Nok')" 
+            class="w-full bg-gradient-to-r from-green-600 to-teal-600 text-white px-4 py-3 rounded-button font-semibold hover:from-green-700 hover:to-teal-700 transition-all whitespace-nowrap !rounded-button"
+        >
+            Démarrer l'atelier
+        </button>
+    </div>
+    
+    <!-- AR Experience 3 -->
+    <div class="media-card bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 shadow-lg card-hover" data-type="ar">
+        <div class="w-16 h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-2xl flex items-center justify-center mb-4">
+            <i class="ri-camera-3-line ri-2x text-white"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Visite Virtuelle 360°</h3>
+        <p class="text-gray-600 text-sm mb-4">Explorez le musée depuis chez vous avec notre visite virtuelle interactive.</p>
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full">360° VR Ready</span>
+            <div class="flex items-center text-sm text-gray-500">
+                <i class="ri-download-line mr-1"></i>
+                <span>4.1k</span>
+            </div>
+        </div>
+        <button 
+            onclick="openVideoModal('https://www.youtube.com/embed/NV-24VePtHI', 'Visite Virtuelle 360° - Musée des Civilisations Noires')" 
+            class="w-full bg-gradient-to-r from-orange-600 to-red-600 text-white px-4 py-3 rounded-button font-semibold hover:from-orange-700 hover:to-red-700 transition-all whitespace-nowrap !rounded-button"
+        >
+            Commencer la visite
+        </button>
+    </div>
+</div>
+
+<!-- Modal Video Universel -->
+<div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4 animate-fade-in">
+    <div class="relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden animate-slide-up">
+        <!-- Header du modal -->
+        <div class="bg-gradient-to-r from-amber-700 to-amber-900 text-white p-4 flex justify-between items-center">
+            <h3 id="videoTitle" class="text-xl font-bold flex items-center gap-2">
+                <i class="ri-play-circle-line"></i>
+                <span id="modalTitle">Titre de la vidéo</span>
+            </h3>
+            <button 
+                onclick="closeVideoModal()" 
+                class="w-8 h-8 flex items-center justify-center bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full transition-all hover:rotate-90"
+            >
+                <i class="ri-close-line text-lg"></i>
+            </button>
+        </div>
+        
+        <!-- Conteneur de la vidéo -->
+        <div class="p-4">
+            <div class="video-container">
+                <iframe 
+                    id="videoIframe"
+                    src="" 
+                    title="Video du Musée"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+        
+        <!-- Footer du modal -->
+        <div class="bg-gray-100 p-4 flex justify-between items-center">
+            <span class="text-gray-600 text-sm flex items-center gap-2">
+                <i class="ri-fullscreen-line"></i>
+                Double-cliquez pour le mode plein écran
+            </span>
+            <button 
+                onclick="closeVideoModal()" 
+                class="bg-amber-800 hover:bg-amber-600 text-white px-4 py-2 rounded-button font-medium transition-colors"
+            >
+                Fermer
+            </button>
+        </div>
+    </div>
+</div>
+
+<style>
+.rounded-button {
+    border-radius: 8px;
+}
+
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease;
+}
+
+.animate-slide-up {
+    animation: slide-up 0.3s ease;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+</style>
+
+<script>
+let currentVideoUrl = '';
+
+function openVideoModal(videoUrl, title) {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoIframe');
+    const titleElement = document.getElementById('modalTitle');
+    
+    // Stocker l'URL actuelle pour pouvoir la réinitialiser
+    currentVideoUrl = videoUrl;
+    
+    // Mettre à jour le titre et la vidéo
+    titleElement.textContent = title;
+    iframe.src = videoUrl + "?autoplay=1&rel=0";
+    
+    // Afficher le modal
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoIframe');
+    
+    // Cacher le modal
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    
+    // Arrêter la vidéo en réinitialisant la source
+    iframe.src = '';
+}
+
+// Fermer le modal en cliquant à l'extérieur
+document.getElementById('videoModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeVideoModal();
+    }
+});
+
+// Fermer avec la touche Échap
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeVideoModal();
+    }
+});
+</script>
         </div>
     </div>
     <br>
