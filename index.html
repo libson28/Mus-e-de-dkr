@@ -81,53 +81,104 @@
         .mobile-menu.active {
             max-height: 500px;
         }
+
+        .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #D4831C;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #B36A15;
+}
+
+/* Pour Firefox */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #D4831C #f1f1f1;
+}
+
+  @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.3s ease;
+        }
+
+        .animate-slide-up {
+            animation: slide-up 0.3s ease;
+        }
         </style>
     </head>
     <body class="bg-gray-50">
         <!-- Header -->
-      <header class="bg-amber-900 text-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-0.5">
-                <div class="flex items-center space-x-8">
-                    <div>
-                        <a href="#">
-                            <img src="Logo_MCN.png" style="width: 75px;" alt="Logo" onerror="this.style.display='none'">
-                        </a>
+        <header class="bg-white text-white shadow-lg sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-0.5">
+                    <div class="flex items-center space-x-8">
+                        <div>
+                            <a href="#">
+                                <img
+                                    src="Logo_MCN.png"
+                                    style="width: 75px;"
+                                    alt="Logo"
+                                    onerror="this.style.display='none'"
+                                >
+                            </a>
+                        </div>
+                        <nav class="hidden md:flex space-x-8 text-black">
+                            <a href="#accueil" class="text-amber-600 transition-colors font-medium border-b-2 border-amber-500 pb-1">Accueil</a>
+                            <a href="catalogue.html" class="hover:text-amber-600 transition-colors font-medium">Catalogue</a>
+                            <a href="histoire&culture.html" class="hover:text-amber-600 transition-colors font-medium">Histoire & Culture</a>
+                            <a href="multimedia.html" class="hover:text-amber-600 transition-colors font-medium">Galerie & Multimédia</a>
+                            <a href="actualites.html" class="hover:text-amber-600 transition-colors font-medium">Actualités</a>
+                        </nav>
                     </div>
-                    <nav class="hidden md:flex space-x-8">
-                        <a href="#accueil" class="text-amber-200 transition-colors font-medium border-b-2 border-amber-200 pb-1">Accueil</a>
-                        <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium">Catalogue</a>
-                        <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium">Histoire & Culture</a>
-                        <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium">Multimédia</a>
-                        <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium">Actualités</a>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <button class="px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
+                            <button class="px-3 py-1 rounded text-amber-800 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
+                            <button class="px-3 py-1 rounded text-amber-800 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">ES</button>
+                        </div>
+                        <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center" style="color: black;">
+                            <i id="menuIcon" class="ri-menu-line ri-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Menu Mobile -->
+                <div id="mobileMenu" class="mobile-menu md:hidden">
+                    <nav class="flex flex-col space-y-4 py-4 border-t border-amber-800 text-black">
+                        <a href="#" class="text-amber-600 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded border-b-2 border-amber-500 pb-1">Accueil</a>
+                        <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Catalogue</a>
+                        <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Histoire & Culture</a>
+                        <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Galerie & Multimédia</a>
+                        <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Actualités</a>
                     </nav>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-2">
-                        <button class="px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
-                        <button class="px-3 py-1 rounded text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
-                        <button class="px-3 py-1 rounded text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">ES</button>
-                    </div>
-                    <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center">
-                        <i id="menuIcon" class="ri-menu-line ri-xl"></i>
-                    </button>
-                </div>
             </div>
-            
-            <!-- Menu Mobile -->
-            <div id="mobileMenu" class="mobile-menu md:hidden">
-                <nav class="flex flex-col space-y-4 py-4 border-t border-amber-800">
-                    <a href="#accueil" class="text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Accueil</a>
-                    <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Catalogue</a>
-                    <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Histoire & Culture</a>
-                    <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Multimédia</a>
-                    <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Actualités</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <script>
+        </header>
+        <script>
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
         const menuIcon = document.getElementById('menuIcon');
@@ -163,7 +214,7 @@
                 menuIcon.classList.add('ri-menu-line');
             }
         });
-    </script>
+        </script>
         <!-- Hero Section -->
         <section id="accueil" class="hero-bg min-h-screen flex items-center">
             <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -181,11 +232,11 @@
                             Découvrir nos collections
                         </button>
                     </div>
-                    <div class="pt-4">
+                    <!-- <div class="pt-4">
                         <button class="bg-white bg-opacity-20 backdrop-blur-md hover:bg-secondary text-white px-8 py-4 rounded-button text-lg font-semibold transition-colors whitespace-nowrap !rounded-button">
                             Visite virtuelle
                         </button>
-                    </div>
+                    </div> -->
                     <div class="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto">
                         <div class="text-center">
                             <div class="text-3xl font-bold text-amber-300">2500+</div>
@@ -251,13 +302,209 @@
                                 <span>Conférences mensuelles</span>
                             </div>
                         </div>
-                        <button class="mt-6 bg-white text-primary px-6 py-3 rounded-button font-semibold hover:bg-amber-50 transition-colors whitespace-nowrap !rounded-button">
-                            <a href="actualites.html">Voir le programme</a>
+                        <button onclick="openModal()" class="mt-6 bg-white text-primary px-6 py-3 rounded-button font-semibold hover:bg-amber-50 transition-colors whitespace-nowrap !rounded-button">
+                           Voir le programme
                         </button>
                     </div>
                 </div>
             </div>
         </section>
+
+          <!-- Modal -->
+    <div id="eventsModal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 animate-fade-in">
+        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-hidden shadow-2xl animate-slide-up">
+            
+            <!-- Header Modal -->
+            <div class="bg-gradient-to-r from-primary to-secondary text-white p-6 relative">
+                <h2 class="text-3xl font-bold mb-2 flex items-center">
+                    <i class="ri-calendar-line mr-3"></i>
+                    Programme des Événements
+                </h2>
+                <p class="text-amber-100">Découvrez nos prochains événements culturels</p>
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center transition-all hover:rotate-90">
+                    <i class="ri-close-line text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Body Modal -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                
+                <!-- Événement 1 -->
+                <div class="border-l-4 border-primary bg-gray-50 p-6 mb-6 rounded-lg hover:translate-x-1 transition-all hover:shadow-md">
+                    <h3 class="text-primary text-xl font-bold mb-3 flex items-center">
+                        <i class="ri-gallery-line mr-2"></i>
+                        Exposition : "Masques Sacrés d'Afrique"
+                    </h3>
+                    <div class="space-y-2 mb-4 text-gray-600">
+                        <div class="flex items-center">
+                            <i class="ri-calendar-line text-primary mr-3 w-5"></i>
+                            <span>15 Octobre - 30 Décembre 2025</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-time-line text-primary mr-3 w-5"></i>
+                            <span>9h00 - 18h00 (tous les jours)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-map-pin-line text-primary mr-3 w-5"></i>
+                            <span>Salle d'exposition principale</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-price-tag-3-line text-primary mr-3 w-5"></i>
+                            <span>Inclus dans le billet d'entrée</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Une collection exceptionnelle de masques rituels provenant de diverses régions d'Afrique. Découvrez l'histoire, la signification spirituelle et l'artisanat derrière ces œuvres sacrées.
+                    </p>
+                </div>
+
+                <!-- Événement 2 -->
+                <div class="border-l-4 border-primary bg-gray-50 p-6 mb-6 rounded-lg hover:translate-x-1 transition-all hover:shadow-md">
+                    <h3 class="text-primary text-xl font-bold mb-3 flex items-center">
+                        <i class="ri-music-2-line mr-2"></i>
+                        Concert de Musique Traditionnelle
+                    </h3>
+                    <div class="space-y-2 mb-4 text-gray-600">
+                        <div class="flex items-center">
+                            <i class="ri-calendar-line text-primary mr-3 w-5"></i>
+                            <span>Samedi 25 Octobre 2025</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-time-line text-primary mr-3 w-5"></i>
+                            <span>19h00 - 21h00</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-map-pin-line text-primary mr-3 w-5"></i>
+                            <span>Auditorium du musée</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-price-tag-3-line text-primary mr-3 w-5"></i>
+                            <span>15€ (10€ tarif réduit)</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Soirée musicale exceptionnelle avec l'ensemble "Djembé d'Or". Plongez dans l'univers des rythmes ancestraux avec des instruments traditionnels : kora, balafon, djembé et chants polyphoniques.
+                    </p>
+                </div>
+
+                <!-- Événement 3 -->
+                <div class="border-l-4 border-primary bg-gray-50 p-6 mb-6 rounded-lg hover:translate-x-1 transition-all hover:shadow-md">
+                    <h3 class="text-primary text-xl font-bold mb-3 flex items-center">
+                        <i class="ri-user-voice-line mr-2"></i>
+                        Conférence : "Les Civilisations du Sahel"
+                    </h3>
+                    <div class="space-y-2 mb-4 text-gray-600">
+                        <div class="flex items-center">
+                            <i class="ri-calendar-line text-primary mr-3 w-5"></i>
+                            <span>Mercredi 5 Novembre 2025</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-time-line text-primary mr-3 w-5"></i>
+                            <span>18h30 - 20h00</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-map-pin-line text-primary mr-3 w-5"></i>
+                            <span>Salle de conférence</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-price-tag-3-line text-primary mr-3 w-5"></i>
+                            <span>Gratuit (inscription requise)</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Conférence animée par le Dr. Amadou Diallo, historien spécialiste des empires ouest-africains. Explorez l'histoire fascinante des royaumes du Mali, Songhaï et Ghana.
+                    </p>
+                </div>
+
+                <!-- Événement 4 -->
+                <div class="border-l-4 border-primary bg-gray-50 p-6 mb-6 rounded-lg hover:translate-x-1 transition-all hover:shadow-md">
+                    <h3 class="text-primary text-xl font-bold mb-3 flex items-center">
+                        <i class="ri-paint-brush-line mr-2"></i>
+                        Atelier : Initiation à l'Art Textile Africain
+                    </h3>
+                    <div class="space-y-2 mb-4 text-gray-600">
+                        <div class="flex items-center">
+                            <i class="ri-calendar-line text-primary mr-3 w-5"></i>
+                            <span>Samedi 15 Novembre 2025</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-time-line text-primary mr-3 w-5"></i>
+                            <span>14h00 - 17h00</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-map-pin-line text-primary mr-3 w-5"></i>
+                            <span>Atelier pédagogique</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-price-tag-3-line text-primary mr-3 w-5"></i>
+                            <span>25€ (matériel inclus)</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Apprenez les techniques traditionnelles de tissage et de teinture avec des artisans experts. Créez votre propre pièce textile inspirée des motifs bogolan du Mali. Places limitées à 15 participants.
+                    </p>
+                </div>
+
+                <!-- Événement 5 -->
+                <div class="border-l-4 border-primary bg-gray-50 p-6 rounded-lg hover:translate-x-1 transition-all hover:shadow-md">
+                    <h3 class="text-primary text-xl font-bold mb-3 flex items-center">
+                        <i class="ri-film-line mr-2"></i>
+                        Projection : "Racines d'Afrique"
+                    </h3>
+                    <div class="space-y-2 mb-4 text-gray-600">
+                        <div class="flex items-center">
+                            <i class="ri-calendar-line text-primary mr-3 w-5"></i>
+                            <span>Vendredi 20 Novembre 2025</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-time-line text-primary mr-3 w-5"></i>
+                            <span>20h00 - 22h30</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-map-pin-line text-primary mr-3 w-5"></i>
+                            <span>Auditorium du musée</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-price-tag-3-line text-primary mr-3 w-5"></i>
+                            <span>8€ (5€ tarif réduit)</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">
+                        Documentaire primé suivi d'un débat avec la réalisatrice Fatou Kandé. Un voyage cinématographique à travers les traditions, la modernité et la diaspora africaine.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            const modal = document.getElementById('eventsModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('eventsModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer le modal en cliquant à l'extérieur
+        document.getElementById('eventsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Fermer le modal avec la touche Échap
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
         <!-- Œuvres Phares -->
         <section id="catalogue" class="py-20 bg-gray-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -346,10 +593,502 @@
                         <p class="text-amber-100 mb-6 leading-relaxed">
                             Réservez vos tickets en ligne pour accéder aux expositions et profitez d’une visite guidée personnalisée en réservant votre guide dès maintenant.
                         </p>
-                        <button class="bg-white text-primary px-6 py-3 rounded-button font-semibold hover:bg-amber-50 transition-colors whitespace-nowrap !rounded-button">
+                        <button id="reservationBtn" class="bg-white text-primary px-6 py-3 rounded-button font-semibold hover:bg-amber-50 transition-colors whitespace-nowrap !rounded-button">
                             Réserver maintenant
                         </button>
                     </div>
+                    <!--  -->
+                  
+                    <!-- Popup Modal de Réservation -->
+                    <div id="reservationModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+                        <div class="relative w-full max-w-2xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden">
+                            <!-- Bouton fermer -->
+                            <button id="closeReservationModal" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-red-600 hover:bg-red-700 text-white rounded-full transition-all hover:scale-110 z-20 shadow-lg">
+                                <i class="ri-close-line ri-2x"></i>
+                            </button>
+                            <!-- En-tête du formulaire (fixe) -->
+                            <div class="bg-gradient-to-br from-primary to-secondary p-6 text-white text-center sticky top-0 z-10">
+                                <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
+                                    <i class="ri-calendar-check-line ri-2x"></i>
+                                </div>
+                                <h2 class="text-3xl font-bold mb-2">Réserver une visite guidée</h2>
+                                <p class="text-amber-100">Complétez le formulaire pour réserver votre visite</p>
+                            </div>
+                            <!-- Container avec scroll -->
+                            <div class="overflow-y-auto max-h-[calc(90vh-180px)] custom-scrollbar">
+                                <!-- Formulaire -->
+                                <form id="reservationForm" class="p-8 space-y-6">
+                                    <!-- Informations personnelles -->
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-gray-700 font-semibold mb-2">
+                                                <i class="ri-user-line mr-1"></i>
+                                                Nom complet *
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="nom"
+                                                required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                                placeholder="Votre nom complet"
+                                            >
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 font-semibold mb-2">
+                                                <i class="ri-mail-line mr-1"></i>
+                                                Email *
+                                            </label>
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                                placeholder="votre@email.com"
+                                            >
+                                        </div>
+                                    </div>
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-gray-700 font-semibold mb-2">
+                                                <i class="ri-phone-line mr-1"></i>
+                                                Téléphone *
+                                            </label>
+                                            <input
+                                                type="tel"
+                                                name="telephone"
+                                                required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                                placeholder="+221 XX XXX XX XX"
+                                            >
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 font-semibold mb-2">
+                                                <i class="ri-team-line mr-1"></i>
+                                                Nombre de personnes *
+                                            </label>
+                                            <input
+                                                type="number"
+                                                name="personnes"
+                                                min="1"
+                                                max="50"
+                                                required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                                placeholder="Ex: 5"
+                                            >
+                                        </div>
+                                    </div>
+                                    <!-- Détails de la visite -->
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <label class="block text-gray-700 font-semibold mb-2">
+                                                <i class="ri-calendar-line mr-1"></i>
+                                                Date de visite *
+                                            </label>
+                                            <input
+                                                type="date"
+                                                name="date"
+                                                required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                                            >
+                                        </div>
+                                        <div>
+                                            <label class="block text-gray-700 font-semibold mb-2">
+                                                <i class="ri-time-line mr-1"></i>
+                                                Heure préférée *
+                                            </label>
+                                            <select name="heure" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                                                <option value="">Choisir une heure</option>
+                                                <option value="09:00">09:00 - 11:00</option>
+                                                <option value="11:00">11:00 - 13:00</option>
+                                                <option value="14:00">14:00 - 16:00</option>
+                                                <option value="16:00">16:00 - 18:00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 font-semibold mb-2">
+                                            <i class="ri-map-pin-line mr-1"></i>
+                                            Type de visite *
+                                        </label>
+                                        <select name="type_visite" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                                            <option value="">Sélectionner le type de visite</option>
+                                            <option value="generale">Visite Générale (2h)</option>
+                                            <option value="thematique">Visite Thématique (1h30)</option>
+                                            <option value="privee">Visite Privée (3h)</option>
+                                            <option value="scolaire">Visite Scolaire (2h)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 font-semibold mb-2">
+                                            <i class="ri-translate-2 mr-1"></i>
+                                            Langue de la visite *
+                                        </label>
+                                        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                            <label class="flex items-center space-x-2 cursor-pointer">
+                                                <input
+                                                    type="radio"
+                                                    name="langue"
+                                                    value="francais"
+                                                    required
+                                                    class="text-primary focus:ring-primary"
+                                                >
+                                                <span class="text-gray-700">Français</span>
+                                            </label>
+                                            <label class="flex items-center space-x-2 cursor-pointer">
+                                                <input
+                                                    type="radio"
+                                                    name="langue"
+                                                    value="anglais"
+                                                    class="text-primary focus:ring-primary"
+                                                >
+                                                <span class="text-gray-700">Anglais</span>
+                                            </label>
+                                            <label class="flex items-center space-x-2 cursor-pointer">
+                                                <input
+                                                    type="radio"
+                                                    name="langue"
+                                                    value="wolof"
+                                                    class="text-primary focus:ring-primary"
+                                                >
+                                                <span class="text-gray-700">Wolof</span>
+                                            </label>
+                                            <label class="flex items-center space-x-2 cursor-pointer">
+                                                <input
+                                                    type="radio"
+                                                    name="langue"
+                                                    value="autre"
+                                                    class="text-primary focus:ring-primary"
+                                                >
+                                                <span class="text-gray-700">Autre</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-gray-700 font-semibold mb-2">
+                                            <i class="ri-message-3-line mr-1"></i>
+                                            Demandes spéciales (optionnel)
+                                        </label>
+                                        <textarea
+                                            name="message"
+                                            rows="3"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+                                            placeholder="Avez-vous des besoins particuliers ou des questions ?"
+                                        ></textarea>
+                                    </div>
+                                    <!-- Récapitulatif des prix -->
+                                    <div class="bg-amber-50 p-4 rounded-lg border-2 border-amber-200">
+                                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                                            <i class="ri-price-tag-3-line mr-2"></i>
+                                            Tarifs
+                                        </h4>
+                                        <div class="text-sm text-gray-700 space-y-1">
+                                            <p>• Adulte : 5 000 FCFA</p>
+                                            <p>• Enfant (6-12 ans) : 2 500 FCFA</p>
+                                            <p>• Groupe (+10 personnes) : -20%</p>
+                                            <p>• Visite privée : +10 000 FCFA</p>
+                                        </div>
+                                    </div>
+                                    <!-- Boutons d'action -->
+                                    <div class="flex flex-col md:flex-row gap-4 pt-4">
+                                        <button type="submit" class="flex-1 bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-button font-bold text-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                                            <i class="ri-check-line"></i>
+                                            Confirmer la réservation
+                                        </button>
+                                        <button type="button" id="cancelReservation" class="md:flex-none bg-gray-200 text-gray-700 px-6 py-4 rounded-button font-semibold hover:bg-gray-300 transition-all">
+                                            Annuler
+                                        </button>
+                                    </div>
+                                    <p class="text-xs text-gray-500 text-center mt-4">
+                                        * Champs obligatoires. Vous recevrez une confirmation par email.
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Nouvelle Popup de Confirmation avec QR Code -->
+                    <div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+                        <div class="relative w-full max-w-md max-h-[85vh] bg-white rounded-2xl shadow-2xl overflow-hidden">
+                            <!-- Bouton fermer -->
+                            <button id="closeConfirmationModal" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-red-600 hover:bg-red-700 text-white rounded-full transition-all hover:scale-110 z-20 shadow-lg">
+                                <i class="ri-close-line ri-2x"></i>
+                            </button>
+                            <!-- En-tête fixe -->
+                            <div class="bg-gradient-to-br from-primary to-secondary p-6 text-white text-center sticky top-0 z-10">
+                                <div class="w-16 h-16 flex items-center justify-center bg-white bg-opacity-20 rounded-full mx-auto mb-4">
+                                    <i class="ri-checkbox-circle-line ri-2x"></i>
+                                </div>
+                                <h2 class="text-2xl font-bold mb-2">Réservation Confirmée !</h2>
+                                <p class="text-amber-100">Votre ticket est prêt à être téléchargé</p>
+                            </div>
+                            <!-- Container avec scroll -->
+                            <div class="overflow-y-auto max-h-[calc(85vh-180px)] custom-scrollbar">
+                                <div class="p-6 space-y-6">
+                                    <!-- Message de confirmation -->
+                                    <div class="text-center">
+                                        <p class="text-gray-600 leading-relaxed">
+                                            Votre réservation a été enregistrée avec succès. Un email de confirmation a été envoyé à
+                                            <span id="confirmationEmail" class="font-semibold text-primary"></span>
+                                            .
+                                        </p>
+                                    </div>
+                                    <!-- QR Code -->
+                                    <div class="bg-gray-50 p-4 rounded-xl border-2 border-dashed border-gray-200">
+                                        <h3 class="font-semibold text-gray-700 text-center mb-3">Votre ticket QR Code</h3>
+                                        <div id="qrcode" class="flex justify-center mb-3">
+                                            <!-- Le QR code sera généré ici --></div>
+                                        <p class="text-xs text-gray-500 text-center">
+                                            Présentez ce code à l'entrée le jour de votre visite
+                                        </p>
+                                    </div>
+                                    <!-- Détails de la réservation -->
+                                    <div class="bg-primary bg-opacity-10 p-4 rounded-lg border border-primary border-opacity-20">
+                                        <h4 class="font-semibold text-primary mb-3 flex items-center justify-center">
+                                            <i class="ri-information-line mr-2"></i>
+                                            Détails de votre visite
+                                        </h4>
+                                        <div class="text-sm text-gray-700 space-y-2">
+                                            <div class="flex justify-between">
+                                                <span class="font-medium">Date:</span>
+                                                <span id="confirmationDate"></span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="font-medium">Heure:</span>
+                                                <span id="confirmationHeure"></span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="font-medium">Type:</span>
+                                                <span id="confirmationType"></span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="font-medium">Personnes:</span>
+                                                <span id="confirmationPersonnes"></span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="font-medium">Langue:</span>
+                                                <span id="confirmationLangue"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Instructions -->
+                                    <div class="bg-amber-50 p-4 rounded-lg border-2 border-amber-200">
+                                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                                            <i class="ri-lightbulb-flash-line mr-2"></i>
+                                            Instructions importantes
+                                        </h4>
+                                        <div class="text-xs text-gray-700 space-y-1">
+                                            <p>• Présentez votre ticket QR code à l'entrée</p>
+                                            <p>• Arrivez 15 minutes avant l'heure de visite</p>
+                                            <p>• Ayez une pièce d'identité avec vous</p>
+                                            <p>• Le ticket est valable uniquement pour la date indiquée</p>
+                                        </div>
+                                    </div>
+                                    <!-- Boutons d'action -->
+                                    <div class="flex flex-col gap-3 pt-2">
+                                        <button id="downloadTicket" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-button font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                                            <i class="ri-download-line"></i>
+                                            Télécharger le ticket
+                                        </button>
+                                        <button id="closeConfirmation" class="bg-gray-200 text-gray-700 px-6 py-3 rounded-button font-semibold hover:bg-gray-300 transition-all">
+                                            Fermer
+                                        </button>
+                                    </div>
+                                    <p class="text-xs text-gray-500 text-center">
+                                        Conservez bien ce ticket, vous en aurez besoin pour votre visite.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+                    <script>
+    // Script pour le popup de réservation
+    const reservationBtn = document.getElementById('reservationBtn');
+    const reservationModal = document.getElementById('reservationModal');
+    const closeReservationModal = document.getElementById('closeReservationModal');
+    const cancelReservation = document.getElementById('cancelReservation');
+    const reservationForm = document.getElementById('reservationForm');
+    
+    // Éléments de la popup de confirmation
+    const confirmationModal = document.getElementById('confirmationModal');
+    const closeConfirmationModal = document.getElementById('closeConfirmationModal');
+    const closeConfirmation = document.getElementById('closeConfirmation');
+    const downloadTicket = document.getElementById('downloadTicket');
+
+    // Définir la date minimale (aujourd'hui)
+    const dateInput = document.querySelector('input[name="date"]');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+    }
+
+    // Ouvrir le modal de réservation
+    reservationBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        reservationModal.classList.remove('hidden');
+        reservationModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Fermer le modal de réservation avec le bouton X
+    closeReservationModal.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeReservationModalFunc();
+    });
+
+    // Fermer avec le bouton Annuler
+    cancelReservation.addEventListener('click', function() {
+        closeReservationModalFunc();
+    });
+
+    // Fermer en cliquant à l'extérieur
+    reservationModal.addEventListener('click', function(e) {
+        if (e.target === reservationModal) {
+            closeReservationModalFunc();
+        }
+    });
+
+    // Empêcher la fermeture lors du clic sur le formulaire
+    reservationModal.querySelector('.relative.w-full.max-w-2xl').addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+
+    // Fermer avec Échap
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (!reservationModal.classList.contains('hidden')) {
+                closeReservationModalFunc();
+            }
+            if (!confirmationModal.classList.contains('hidden')) {
+                closeConfirmationModalFunc();
+            }
+        }
+    });
+
+    function closeReservationModalFunc() {
+        reservationModal.classList.add('hidden');
+        reservationModal.classList.remove('flex');
+        document.body.style.overflow = '';
+    }
+
+    function closeConfirmationModalFunc() {
+        confirmationModal.classList.add('hidden');
+        confirmationModal.classList.remove('flex');
+        document.body.style.overflow = '';
+    }
+
+    // Gestionnaires pour la popup de confirmation
+    closeConfirmationModal.addEventListener('click', closeConfirmationModalFunc);
+    closeConfirmation.addEventListener('click', closeConfirmationModalFunc);
+    
+    confirmationModal.addEventListener('click', function(e) {
+        if (e.target === confirmationModal) {
+            closeConfirmationModalFunc();
+        }
+    });
+
+    // Soumission du formulaire
+    reservationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Récupérer les données du formulaire
+        const formData = new FormData(reservationForm);
+        const data = Object.fromEntries(formData);
+        
+        console.log('Données de réservation:', data);
+        
+        // Générer un ID de réservation unique
+        const reservationId = 'RES' + Date.now() + Math.random().toString(36).substr(2, 5).toUpperCase();
+        
+        // Afficher les détails dans la popup de confirmation
+        document.getElementById('confirmationEmail').textContent = data.email;
+        document.getElementById('confirmationDate').textContent = formatDate(data.date);
+        document.getElementById('confirmationHeure').textContent = data.heure;
+        document.getElementById('confirmationType').textContent = getTypeVisiteLabel(data.type_visite);
+        document.getElementById('confirmationPersonnes').textContent = data.personnes + ' personne(s)';
+        document.getElementById('confirmationLangue').textContent = getLangueLabel(data.langue);
+        
+        // Générer le QR Code
+        generateQRCode(reservationId, data);
+        
+        // Fermer le modal de réservation et ouvrir la confirmation
+        closeReservationModalFunc();
+        confirmationModal.classList.remove('hidden');
+        confirmationModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        
+        // Réinitialiser le formulaire
+        reservationForm.reset();
+    });
+
+    // Télécharger le ticket
+    downloadTicket.addEventListener('click', function() {
+        const qrCodeElement = document.querySelector('#qrcode canvas');
+        if (qrCodeElement) {
+            // Créer un lien de téléchargement pour le QR code
+            const link = document.createElement('a');
+            link.download = 'ticket-musee-' + Date.now() + '.png';
+            link.href = qrCodeElement.toDataURL('image/png');
+            link.click();
+        }
+    });
+
+    // Fonction pour générer le QR Code
+    function generateQRCode(reservationId, data) {
+        // Nettoyer le conteneur QR code
+        const qrcodeContainer = document.getElementById('qrcode');
+        qrcodeContainer.innerHTML = '';
+        
+        // Créer les données pour le QR code
+        const qrData = JSON.stringify({
+            id: reservationId,
+            nom: data.nom,
+            date: data.date,
+            heure: data.heure,
+            type: data.type_visite,
+            personnes: data.personnes,
+            langue: data.langue
+        });
+        
+        // Générer le QR code
+        new QRCode(qrcodeContainer, {
+            text: qrData,
+            width: 180,
+            height: 180,
+            colorDark: "#1a56db",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    }
+
+    // Fonction utilitaire pour formater la date
+    function formatDate(dateString) {
+        const options = { day: 'numeric', month: 'long', year: 'numeric' };
+        return new Date(dateString).toLocaleDateString('fr-FR', options);
+    }
+
+    // Fonction pour obtenir le libellé du type de visite
+    function getTypeVisiteLabel(type) {
+        const types = {
+            'generale': 'Visite Générale (2h)',
+            'thematique': 'Visite Thématique (1h30)',
+            'privee': 'Visite Privée (3h)',
+            'scolaire': 'Visite Scolaire (2h)'
+        };
+        return types[type] || type;
+    }
+
+    // Fonction pour obtenir le libellé de la langue
+    function getLangueLabel(langue) {
+        const langues = {
+            'francais': 'Français',
+            'anglais': 'Anglais',
+            'wolof': 'Wolof',
+            'autre': 'Autre'
+        };
+        return langues[langue] || langue;
+    }
+                    </script>
+                    <!--  -->
                     <div class="bg-white border-2 border-gray-200 p-8 rounded-2xl text-center card-hover">
                         <div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mx-auto mb-6">
                             <i class="ri-headphone-line ri-2x text-primary"></i>
@@ -364,7 +1103,7 @@
                             <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">WO</span>
                         </div>
                         <button id="audioGuideBtn" class="bg-primary text-white px-6 py-3 rounded-button font-semibold hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
-                            Écouter
+                            <a href="multimedia.html"> Écouter</a>
                         </button>
                     </div>
                     <div class="bg-white border-2 border-gray-200 p-8 rounded-2xl text-center card-hover">
@@ -384,7 +1123,7 @@
                 </div>
             </div>
         </section>
-  
+        <!-- <section>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-bold text-gray-900 mb-4">Histoire & Culture</h2>
@@ -597,7 +1336,7 @@
                                     </div>
                                     <div>
                                         <h4 class="font-medium text-gray-800">Horaires</h4>
-                                        <p class="text-gray-600">Lundi - Dimanche : 9h - 19h</p>
+                                        <p class="text-gray-600">Mardi - Dimanche : 10h - 19h</p>
                                     </div>
                                 </div>
                             </div>
@@ -721,12 +1460,12 @@
             </div>
         </section>
         <!-- Footer -->
-       <footer class="bg-amber-900 text-white py-16">
+        <footer class="bg-amber-900 text-white py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div>
                         <div class="flex items-center space-x-3 mb-6">
-                              <img src="Logo_MCN.png" style="width: 75px;" alt="">
+                            <img src="Logo_MCN.png" style="width: 75px;" alt="">
                         </div>
                         <p class="text-white-400 leading-relaxed">
                             Découvrez la richesse des civilisations africaines dans notre musée d'exception.
@@ -795,9 +1534,7 @@
                             <a href="#" class="hover:text-white transition-colors">Politique de Confidentialité</a>
                             <a href="#" class="hover:text-white transition-colors">CGU</a>
                         </div>
-                        <div class="flex items-center space-x-4">
-                           
-                        </div>
+                        <div class="flex items-center space-x-4"></div>
                     </div>
                     <div class="text-center mt-6 text-white-400 text-sm">
                         <p>&copy; 2025 Musée des Civilisations Africaines. Tous droits réservés.</p>
@@ -819,7 +1556,6 @@
             </button>
             <!-- audio -->
             <audio id="audioGuide" src="presentation.mp3"></audio>
-          
         </div>
         <script id="navigation">
             document.addEventListener('DOMContentLoaded', function() {
@@ -941,7 +1677,6 @@ document.addEventListener('DOMContentLoaded', function() {
  
 });
         </script>
-        
         <!-- Quiz Modal -->
         <div id="quizModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
             <div class="bg-white rounded-2xl max-w-2xl mx-4 max-h-screen overflow-y-auto">
@@ -1303,7 +2038,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             });
         </script>
-        
         <script id="artworkPopup">
             document.addEventListener('DOMContentLoaded', function() {
             const modal = document.getElementById('artworkModal');

@@ -27,47 +27,51 @@ content: "\f3c2";
         </style>
     </head>
     <body class="bg-white">
-         <header class="bg-amber-900 text-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-0.5">
-                <div class="flex items-center space-x-8">
-                    <div>
-                        <a href="#">
-                            <img src="Logo_MCN.png" style="width: 75px;" alt="Logo" onerror="this.style.display='none'">
-                        </a>
+          <header class="bg-white text-white shadow-lg sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-0.5">
+                    <div class="flex items-center space-x-8">
+                        <div>
+                            <a href="#">
+                                <img
+                                    src="Logo_MCN.png"
+                                    style="width: 75px;"
+                                    alt="Logo"
+                                    onerror="this.style.display='none'"
+                                >
+                            </a>
+                        </div>
+                        <nav class="hidden md:flex space-x-8 text-black">
+                            <a href="index.html" class="hover:text-amber-600 transition-colors font-medium ">Accueil</a>
+                            <a href="catalogue.html" class="hover:text-amber-600 transition-colors font-medium font-medium ">Catalogue</a>
+                            <a href="#" class="text-amber-600 transition-colors border-b-2 border-amber-500 pb-1">Histoire & Culture</a>
+                            <a href="multimedia.html" class="hover:text-amber-600 transition-colors font-medium ">Galerie & Multimédia</a>
+                            <a href="actualites.html" class="hover:text-amber-600 transition-colors font-medium">Actualités</a>
+                        </nav>
                     </div>
-                    <nav class="hidden md:flex space-x-8">
-                        <a href="#accueil" class="text-amber-200 transition-colors font-medium border-b-2 border-amber-200 pb-1">Accueil</a>
-                        <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium">Catalogue</a>
-                        <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium">Histoire & Culture</a>
-                        <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium">Multimédia</a>
-                        <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium">Actualités</a>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <button class="px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
+                            <button class="px-3 py-1 rounded text-amber-800 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
+                            <button class="px-3 py-1 rounded text-amber-800 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">ES</button>
+                        </div>
+                        <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center" style="color: black;">
+                            <i id="menuIcon" class="ri-menu-line ri-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Menu Mobile -->
+                <div id="mobileMenu" class="mobile-menu md:hidden">
+                    <nav class="flex flex-col space-y-4 py-4 border-t border-amber-800 text-black">
+                        <a href="index.html" class="hover:text-amber-800 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Accueil</a>
+                        <a href="catalogue.html" class="hover:text-amber-800 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Catalogue</a>
+                        <a href="#" class="border-b-2 border-amber-500 pb-1 text-amber-800 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Histoire & Culture</a>
+                        <a href="multimedia.html" class="hover:text-amber-800 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Galerie & Multimédia</a>
+                        <a href="actualites.html" class="hover:text-amber-800 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Actualités</a>
                     </nav>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-2">
-                        <button class="px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
-                        <button class="px-3 py-1 rounded text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
-                        <button class="px-3 py-1 rounded text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">ES</button>
-                    </div>
-                    <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center">
-                        <i id="menuIcon" class="ri-menu-line ri-xl"></i>
-                    </button>
-                </div>
             </div>
-            
-            <!-- Menu Mobile -->
-            <div id="mobileMenu" class="mobile-menu md:hidden">
-                <nav class="flex flex-col space-y-4 py-4 border-t border-amber-800">
-                    <a href="#accueil" class="text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Accueil</a>
-                    <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Catalogue</a>
-                    <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Histoire & Culture</a>
-                    <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Multimédia</a>
-                    <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Actualités</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+        </header>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');

@@ -1,136 +1,299 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Détails de l'œuvre - Lance Cérémonielle Maasaï</title>
-
-  <!-- ✅ Lien Tailwind CSS officiel (CDN propre et fonctionnel) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- ✅ Lien pour les icônes Remix -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
-  <!-- ✅ Couleur personnalisée du thème -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#d97706',  // amber-600
-            secondary: '#b45309' // amber-700
-          }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Masque Royal du Bénin - Musée des Civilisations Noires</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+        <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#d97706',
+                        secondary: '#b45309',
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-</head>
-
-<body class="bg-gray-50 text-gray-800">
-
-  <!-- Conteneur principal -->
-  <main class="max-w-5xl mx-auto px-4 py-10">
-
-    <!-- Bouton retour -->
-    <a href="index.html"
-       class="inline-flex items-center text-primary hover:text-secondary mb-6 transition">
-      <i class="ri-arrow-left-line mr-2"></i> Retour aux œuvres
-    </a>
-
-    <!-- Bloc principal : image + contenu -->
-    <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
-      <div class="md:flex">
-
-        <!-- Image -->
-        <div class="md:w-1/2 h-80 md:h-auto bg-cover bg-center"
-             style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20metal%20tools%20weapons%20spears%20shields%20craftsmanship%20museum%20display%20cultural%20heritage%20Maasai%20Kenya%20traditional%20metalwork%20daily%20life%20hunting&width=640&height=480&orientation=landscape');">
+        </script>
+    </head>
+    <body class="bg-gray-50">
+        <!-- Image principale -->
+        <div class="relative">
+            <div class="h-80 bg-gradient-to-br from-amber-900 to-amber-700 flex items-center justify-center">
+                <h1 class="text-4xl font-bold text-white">Détails de l'oeuvre</h1>
+            </div>
+            <!-- Badge QR scanné -->
+            <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full flex items-center space-x-2 shadow-lg animate-pulse">
+                <i class="ri-qr-scan-line"></i>
+                <span class="text-sm font-medium">QR Scanné</span>
+            </div>
         </div>
-
-        <!-- Contenu -->
-        <div class="md:w-1/2 p-8 flex flex-col justify-between">
-          <div>
-            <h1 class="text-2xl font-bold text-gray-900 mb-2">
-              Lance Cérémonielle Maasaï
-            </h1>
-            <p class="text-sm text-primary font-medium mb-3">XVIIIe siècle · Kenya</p>
-
-            <p class="text-gray-600 text-sm leading-relaxed mb-4">
-              Cette lance cérémonielle, forgée selon les traditions maasaï, symbolise le passage à l'âge adulte. 
-              Utilisée lors de rituels d’initiation, elle représente la bravoure et l’honneur des jeunes guerriers. 
-              Fabriquée à partir de métal local et de bois, elle témoigne d’un savoir-faire ancestral transmis de génération en génération.
-            </p>
-
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Exposée dans la collection d’objets rituels, cette lance illustre la richesse culturelle des peuples 
-              de la vallée du Rift et l’importance du symbolisme dans les objets du quotidien.
-            </p>
-          </div>
-
-          <!-- Bloc audio -->
-          <div class="mt-6">
-            <div class="flex items-center justify-between mb-2">
-              <span class="text-sm font-medium text-gray-700">Écouter la description audio</span>
-              <button id="playAudio"
-                      class="w-9 h-9 flex items-center justify-center rounded-full bg-primary hover:bg-secondary text-white transition">
-                <i id="audioIcon" class="ri-play-fill text-lg"></i>
-              </button>
+        <!-- Contenu principal -->
+        <div class="container mx-auto px-4 -mt-8 relative z-10 pb-20">
+            <!-- Carte principale -->
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <!-- En-tête de la carte -->
+                <div class="p-6 border-b border-gray-200">
+                    <div class="flex items-start justify-between mb-3">
+                        <div class="flex-1">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-2">Masque Royal du Bénin</h2>
+                            <p class="text-primary font-semibold text-lg mb-1">XVIe siècle</p>
+                            <p class="text-gray-600 flex items-center">
+                                <i class="ri-map-pin-line mr-2"></i>
+                                Royaume du Bénin, Nigeria
+                            </p>
+                        </div>
+                        <div class="ml-4">
+                            <div class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center">
+                                <i class="ri-qr-code-line text-3xl text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tags -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-1.5 bg-amber-100 text-amber-800 text-sm rounded-full font-medium flex items-center">
+                            <i class="ri-hammer-line mr-1.5"></i>
+                            Bronze coulé
+                        </span>
+                        <span class="px-4 py-1.5 bg-purple-100 text-purple-800 text-sm rounded-full font-medium flex items-center">
+                            <i class="ri-古-trophy-line mr-1.5"></i>
+                            Cérémoniel
+                        </span>
+                        <span class="px-4 py-1.5 bg-blue-100 text-blue-800 text-sm rounded-full font-medium flex items-center">
+                            <i class="ri-global-line mr-1.5"></i>
+                            Afrique de l'Ouest
+                        </span>
+                        <span class="px-4 py-1.5 bg-green-100 text-green-800 text-sm rounded-full font-medium flex items-center">
+                            <i class="ri-time-line mr-1.5"></i>
+                            Médiéval
+                        </span>
+                    </div>
+                </div>
+                <!-- Description -->
+                <div class="p-6 border-b border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="ri-file-text-line text-primary mr-2"></i>
+                        Description
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Ce masque exceptionnel en bronze a été coulé selon les techniques ancestrales perfectionnées par les artisans de la cour royale du Bénin. 
+                    Symbole de pouvoir et de prestige, il était utilisé lors des cérémonies d'intronisation des Obas (rois). 
+                    La finesse du travail témoigne de la maîtrise extraordinaire des bronziers béninois, dont la renommée s'étendait bien au-delà des frontières du royaume.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Les motifs gravés sur le masque représentent des scarifications rituelles et des symboles de protection spirituelle. 
+                    Chaque détail possède une signification profonde liée à la cosmogonie et aux traditions du peuple Edo.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Exposé dans la collection d'art royal africain, ce masque illustre l'apogée de la civilisation du Bénin 
+                    et la sophistication technique des arts métallurgiques précoloniaux. Il fait partie des trésors 
+                    qui témoignent de la grandeur et de la richesse culturelle des royaumes d'Afrique de l'Ouest.
+                    </p>
+                </div>
+                <!-- Lecteur audio -->
+                <div class="p-6 bg-gradient-to-r from-amber-50 to-orange-50 border-b border-gray-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                <i class="ri-headphone-line text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900">Guide Audio</h3>
+                                <p class="text-sm text-gray-600">Description détaillée de l'œuvre</p>
+                            </div>
+                        </div>
+                        <button id="playAudio" class="w-14 h-14 flex items-center justify-center rounded-full bg-primary hover:bg-secondary text-white transition-all transform hover:scale-110 shadow-lg">
+                            <i id="audioIcon" class="ri-play-fill text-2xl"></i>
+                        </button>
+                    </div>
+                    <!-- Barre de progression -->
+                    <div class="relative w-full h-2 bg-white rounded-full overflow-hidden cursor-pointer shadow-inner" id="progressBar">
+                        <div id="audioProgress" class="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-secondary transition-all duration-200 ease-linear" style="width: 0%;"></div>
+                    </div>
+                    <!-- Durée -->
+                    <div class="flex justify-between text-sm text-gray-600 mt-2 font-medium">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                    <audio id="audio" src="presentation.mp3"></audio>
+                </div>
+                <!-- Informations détaillées -->
+                <div class="p-6 border-b border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="ri-information-line text-primary mr-2"></i>
+                        Informations détaillées
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-50 p-4 rounded-xl">
+                            <p class="text-xs text-gray-500 mb-1 font-medium">Matériau</p>
+                            <p class="text-sm font-bold text-gray-900">Bronze coulé</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl">
+                            <p class="text-xs text-gray-500 mb-1 font-medium">Période</p>
+                            <p class="text-sm font-bold text-gray-900">XVIe siècle</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl">
+                            <p class="text-xs text-gray-500 mb-1 font-medium">Origine</p>
+                            <p class="text-sm font-bold text-gray-900">Nigeria</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl">
+                            <p class="text-xs text-gray-500 mb-1 font-medium">Fonction</p>
+                            <p class="text-sm font-bold text-gray-900">Cérémoniel</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl">
+                            <p class="text-xs text-gray-500 mb-1 font-medium">État</p>
+                            <p class="text-sm font-bold text-gray-900">Excellent</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-xl">
+                            <p class="text-xs text-gray-500 mb-1 font-medium">Collection</p>
+                            <p class="text-sm font-bold text-gray-900">Art Royal</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contexte historique -->
+                <div class="p-6 border-b border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="ri-book-open-line text-primary mr-2"></i>
+                        Contexte historique
+                    </h3>
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-5 rounded-xl border-l-4 border-primary">
+                        <p class="text-gray-700 leading-relaxed mb-3">
+                            Le Royaume du Bénin (actuel Nigeria) a connu son apogée entre le XIIIe et le XVIIe siècle. 
+                        Célèbre pour son art de la fonte du bronze, ce royaume a produit certaines des œuvres les plus sophistiquées d'Afrique.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Les bronzes du Bénin, dont ce masque fait partie, ont étonné les explorateurs européens par leur finesse 
+                        et leur complexité technique, remettant en question les préjugés sur les civilisations africaines.
+                        </p>
+                    </div>
+                </div>
+                <!-- Galerie connexe -->
+                  <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                    <i class="ri-gallery-line text-primary mr-2"></i>
+                    Œuvres similaires
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+                    <div class="aspect-square bg-cover bg-center rounded-xl cursor-pointer hover:shadow-lg transition-all transform hover:scale-105" style="background-image: url('https://readdy.ai/api/search-image?query=Traditional%20African%20wooden%20sculpture%20statue%20carved%20figure%20tribal%20art%20museum%20exhibition%20cultural%20artifact%20black%20wood%20craftsmanship%20ancestral%20heritage%20display%20Dogon%20Mali%20spiritual&width=320&height=256&seq=cat002&orientation=landscape');"></div>
+                    <div class="aspect-square bg-cover bg-center rounded-xl cursor-pointer hover:shadow-lg transition-all transform hover:scale-105" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations%20royal%20ceremonial&width=320&height=256&seq=cat001&orientation=landscape');"></div>
+                    <div class="aspect-square bg-cover bg-center rounded-xl cursor-pointer hover:shadow-lg transition-all transform hover:scale-105 col-span-2 sm:col-span-1" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations%20royal%20ceremonial&width=320&height=256&seq=cat001&orientation=landscape');"></div>
+                </div>
             </div>
 
-            <!-- Barre de progression -->
-            <div class="relative w-full h-1 bg-gray-200 rounded-full overflow-hidden">
-              <div id="audioProgress"
-                   class="absolute top-0 left-0 h-full bg-primary transition-all duration-200 ease-linear"
-                   style="width: 0%;"></div>
-            </div>
-
-            <audio id="audio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
-          </div>
         </div>
-      </div>
-    </div>
+                <!-- Actions en bas -->
+                <div class="mt-6 grid grid-cols gap-4 r">
+                    <button onclick="shareArtwork()" class="bg-white border-2 border-primary text-primary px-6 py-4 rounded-xl font-bold hover:bg-primary hover:text-white transition-all flex items-center justify-center space-x-2 shadow-lg">
+                        <span>
+                            <i class="ri-share-line text-xl"></i> Partager
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <script>
+        const audio = document.getElementById('audio');
+        const playButton = document.getElementById('playAudio');
+        const audioIcon = document.getElementById('audioIcon');
+        const audioProgress = document.getElementById('audioProgress');
+        const progressBar = document.getElementById('progressBar');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
 
-    <!-- Galerie -->
-    <section class="mt-10">
-      <h2 class="text-xl font-semibold mb-4 text-gray-900">Autres vues et détails</h2>
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <img src="https://readdy.ai/api/search-image?query=African%20spear%20metal%20closeup&width=400&height=300"
-             class="rounded-xl shadow-sm hover:shadow-md transition"
-             alt="Détail 1">
-        <img src="https://readdy.ai/api/search-image?query=Maasai%20ceremonial%20weapon%20handle&width=400&height=300"
-             class="rounded-xl shadow-sm hover:shadow-md transition"
-             alt="Détail 2">
-        <img src="https://readdy.ai/api/search-image?query=African%20metal%20smith%20tool%20crafting&width=400&height=300"
-             class="rounded-xl shadow-sm hover:shadow-md transition"
-             alt="Détail 3">
-      </div>
-    </section>
-  </main>
+        let isPlaying = false;
 
-  <script>
-    const playAudio = document.getElementById('playAudio');
-    const audioIcon = document.getElementById('audioIcon');
-    const audio = document.getElementById('audio');
-    const audioProgress = document.getElementById('audioProgress');
+        // Lecture/Pause audio
+        playButton.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                audioIcon.className = 'ri-play-fill text-2xl';
+            } else {
+                audio.play();
+                audioIcon.className = 'ri-pause-fill text-2xl';
+            }
+            isPlaying = !isPlaying;
+        });
 
-    playAudio.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play();
-        audioIcon.classList.replace('ri-play-fill', 'ri-pause-fill');
-      } else {
-        audio.pause();
-        audioIcon.classList.replace('ri-pause-fill', 'ri-play-fill');
-      }
-    });
+        // Mettre à jour la barre de progression
+        audio.addEventListener('timeupdate', function() {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            audioProgress.style.width = progress + '%';
+            currentTimeEl.textContent = formatTime(audio.currentTime);
+        });
 
-    audio.addEventListener('timeupdate', () => {
-      const progress = (audio.currentTime / audio.duration) * 100;
-      audioProgress.style.width = `${progress}%`;
-    });
+        // Afficher la durée totale
+        audio.addEventListener('loadedmetadata', function() {
+            durationEl.textContent = formatTime(audio.duration);
+        });
 
-    audio.addEventListener('ended', () => {
-      audioIcon.classList.replace('ri-pause-fill', 'ri-play-fill');
-      audioProgress.style.width = '0%';
-    });
-  </script>
-</body>
-</html>
+        // Réinitialiser quand l'audio se termine
+        audio.addEventListener('ended', function() {
+            isPlaying = false;
+            audioIcon.className = 'ri-play-fill text-2xl';
+            audioProgress.style.width = '0%';
+        });
+
+        // Cliquer sur la barre de progression
+        progressBar.addEventListener('click', function(e) {
+            const rect = progressBar.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = percent * audio.duration;
+        });
+
+        // Formater le temps
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+         // Fonction de partage
+        function shareArtwork() {
+            const currentUrl = window.location.href;
+            const artworkTitle = "Masque Royal du Bénin - Musée des Civilisations Noires";
+            
+            // Vérifier si l'API Web Share est disponible (mobile)
+            if (navigator.share) {
+                navigator.share({
+                    title: artworkTitle,
+                    text: "Découvrez cette œuvre exceptionnelle au Musée des Civilisations Noires",
+                    url: currentUrl
+                }).catch((error) => {
+                    // Si l'utilisateur annule, ne rien faire
+                    if (error.name !== 'AbortError') {
+                        copyToClipboard(currentUrl);
+                    }
+                });
+            } else {
+                // Sinon, copier le lien dans le presse-papiers
+                copyToClipboard(currentUrl);
+            }
+        }
+
+        // Fonction pour copier dans le presse-papiers
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast();
+            }).catch((error) => {
+                // Fallback pour les anciens navigateurs
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast();
+                } catch (error) {
+                    alert('Impossible de copier le lien. Veuillez le copier manuellement : ' + text);
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+            </script>
+        </body>
+    </html>

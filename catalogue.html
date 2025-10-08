@@ -123,51 +123,93 @@
             border-radius: 50%;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
+
+            @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slide-up {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.3s ease;
+        }
+
+        .animate-slide-up {
+            animation: slide-up 0.3s ease;
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
         </style>
     </head>
     <body class="bg-gray-50">
         <!-- Header -->
-        <header class="bg-amber-900 text-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-0.5">
-                <div class="flex items-center space-x-8">
-                    <div>
-                        <a href="#">
-                            <img src="Logo_MCN.png" style="width: 75px;" alt="Logo" onerror="this.style.display='none'">
-                        </a>
+         <header class="bg-white text-white shadow-lg sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-0.5">
+                    <div class="flex items-center space-x-8">
+                        <div>
+                            <a href="#">
+                                <img
+                                    src="Logo_MCN.png"
+                                    style="width: 75px;"
+                                    alt="Logo"
+                                    onerror="this.style.display='none'"
+                                >
+                            </a>
+                        </div>
+                        <nav class="hidden md:flex space-x-8 text-black">
+                            <a href="index.html" class="hover:text-amber-600 transition-colors font-medium ">Accueil</a>
+                            <a href="#" class="text-amber-600 transition-colors font-medium font-medium border-b-2 border-amber-500 pb-1">Catalogue</a>
+                            <a href="histoire&culture.html" class="hover:text-amber-600 transition-colors">Histoire & Culture</a>
+                            <a href="multimedia.html" class="hover:text-amber-600 transition-colors font-medium ">Galerie & Multimédia</a>
+                            <a href="actualites.html" class="hover:text-amber-600 transition-colors font-medium">Actualités</a>
+                        </nav>
                     </div>
-                    <nav class="hidden md:flex space-x-8">
-                        <a href="#accueil" class="text-amber-200 transition-colors font-medium border-b-2 border-amber-200 pb-1">Accueil</a>
-                        <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium">Catalogue</a>
-                        <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium">Histoire & Culture</a>
-                        <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium">Multimédia</a>
-                        <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium">Actualités</a>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <button class="px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
+                            <button class="px-3 py-1 rounded text-amber-800 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
+                            <button class="px-3 py-1 rounded text-amber-800 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">ES</button>
+                        </div>
+                        <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center" style="color: black;">
+                            <i id="menuIcon" class="ri-menu-line ri-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Menu Mobile -->
+                <div id="mobileMenu" class="mobile-menu md:hidden">
+                  <nav class="flex flex-col space-y-4 py-4 border-t border-amber-800 text-black">
+                        <a href="index.html" class="hover:text-amber-800 transition-colors font-medium px-2 py-2  rounded">Accueil</a>
+                        <a href="catalogue.html" class="border-b-2 border-amber-500 pb-1 text-amber-800 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Catalogue</a>
+                        <a href="histoire&culture.html" class="hover:text-amber-800 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Histoire & Culture</a>
+                        <a href="multimedia.html" class=" hover:text-amber-800 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Galerie & Multimédia</a>
+                        <a href="actualites.html" class="hover:text-amber-800 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Actualités</a>
                     </nav>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <div class="flex items-center space-x-2">
-                        <button class="px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
-                        <button class="px-3 py-1 rounded text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
-                        <button class="px-3 py-1 rounded text-amber-200 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">ES</button>
-                    </div>
-                    <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center">
-                        <i id="menuIcon" class="ri-menu-line ri-xl"></i>
-                    </button>
-                </div>
             </div>
-            
-            <!-- Menu Mobile -->
-            <div id="mobileMenu" class="mobile-menu md:hidden">
-                <nav class="flex flex-col space-y-4 py-4 border-t border-amber-800">
-                    <a href="#accueil" class="text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Accueil</a>
-                    <a href="catalogue.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Catalogue</a>
-                    <a href="histoire&culture.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Histoire & Culture</a>
-                    <a href="multimedia.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Multimédia</a>
-                    <a href="actualites.html" class="hover:text-amber-200 transition-colors font-medium px-2 py-2 hover:bg-amber-800 rounded">Actualités</a>
-                </nav>
-            </div>
-        </div>
-    </header>
+        </header>
 
     <script>
         const menuToggle = document.getElementById('menuToggle');
@@ -346,13 +388,13 @@
                         œuvres trouvées
                     </div>
                     <div class="flex items-center space-x-2">
-                        <span class="text-sm text-gray-600">Trier par :</span>
+                        <!-- <span class="text-sm text-gray-600">Trier par :</span>
                         <select id="sortBy" class="px-3 py-1 text-sm border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary">
                             <option value="name">Nom</option>
                             <option value="date">Date</option>
                             <option value="region">Région</option>
                             <option value="popularity">Popularité</option>
-                        </select>
+                        </select> -->
                     </div>
                 </div>
                 <!-- Catalog Grid -->
@@ -381,7 +423,7 @@
                             <div class="text-xs text-gray-500 mb-3">Bronze · Cérémoniel</div>
                             <p class="text-gray-600 text-sm mb-4 line-clamp-3">Bronze coulé selon les techniques ancestrales de la cour royale du Bénin, symbole de pouvoir et de prestige utilisé lors des cérémonies d'intronisation.</p>
                             <div class="flex space-x-2">
-                                <button class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
+                                <button onclick="openModal()" class="flex-1 bg-primary text-white px-4 py-2 rounded-button text-sm font-medium hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
                                     Voir détails
                                 </button>
                                 <button class="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-button hover:bg-gray-50 transition-colors">
@@ -390,6 +432,195 @@
                             </div>
                         </div>
                     </div>
+                    <!--  -->
+                      <!-- Modal -->
+    <div id="artworkModal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 animate-fade-in">
+        <div class="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl animate-slide-up">
+            
+            <!-- Bouton fermeture -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full w-10 h-10 flex items-center justify-center transition-all hover:rotate-90 shadow-lg">
+                <i class="ri-close-line text-2xl text-gray-700"></i>
+            </button>
+
+            <!-- Contenu du modal -->
+            <div class="flex flex-col md:flex-row overflow-y-auto max-h-[90vh]">
+                
+                <!-- Image -->
+                <div class="md:w-1/2 h-64 md:h-auto bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=Ancient%20African%20bronze%20sculpture%20mask%20from%20Benin%20Kingdom%20traditional%20metalwork%20artifact%20museum%20display%20warm%20lighting%20detailed%20craftsmanship%20cultural%20heritage%20black%20civilizations%20royal%20ceremonial&width=320&height=256&seq=cat001&orientation=landscape');"></div>
+                
+                <!-- Détails -->
+                <div class="md:w-1/2 p-8 flex flex-col justify-between">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                            Masque Royal du Bénin
+                        </h1>
+                        <p class="text-sm text-primary font-medium mb-3">XVIe siècle · Nigeria</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs rounded-full font-medium">Bronze</span>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs rounded-full font-medium">Cérémoniel</span>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-800 text-xs rounded-full font-medium">Royaume du Bénin</span>
+                        </div>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Ce masque exceptionnel en bronze a été coulé selon les techniques ancestrales perfectionnées par les artisans de la cour royale du Bénin. 
+                            Symbole de pouvoir et de prestige, il était utilisé lors des cérémonies d'intronisation des Obas (rois). 
+                            La finesse du travail témoigne de la maîtrise extraordinaire des bronziers béninois, dont la renommée s'étendait bien au-delà des frontières du royaume.
+                        </p>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Les motifs gravés sur le masque représentent des scarifications rituelles et des symboles de protection spirituelle. 
+                            Chaque détail possède une signification profonde liée à la cosmogonie et aux traditions du peuple Edo.
+                        </p>
+
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Exposé dans la collection d'art royal africain, ce masque illustre l'apogée de la civilisation du Bénin 
+                            et la sophistication technique des arts métallurgiques précoloniaux. Il fait partie des trésors 
+                            qui témoignent de la grandeur et de la richesse culturelle des royaumes d'Afrique de l'Ouest.
+                        </p>
+                    </div>
+
+                    <!-- Bloc audio -->
+                    <div class="mt-6 pt-6 border-t border-gray-200">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-sm font-medium text-gray-700">Écouter la description audio</span>
+                            <button id="playAudio"
+                                    class="w-10 h-10 flex items-center justify-center rounded-full bg-primary hover:bg-secondary text-white transition-all transform hover:scale-110">
+                                <i id="audioIcon" class="ri-play-fill text-xl"></i>
+                            </button>
+                        </div>
+
+                        <!-- Barre de progression -->
+                        <div class="relative w-full h-2 bg-gray-200 rounded-full overflow-hidden cursor-pointer" id="progressBar">
+                            <div id="audioProgress"
+                                 class="absolute top-0 left-0 h-full bg-primary transition-all duration-200 ease-linear"
+                                 style="width: 0%;"></div>
+                        </div>
+
+                        <!-- Durée -->
+                        <div class="flex justify-between text-xs text-gray-500 mt-1">
+                            <span id="currentTime">0:00</span>
+                            <span id="duration">0:00</span>
+                        </div>
+
+                        <audio id="audio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+                    </div>
+
+                    <!-- Informations supplémentaires -->
+                    <div class="mt-6 pt-6 border-t border-gray-200 grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">Matériau</p>
+                            <p class="text-sm font-medium text-gray-900">Bronze coulé</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">Période</p>
+                            <p class="text-sm font-medium text-gray-900">Médiévale</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">Région</p>
+                            <p class="text-sm font-medium text-gray-900">Afrique de l'Ouest</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">État</p>
+                            <p class="text-sm font-medium text-gray-900">Excellent</p>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('artworkModal');
+        const audio = document.getElementById('audio');
+        const playButton = document.getElementById('playAudio');
+        const audioIcon = document.getElementById('audioIcon');
+        const audioProgress = document.getElementById('audioProgress');
+        const progressBar = document.getElementById('progressBar');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+
+        let isPlaying = false;
+
+        // Ouvrir le modal
+        function openModal() {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Fermer le modal
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            // Arrêter l'audio si en cours
+            if (isPlaying) {
+                audio.pause();
+                isPlaying = false;
+                audioIcon.className = 'ri-play-fill text-xl';
+            }
+        }
+
+        // Fermer en cliquant à l'extérieur
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Fermer avec Échap
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Lecture/Pause audio
+        playButton.addEventListener('click', function() {
+            if (isPlaying) {
+                audio.pause();
+                audioIcon.className = 'ri-play-fill text-xl';
+            } else {
+                audio.play();
+                audioIcon.className = 'ri-pause-fill text-xl';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Mettre à jour la barre de progression
+        audio.addEventListener('timeupdate', function() {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            audioProgress.style.width = progress + '%';
+            currentTimeEl.textContent = formatTime(audio.currentTime);
+        });
+
+        // Afficher la durée totale
+        audio.addEventListener('loadedmetadata', function() {
+            durationEl.textContent = formatTime(audio.duration);
+        });
+
+        // Réinitialiser quand l'audio se termine
+        audio.addEventListener('ended', function() {
+            isPlaying = false;
+            audioIcon.className = 'ri-play-fill text-xl';
+            audioProgress.style.width = '0%';
+        });
+
+        // Cliquer sur la barre de progression
+        progressBar.addEventListener('click', function(e) {
+            const rect = progressBar.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = percent * audio.duration;
+        });
+
+        // Formater le temps
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+    </script>
+                    <!--  -->
                     <!-- Artwork Card 2 -->
                     <div
                         class="artwork-card bg-white rounded-2xl shadow-lg overflow-hidden card-hover"
