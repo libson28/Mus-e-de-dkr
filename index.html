@@ -157,10 +157,80 @@
                     </div>
                     <div class="flex items-center space-x-4">
                         <div class="flex items-center space-x-2">
-                            <button class="px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
-                            <button class="px-3 py-1 rounded text-amber-800 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">EN</button>
-                            <button class="px-3 py-1 rounded text-amber-800 hover:bg-amber-800 text-sm font-medium whitespace-nowrap">ES</button>
+                            <button class="lang-btn px-3 py-1 rounded bg-amber-700 text-white text-sm font-medium whitespace-nowrap">FR</button>
+                            <button class="lang-btn px-3 py-1 rounded text-amber-800 hover:bg-amber-800 hover:text-white text-sm font-medium whitespace-nowrap">EN</button>
+                            <button class="lang-btn px-3 py-1 rounded text-amber-800 hover:bg-amber-800 hover:text-white text-sm font-medium whitespace-nowrap">WO</button>
                         </div>
+                        <script id="languageSelector">
+                            document.addEventListener('DOMContentLoaded', function() {
+                            const langButtons = document.querySelectorAll('.lang-btn');
+                            const translations = {
+                                fr: {
+                                navItems: ['Accueil', 'Catalogue', 'Histoire & Culture', 'Multimédia', 'Contact'],
+                                heroTitle: 'Bienvenue au Musée des<br><span class="text-amber-300">Civilisations Noires</span>',
+                                heroSubtitle: 'Découvrez la richesse et la diversité des civilisations africaines à travers nos collections exceptionnelles',
+                                heroButton: 'Découvrir nos collections',
+                                audioGuideBtn: 'Écouter'
+                                },
+                                en: {
+                                navItems: ['Home', 'Catalog', 'History & Culture', 'Multimedia', 'Contact'],
+                                heroTitle: 'Welcome to the Museum of<br><span class="text-amber-300">Black Civilizations</span>',
+                                heroSubtitle: 'Discover the richness and diversity of African civilizations through our exceptional collections',
+                                heroButton: 'Discover our collections',
+                                audioGuideBtn: 'Listen'
+                                },
+                                wo: {
+                                navItems: ['Kër', 'Kataloog', 'Taarix ak Cosaan', 'Multimédia', 'Jokkoo'],
+                                heroTitle: 'Dalal ak jàmm ci Musée bu<br><span class="text-amber-300">Civilisations Noires</span>',
+                                heroSubtitle: 'Gis njàmm ak dayo cosaan Afrik yi ci biir jëfandikook yi nu rafet',
+                                heroButton: 'Seet sunu koleksiyoŋ yi',
+                                audioGuideBtn: 'Déggal'
+                                }
+                            };
+
+                            function switchLanguage(lang) {
+                                const translation = translations[lang];
+                                if (!translation) return;
+
+                                const navLinks = document.querySelectorAll('nav a');
+                                navLinks.forEach((link, index) => {
+                                if (index < translation.navItems.length) {
+                                    link.textContent = translation.navItems[index];
+                                }
+                                });
+
+                                document.querySelector('h1').innerHTML = translation.heroTitle;
+                                document.querySelector('h1').nextElementSibling.textContent = translation.heroSubtitle;
+                                document.querySelector('.hero-bg button').textContent = translation.heroButton;
+
+                                const audioBtn = document.getElementById('audioGuideBtn');
+                                if (audioBtn) {
+                                audioBtn.textContent = translation.audioGuideBtn;
+                                }
+                            }
+
+                            // Gestion des boutons de langue
+                            langButtons.forEach(button => {
+                                button.addEventListener('click', function() {
+                                // Réinitialiser tous les boutons
+                                langButtons.forEach(btn => {
+                                    btn.classList.remove('bg-amber-700', 'text-white');
+                                    btn.classList.add('text-amber-800', 'hover:bg-amber-800', 'hover:text-white');
+                                    btn.blur(); // enlève le focus visuel sur les autres
+                                });
+
+                                // Appliquer le style actif au bouton cliqué
+                                this.classList.remove('text-amber-800', 'hover:bg-amber-800', 'hover:text-white');
+                                this.classList.add('bg-amber-700', 'text-white');
+                                this.focus(); // garde le focus visuel
+
+                                // Déterminer la langue
+                                const lang = this.textContent.trim().toLowerCase();
+                                switchLanguage(lang);
+                                });
+                            });
+                            });
+                        </script>
                         <button id="menuToggle" class="md:hidden w-8 h-8 flex items-center justify-center" style="color: black;">
                             <i id="menuIcon" class="ri-menu-line ri-xl"></i>
                         </button>
@@ -229,7 +299,7 @@
                     </p>
                     <div>
                         <button class="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-button text-lg font-semibold transition-colors whitespace-nowrap !rounded-button">
-                            Découvrir nos collections
+                            <a href="#catalogue"> Découvrir nos collections</a>
                         </button>
                     </div>
                     <!-- <div class="pt-4">
@@ -1537,7 +1607,6 @@
         </div>
         <!-- Boutons d'Accessibilité -->
         <div class="fixed right-6 bottom-6 space-y-3 z-50">
-           
             <!-- Bouton Audio -->
             <button id="audioMode" class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full shadow-lg hover:bg-secondary transition-colors">
                 <i class="ri-volume-up-line ri-lg"></i>
@@ -1576,7 +1645,7 @@
   } else {
     console.error('⚠️ Élément bouton ou audio introuvable dans le DOM.');
   }
-</script>
+            </script>
         </div>
         <script id="navigation">
             document.addEventListener('DOMContentLoaded', function() {
@@ -1591,75 +1660,6 @@
             behavior: 'smooth',
             block: 'start'
             });
-            }
-            });
-            });
-            });
-        </script>
-        <script id="languageSelector">
-document.addEventListener('DOMContentLoaded', function() {
-        const langButtons = document.querySelectorAll('header button[class*="px-3"]');
-        const translations = {
-            fr: {
-            navItems: ['Accueil', 'Catalogue', 'Histoire & Culture', 'Multimédia', 'Contact'],
-            heroTitle: 'Bienvenue au Musée des<br><span class="text-amber-300">Civilisations Noires</span>',
-            heroSubtitle: 'Découvrez la richesse et la diversité des civilisations africaines à travers nos collections exceptionnelles',
-            heroButton: 'Découvrir nos collections',
-            audioGuideBtn: 'Écouter'
-            },
-            en: {
-            navItems: ['Home', 'Catalog', 'History & Culture', 'Multimedia', 'Contact'],
-            heroTitle: 'Welcome to the Museum of<br><span class="text-amber-300">Black Civilizations</span>',
-            heroSubtitle: 'Discover the richness and diversity of African civilizations through our exceptional collections',
-            heroButton: 'Discover our collections',
-            audioGuideBtn: 'Listen'
-            },
-            es: {
-            navItems: ['Inicio', 'Catálogo', 'Historia y Cultura', 'Multimedia', 'Contacto'],
-            heroTitle: 'Bienvenidos al Museo de las<br><span class="text-amber-300">Civilizaciones Negras</span>',
-            heroSubtitle: 'Descubre la riqueza y diversidad de las civilizaciones africanas a través de nuestras colecciones excepcionales',
-            heroButton: 'Descubrir nuestras colecciones',
-            audioGuideBtn: 'Escuchar'
-            }
-            };
-
-            function switchLanguage(lang) {
-            const translation = translations[lang];
-            if (!translation) return;
-
-            const navLinks = document.querySelectorAll('nav a');
-            navLinks.forEach((link, index) => {
-            if (index < translation.navItems.length) {
-            link.textContent = translation.navItems[index];
-            }
-            });
-
-            document.querySelector('h1').innerHTML = translation.heroTitle;
-            document.querySelector('h1').nextElementSibling.textContent = translation.heroSubtitle;
-            document.querySelector('.hero-bg button').textContent = translation.heroButton;
-
-            const audioBtn = document.getElementById('audioGuideBtn');
-            if (audioBtn) {
-            audioBtn.textContent = translation.audioGuideBtn;
-            }
-            }
-
-            langButtons.forEach(button => {
-            button.addEventListener('click', function() {
-            langButtons.forEach(btn => {
-            btn.classList.remove('bg-primary', 'text-white');
-            btn.classList.add('text-amber-200', 'hover:bg-amber-800');
-            });
-            this.classList.remove('text-amber-200', 'hover:bg-amber-800');
-            this.classList.add('bg-primary', 'text-white');
-
-            const lang = this.textContent.toLowerCase();
-            if (lang === 'en') {
-            switchLanguage('en');
-            } else if (lang === 'es') {
-            switchLanguage('es');
-            } else {
-            switchLanguage('fr');
             }
             });
             });
@@ -1769,50 +1769,100 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
         <!-- Popup Modal for Artworks -->
-        <div id="artworkModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-            <div class="bg-white rounded-2xl max-w-4xl mx-4 max-h-screen overflow-y-auto">
-                <div class="flex">
-                    <div class="w-1/2">
-                        <div id="modalImage" class="h-96 bg-cover bg-center rounded-l-2xl"></div>
-                    </div>
-                    <div class="w-1/2 p-8">
-                        <div class="flex justify-between items-start mb-6">
-                            <div>
-                                <h2 id="modalTitle" class="text-3xl font-bold text-gray-900 mb-2"></h2>
-                                <p id="modalPeriod" class="text-lg text-primary font-medium"></p>
-                            </div>
-                            <button id="closeModal" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600">
-                                <i class="ri-close-line ri-lg"></i>
-                            </button>
-                        </div>
-                        <div id="modalContent" class="space-y-6">
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-900 mb-3">Description</h3>
-                                <p id="modalDescription" class="text-gray-700 leading-relaxed"></p>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-900 mb-3">Informations techniques</h3>
-                                <div id="modalTechnical" class="space-y-2 text-gray-700"></div>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-900 mb-3">Contexte culturel</h3>
-                                <p id="modalContext" class="text-gray-700 leading-relaxed"></p>
-                            </div>
-                            <div class="flex space-x-4 pt-4">
-                                <button class="flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-button hover:bg-secondary transition-colors whitespace-nowrap !rounded-button">
-                                    <i class="ri-headphone-line ri-sm"></i>
-                                    <span>Audio Guide</span>
-                                </button>
-                                <button class="flex items-center space-x-2 bg-gray-100 text-gray-700 px-4 py-2 rounded-button hover:bg-gray-200 transition-colors whitespace-nowrap !rounded-button">
-                                    <i class="ri-qr-code-line ri-sm"></i>
-                                    <span>QR Code</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+     <!-- Fenêtre modale -->
+<div id="artworkModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-2xl w-full max-w-6xl mx-4 max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col">
+    
+    <!-- Contenu principal -->
+    <div class="flex flex-col md:flex-row">
+      
+      <!-- Image -->
+      <div class="w-full md:w-1/2">
+        <div id="modalImage" class="h-60 md:h-full bg-cover bg-center rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none"></div>
+      </div>
+
+      <!-- Texte -->
+      <div class="w-full md:w-1/2 p-5 md:p-8">
+        <div class="flex justify-between items-start mb-4 md:mb-6">
+          <div>
+            <h2 id="modalTitle" class="text-2xl md:text-3xl font-bold text-gray-900 mb-1 md:mb-2"></h2>
+            <p id="modalPeriod" class="text-base md:text-lg text-primary font-medium"></p>
+          </div>
+          <button id="closeModal" class="w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-600 transition">
+            <i class="ri-close-line ri-lg"></i>
+          </button>
         </div>
+
+        <div id="modalContent" class="space-y-5 md:space-y-6">
+          <div>
+            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">Description</h3>
+            <p id="modalDescription" class="text-gray-700 leading-relaxed text-sm md:text-base"></p>
+          </div>
+          <div>
+            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">Informations techniques</h3>
+            <div id="modalTechnical" class="space-y-2 text-gray-700 text-sm md:text-base"></div>
+          </div>
+          <div>
+            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-2 md:mb-3">Contexte culturel</h3>
+            <p id="modalContext" class="text-gray-700 leading-relaxed text-sm md:text-base"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Audio -->
+    <div class="p-5 md:p-6 bg-gradient-to-r from-amber-50 to-orange-50 border-t border-gray-200">
+      <div class="flex flex-col md:flex-row items-center justify-between mb-4 space-y-4 md:space-y-0">
+        
+        <!-- Partie gauche -->
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 md:w-12 md:h-12 bg-primary rounded-full flex items-center justify-center">
+            <i class="ri-headphone-line text-white text-lg md:text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-base md:text-lg font-bold text-gray-900">Guide Audio</h3>
+            <p class="text-xs md:text-sm text-gray-600">Description détaillée de l'œuvre</p>
+          </div>
+        </div>
+
+        <!-- Partie droite -->
+        <div class="flex items-center space-x-3">
+          <!-- Boutons de langue -->
+          <div id="transcriptionButtons" class="flex space-x-2">
+            <button data-lang="FR" class="trans-btn px-3 py-1 text-sm font-medium bg-primary text-white border border-gray-300 rounded-full shadow-sm ring-2 ring-primary transition-all active">
+              FR
+            </button>
+            <button data-lang="EN" class="trans-btn px-3 py-1 text-sm font-medium bg-white text-gray-800 border border-gray-300 rounded-full shadow-sm hover:bg-primary hover:text-white transition-all">
+              EN
+            </button>
+            <button data-lang="WO" class="trans-btn px-3 py-1 text-sm font-medium bg-white text-gray-800 border border-gray-300 rounded-full shadow-sm hover:bg-primary hover:text-white transition-all">
+              WO
+            </button>
+          </div>
+
+          <!-- Bouton lecture -->
+          <button id="playAudio" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center rounded-full bg-primary hover:bg-secondary text-white transition-all transform hover:scale-110 shadow-lg">
+            <i id="audioIcon" class="ri-play-fill text-xl md:text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Barre de progression -->
+      <div class="relative w-full h-2 bg-white rounded-full overflow-hidden cursor-pointer shadow-inner" id="progressBar">
+        <div id="audioProgress" class="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-secondary transition-all duration-200 ease-linear" style="width: 0%;"></div>
+      </div>
+
+      <!-- Durée -->
+      <div class="flex justify-between text-xs md:text-sm text-gray-600 mt-2 font-medium">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+
+      <audio id="audio" src="presentation.mp3"></audio>
+    </div>
+  </div>
+</div>
+
         <script id="carouselScroll">
             document.addEventListener('DOMContentLoaded', function() {
             const carousel = document.querySelector('.carousel-container');
@@ -2043,6 +2093,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             });
             });
+
+
+                 // --- Gestion boutons de transcription ---
+    const buttons = document.querySelectorAll(".trans-btn");
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            buttons.forEach(b => {
+                b.classList.remove("bg-primary", "text-white", "ring-2", "ring-primary", "active");
+                b.classList.add("bg-white", "text-gray-800");
+            });
+
+            btn.classList.add("bg-primary", "text-black", "ring-2", "ring-primary", "active");
+            btn.focus(); // Garde le focus visible sur le bouton actif
+        });
+    });
         </script>
         <script id="artworkPopup">
             document.addEventListener('DOMContentLoaded', function() {
